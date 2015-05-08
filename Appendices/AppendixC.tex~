@@ -1,0 +1,10 @@
+% Appendix A
+
+\chapter{Interpolation} % Main appendix title
+
+\label{AppendixC} % For referencing this appendix elsewhere, use \ref{AppendixA}
+
+\lhead{Appendix C. \emph{Interpolation}} % This is for the header on each page - perhaps a shortened title
+
+
+

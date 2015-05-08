@@ -1,0 +1,74 @@
+% Appendix A
+
+\chapter{Lorentz Spaces} % Main appendix title
+
+\label{AppendixB} % For referencing this appendix elsewhere, use \ref{AppendixA}
+
+\lhead{Appendix B. \emph{Lorentz Spaces}} % This is for the header on each page - perhaps a shortened title
+
+
+\section{Introduction}
+Lorentz spaces form a broad generalisation of $L^p$ spaces
+and weak $L^p$ spaces. These notes cover the basic definitions.
+
+\section{Weak $L^p$-spaces}
+Let $(X,\mathcal{A},\mu)$ be a $\sigma$-finite measure space. 
+Given a measurable funciton $f:X\rightarrow \Cplx$, we may define the 
+distribution function 
+\begin{equation*}
+    d_f(\alpha) = \mu\{x \in X\;:\;|f(x)| \geq \alpha\}.
+\end{equation*}
+for $\alpha \geq 0$. 
+
+By Markov's inequality, for $p > 0$,
+\begin{equation*}
+    d_f(\alpha) \leq \frac{\|f\|_p^p}{\alpha^p}.
+\end{equation*}
+
+The linear span of the class of functions $f$ for which
+\begin{equation*}
+    d_f(\alpha) \leq \frac{C^p}{\alpha^p}
+\end{equation*}
+for some constant $C$ is called the weak $L^p$ space
+or $L^{p,w}(X)$. Given $f \in L^{p,w}(X)$, define
+\begin{equation*}
+    \|f\|_{p,w} := \sup_{\alpha > 0} \alpha d_f(\alpha)^{1/p}.
+\end{equation*}
+
+\section{Non-increasing Rearrangements}
+Again let $(X,\mathcal{A},\mu)$ be a $\sigma$-finite
+measure space, and $f:X\rightarrow \Cplx$ is measurable. Then define,
+for $t \geq 0$,
+\begin{equation*}
+    f^*(t) = \inf\{s \geq 0\;:\;d_f(s) \leq t\}.
+\end{equation*}
+$f^*$ is called the non-increasing rearrangement of $f$.
+
+\begin{lemma}
+    \begin{equation*}
+        \left(\int_X |f|^p\;d\mu\right)^{1/p} = \left(\int_0^\infty (f^*)^p\;d\mu\right)^{1/p}
+    \end{equation*}
+\end{lemma}
+\begin{lemma}
+    \begin{equation*}
+        \sup_{t>0} t^qf^*(t) = \sup_{\alpha > 0} \alpha d_f(\alpha)^{1/p}.
+    \end{equation*}
+\end{lemma}
+
+Inspired by the above two results is the following definition,
+\begin{definition}[Lorentz spaces]
+    Let $p,q > 0$. For a $\sigma$-finite measure space $(X,\mathcal{A},\mu)$, 
+    and a measurable function $f:X\rightarrow \Cplx$, define
+    \begin{equation*}
+        \|f\|_{p,q} = \left(\int_0^\infty (t^{1/p}f^*(t))^q\frac{dt}{t}\right)^{1/q}
+    \end{equation*}
+    and
+    \begin{equation*}
+        \|f\|_{p,\infty} = \sup_{t\geq 0} t^{1/p} f^*(t).
+    \end{equation*}
+\end{definition}
+
+\section{Discrete spaces}
+When $X$ is a set with counting measure, the $L^{p,q}$ spaces
+are denotes $\ell^{p,q}(X)$. 
+

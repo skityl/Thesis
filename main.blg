@@ -1,0 +1,62 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/TeX Live for SUSE Linux)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+The style file: unsrtnat.bst
+Database file #1: Bibliography.bib
+Warning--I didn't find a database entry for "robinson"
+Warning--I didn't find a database entry for "sia"
+Warning--I didn't find a database entry for "lcf"
+Warning--I didn't find a database entry for "infinitesimalBook"
+Warning--I didn't find a database entry for "meCesaro"
+Warning--I didn't find a database entry for "meAbel"
+Warning--I didn't find a database entry for "fefferman"
+Warning--I didn't find a database entry for "interp"
+Warning--I didn't find a database entry for "pedersen"
+Warning--I didn't find a database entry for "me"
+Warning--empty author and editor in Connes94
+Warning--empty title in Connes94
+Warning--empty publisher in Connes94
+Warning--empty year in Connes94
+Warning--empty year in Connes94
+You've used 1 entry,
+            2481 wiz_defined-function locations,
+            566 strings with 4541 characters,
+and the built_in function-call counts, 261 in all, are:
+= -- 13
+> -- 0
+< -- 0
++ -- 2
+- -- 0
+* -- 24
+:= -- 29
+add.period$ -- 1
+call.type$ -- 1
+change.case$ -- 1
+chr.to.int$ -- 1
+cite$ -- 7
+duplicate$ -- 21
+empty$ -- 37
+format.name$ -- 0
+if$ -- 51
+int.to.chr$ -- 1
+int.to.str$ -- 2
+missing$ -- 1
+newline$ -- 11
+num.names$ -- 0
+pop$ -- 19
+preamble$ -- 1
+purify$ -- 1
+quote$ -- 0
+skip$ -- 11
+stack$ -- 0
+substring$ -- 3
+swap$ -- 1
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 4
+warning$ -- 5
+while$ -- 0
+width$ -- 0
+write$ -- 13
+(There were 15 warnings)

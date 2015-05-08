@@ -1,0 +1,572 @@
+% Appendix A
+
+\chapter{Group Actions on Von Neumann Algebras} % Main appendix title
+
+\label{AppendixD} % For referencing this appendix elsewhere, use \ref{AppendixA}
+
+\lhead{Appendix D. \emph{Group Actions on Von Neumann Algebras}} % This is for the header on each page - perhaps a shortened title
+
+
+\section{Introduction}
+There is a beautiful and extraordinary generalisation of the Fourier
+transform in the theory of Von Neumann algebras relating
+to the action of compact groups. The purpose
+of these notes is to give a basic exposition of this idea.
+
+\section{Compact Group actions}
+Let $G$ be a compact abelian group equipped with normalised Haar
+measure $\mu$, and let $\M$ be a Von Neumann algebra.
+
+Recall that a group action on a Von Neumann algebra
+is a group action $\alpha:G\times \M\rightarrow \M$ such that
+for all $g \in G$ the function $a\mapsto \alpha(g,a)$ is an algebra
+homomorphism.
+
+Suppose that $G$ acts on $M$ in a way that is
+\begin{enumerate}
+    \item{} \emph{ergodic}: the only projections in $\M$
+    fixed by $G$ are $0$ and $1$ and
+    \item{} \emph{free}: there is no nontrivial projection $p \in \M$
+    such that some $g \in G$ not equal to the identity fixes all of $p\M p$.
+\end{enumerate}
+
+We then have the following result:
+\begin{proposition}
+    Suppose that $G$ is a compact abelian group that acts freely and ergodically
+    on the Von Neumann algebra $\M$, by the action $\alpha:G\times\M\rightarrow\M$. Then there is a set 
+    \begin{equation*}
+        \{ u(p) \;:\; p \in \widehat{G}\}
+    \end{equation*}
+    of unitary eigenoperators for the action indexed by the dual group $\widehat{G}$,
+    and the map $p\mapsto u(p)$ is a representation of $\widehat{G}$.
+\end{proposition}
+\begin{proof}
+    Let $x \in \M$ and $p \in \widehat{G}$. Define
+    \begin{equation*}
+        \hat{x}(p) := \int_G \alpha(s,x) p(s)^{-1} \;d\mu(s).
+    \end{equation*}
+    
+    Let $g \in G$, then we can compute,
+    \begin{align*}
+        \alpha(g,\hat{x}(p)) &= \int_G \alpha(sg,x)p(s)^{-1} \;d\mu(s)\\
+        &= p(g)\hat{x}(p).
+    \end{align*}
+    Hence we have that $\hat{x}(p)$ is an eigenoperator for the action of $G$.
+    Hence, for $x,y \in \M$, we have that $\hat{x}(p)\hat{y}(p)^*$ is a fixed
+    point of $G$, hence a scalar multiple of $1$. 
+    
+    Then define
+    \begin{equation*}
+        u(p) = \frac{\hat{x}(p)}{\|\hat{x}(p)\|}.
+    \end{equation*}
+    Hence $u$ is unitary, and for each $y \in \M$, we have $\hat{y}(p)$ is a scalar
+    multiple of $u(p)$.
+\end{proof} 
+\begin{example}
+    The prototypical example of this decomposition is for $\M = L^\infty(\Circ)$,
+    and $G = \Circ$ with Haar measure  acting on $\M$ by translation. Then $\widehat{G} = \Itgr$,
+    and for $f \in L^\infty(\Circ)$ and $n \in \Itgr$, we have
+    \begin{equation*}
+        \hat{f}(n)(\zeta) = \int_\Circ f(\tau\zeta) \tau^{-n} d\ha(\tau)
+    \end{equation*}
+    This is simply the $n$th Fourier coefficient times $\zeta^n$. Hence we have
+    \begin{equation*}
+        u(n)(\zeta) = \zeta^n.
+    \end{equation*}
+    So the system of unitaries is the set of monomials on $\Circ$. 
+\end{example}
+The important feature of this system of unitaries is that it spans
+$\M$. First we recall the definition of the $\sigma$-weak topology.
+
+\begin{definition}
+    Let $\Hilb$ be a Hilbert space, and let $\{\xi_j\}_{j = 0}^\infty$
+    and $\{\eta_j\}_{j=0}^\infty$ be sequences of elements of $\Hilb$
+    such that 
+    \begin{align*}
+        \sum_{j=0}^\infty \|\xi_j\|^2 &< \infty\\
+        \sum_{j=0}^\infty \|\eta_j\|^2 &< \infty.
+    \end{align*}
+    Then for $a \in \mathcal{B}(\Hilb)$, define the semi-norm,
+    \begin{equation*}
+        \left| \sum_{j=0}^\infty \langle \xi_j,a\eta_j\rangle\right|.
+    \end{equation*}
+    This system of semi-norms defines the $\sigma$-weak topology
+    on $\mathcal{B}(\Hilb)$.
+\end{definition}
+
+
+
+\begin{proposition}
+    Let $G$ be a compact abelian group acting freely and ergodically 
+    on a Von Neumann algebra $\M$. Let
+    \begin{equation*}
+        \mathcal{P} = \{ u(p)\;:\; p \in \widehat{G}\}
+    \end{equation*}
+    be the corresponding unitary eigenoperators of $G$. Then the span
+    of $\mathcal{P}$ is dense in the $\sigma$-weak topology on $\M$.
+\end{proposition}
+\begin{proof}
+    (sketch: See \cite{pedersen} 8.1.6 for details) This follows from the claim that the \emph{Arveson spectrum}
+    $\operatorname{Sp}(\alpha)$
+    of $\alpha$ is $\widehat{G}$. We claim that since
+    \begin{equation*}
+        \operatorname{Sp}^{\perp}(\alpha) = \{ s \in G\;:\; \alpha(s,x) = x\;\text{ for all }x \in \M\}
+    \end{equation*} 
+    we have that $\operatorname{Sp}^\perp(\alpha) = \{0\}$ because $\alpha$
+    is free,
+    from which it follows that $\operatorname{Sp}(\alpha) = \widehat{G}$.
+    
+    Consequently, the system $\{u(p)\;:\; p \in \widehat{G}\}$ is $\sigma$-weakly
+    dense in $\M$.
+\end{proof}
+
+\section{The space $\mathcal{L}^2(\M,\tau)$}
+Suppose that $\tau$ is a faithful trace on $\M$ such that $\tau(1) = 1$,
+and $\tau$ is invariant under the action of $G$, that is for
+all $g \in G$ and $x \in \M$ we have $\tau(\alpha(g,x)) = \tau(x)$. 
+Then the map $(x,y)\mapsto \tau(x^*y)$ is an inner product on $\M$,
+and the completion of $\M$ in this inner product is denoted $\mathcal{L}^2(\M,\tau)$.
+
+We require the following lemma from Pedersen \cite{pedersen},
+Theorem 3.6.5,
+\begin{lemma}
+    A state $\varphi$ on a Von Neumann algebra is normal if and only if it is
+    $\sigma$-weakly continuous.
+\end{lemma}
+
+
+Since $\M$ carries a group action, such a trace exists.
+\begin{lemma}
+    Let $\M$ be a Von Neumann algebra, and let $G$ act on $\M$ freely and ergodically.
+    Then there is a $G$-invariant state on $\M$, and it is a faithful normal
+    trace.
+\end{lemma}
+\begin{proof}
+    Define for $x \in \M$, 
+    \begin{equation*}
+        \tau(x) = \int_G \alpha(s,x)\;d\mu(s) = \hat{x}(0).
+    \end{equation*}
+    See that $\alpha(g,\tau(x)) = \tau(x)$, so $\tau(x)$
+    is $G$-invariant so by ergodicity must be in $\Cplx 1$. If we identify
+    $\Cplx 1$ with $\Cplx$, we can think of $\tau(x)$ as a scalar, so $\tau(x)$
+    is a state. By the continuity of the group action, we have that $\tau$ is normal,
+    and if $\tau(x^*x) = 0$, we must have $\alpha(s,x)^*\alpha(s,x) = 0$
+    for all $s \in G$, so $x = 0$. Hence $\tau$ is faithful.
+    
+    To prove that prove that $\tau$ is a trace it is sufficient to prove that
+    \begin{equation*}
+        \tau(u(p)u(q)) = \tau(u(q)u(p))
+    \end{equation*}
+    for all $p,q \in \widehat{G}$. 
+    
+    Let $g \in G$, then we have
+    \begin{align*}
+        \tau(u(p)u(q)) &= \tau(\alpha(g,u(p)u(q)))\\
+        &= p(g)q(g)\tau(u(p)u(q)).
+    \end{align*}
+    If $p \neq q^{-1}$, we can find $g$ such that $p(g)q(g) \neq 1$. Thus,
+    $\tau(u(p)u(q)) = 0$.
+    
+    Otherwise, if $p = q^{-1}$ there is a scalar $\lambda_p$
+    with $|\lambda_p| = 1$ such that
+    \begin{align*}
+        \tau(u(p)u(q)) = \lambda_p\tau(u(p)u(p)^*) = \lambda_p.
+    \end{align*}
+    Hence $\tau(u(p)u(q)) = \tau(u(q)u(p))$.
+    
+    Hence, since $\tau$ is normal, it is $\sigma$-weakly continuous.
+    Since the set $\{u(p)\;:\;p \in \widehat{G}\}$ is $\sigma$-weakly
+    dense in $\M$, we have that $\tau(xy) = \tau(yx)$ for all $x,y \in \M$.
+    
+\end{proof} 
+
+
+\begin{proposition}
+    Let $\mathcal{P} := \{u(p)\;:\;p \in \widehat{G}\}$ be the set of unitary eigenoperators
+    corresponding to the action of $G$. Then $\{u(p)\;:\; p \in \widehat{G}\}$
+    is an orthonormal basis for $\mathcal{L}^2(\M,\tau)$.
+\end{proposition}
+\begin{proof}
+    By standard Hilbert space theory, it is sufficient to prove that $\mathcal{P}$
+    is orthonormal and has dense span.
+    
+    First we prove ortho-normality. Let $p,q \in \widehat{G}$. Then for all $g \in G$,
+    \begin{align*}
+        \tau(u(p)^*u(q)) &= \tau(p(g)^{-1}q(g)u(p)^*u(q))\\
+        &= p(g)^{-1}q(g)\tau(u(p)^*u(q)).
+    \end{align*}
+    If $p \neq q$, there is some $g \in G$ such that $p(g)^{-1}q(p) \neq 1$,
+    so we conclude that $\tau(u(p)^*u(q)) = 0$.
+    If $p = q$, then by unitarity we have
+    \begin{equation*}
+        \tau(u(p)^*u(q)) = \tau(1) = 1.
+    \end{equation*}
+    Hence $\mathcal{P}$ is orthonormal.
+    
+    To prove that the span of $\mathcal{P}$ is dense in $\mathcal{L}^2(\M,\tau)$,
+    it is sufficient to prove that it is dense in $\M$ in the norm $\|x\|_2 := \sqrt{\tau(x^*x)}$.
+    This follows from the $\sigma$-weak continuity of $\tau$.
+\end{proof}
+
+\begin{remark}
+    In fact, for any $p \geq 1$, we have that the norm $\|x\|_p = (\tau(|x|^p))^{1/p}$
+    is $\sigma$-weakly continuous, so $\{u(p)\;:\;p \in \widehat{G}\}$
+    is dense in $\mathcal{L}^p(M,\tau)$, defined as the completion of $\M$
+    in the norm $\|\cdot\|_p$. 
+\end{remark}
+
+
+\section{Non-commutative Harmonic Analysis}
+(The following is entirely original and therefore suspect)
+
+We now fix $G = \Circ^d$, so that $\widehat{G} = \Itgr^d$. It is of interest
+to prove certain results that are analogous to classical results of harmonic
+analysis. In particular, one known classical result is that if $f \in L^1(\Circ^d,\ha)$,
+then the Fourier coefficients $\hat{f}(n)$ vanish as $\|n\|\rightarrow \infty$. We now
+prove an analogy of this result. 
+
+Let $\ha$ denote the normalised Haar measure on $\Circ^d$.
+
+From now on, denote the action of $t \in \Circ^d$ on $x \in \M$ as $\alpha_t(x)$.
+
+Fix $\M$ a Von Neumann Algebra, and let $\Circ^d$ act on $\M$ freely
+and ergodically. Let $\tau$ be the unique normalised faithful $\Circ^d$-invariant trace
+on $\M$. Let
+\begin{equation*}
+    \mathcal{P} := \{ u(n) \;:\; n \in \Itgr^d\}
+\end{equation*}
+be the spanning system of unitary eigenoperators of the group action. 
+
+For $a \in \mathcal{L}^1(\M,\tau)$ and $n \in \Itgr^d$, define
+\begin{equation*}
+    \hat{a}(n) := \tau(au(n)^*)
+\end{equation*}
+
+For any $a \in \mathcal{L}^2(\M,\tau)$, we have that
+\begin{equation*}
+    a = \sum_{n \in \Itgr^d} \hat{a}(n)u(n)
+\end{equation*}
+where the convergence is in the $\mathcal{L}^2$ norm. This is
+an isomorphism with $\ell^2(\Itgr^d)$.
+In general, for $N = (N_1,\ldots,N_d) \in \Itgr^d$, define
+\begin{equation*}
+    S_N a := \sum_{n = -N}^N \hat{a}(n)u(n)
+\end{equation*}
+where the summation runs over all multi-indices $n = (n_1,\ldots,n_d)$
+such that for each $1\leq j \leq d$, we have $-N_j \leq n_j \leq N_J$.
+and
+\begin{equation*}
+    \sigma_N a := \frac{1}{N_1N_2\cdots N_d}\sum_{n = (1,\ldots,1)}^N S_n a.
+\end{equation*}
+and the summation runs over multi-indices $n = (n_1,\ldots,n_d)$
+such that for each $j$, $1 \leq n_j \leq N_j$.
+
+Now we define the subspaces of ``\emph{continuous}" and ``\emph{uniformly continuous}"
+functions in $\M$. 
+\begin{definition}
+    Define $\mathcal{C}(\M)$ to be the closure of the span of $\mathcal{P}$
+    in the norm topology of $\M$.
+    
+    Define $\mathcal{U}(\M)$ to be the set of elements of $\M$
+    such that for any $\varepsilon > 0$ there exists $\delta > 0$ such that
+    \begin{equation*}
+        \sup_{|t| < \delta} \|\alpha_t(x)-x\| < \varepsilon.    
+    \end{equation*}
+    Where, for $t \in \Circ^d$, If $t = (e^{2\pi i\varphi_1},\ldots,e^{2\pi i\varphi_d})$, we 
+    denote
+    \begin{equation*}
+        |t| = \max\{|\varphi_1|,\ldots,|\varphi_d|\}.
+    \end{equation*}
+\end{definition}
+
+\begin{definition}
+    Let $n = (n_1,\ldots,n_d) \in \Itgr^d$, and $t = (t_1,\ldots,t_d) \in \Circ^d$.
+    Then we introduce the notation
+    \begin{equation*}
+        t^d := t_1^{n_1}\cdots t_d^{n_d}.
+    \end{equation*}    
+\end{definition}
+
+\begin{lemma}
+    We have the inclusion,
+    \begin{equation*}
+        \mathcal{C}(\M) \subseteq \mathcal{U}(\M).
+    \end{equation*}
+\end{lemma}
+\begin{proof}
+    First let $u(n) \in \mathcal{P}$. Then for $t \in \Circ^d$,
+    we have
+    \begin{equation*}
+        \alpha_t(u(n)) = t^n u(n)
+    \end{equation*}
+    Hence
+    \begin{equation*}
+        \|\alpha_t(u(n))-u(n)\| = |t^n-1|\|u(n)\|.
+    \end{equation*}
+    So since $\lim_{t\rightarrow 1} |t^n - 1| = 0$, we have 
+    that for any $\varepsilon > 0$ there exists $\delta > 0$ such that
+    \begin{equation*}
+        \sup_{|t| < \delta} \|\alpha_t(u(n))-u(n)\| < \varepsilon. 
+    \end{equation*} 
+    
+    Now let $a$ be in the linear span of $\mathcal{P}$. Since $a$
+    is only a finite linear combination of terms of the form $u(n)$, $n \in \Itgr$, we have
+    that for any $\varepsilon > 0$ there exists a $\delta > 0$ such that
+    \begin{equation*}
+        \sup_{|t| <  \delta} \|\alpha_t(a) - a\| < \varepsilon.
+    \end{equation*}
+    Hence the linear span of $\mathcal{P}$ is contained in $\mathcal{U}(\M)$.
+    We will be finished if we can show that $\mathcal{U}(\M)$ is closed
+    in the norm topology.
+    
+    Suppose that $\{x_n\}_{n=0}^\infty$ is a sequence in $\mathcal{U}(\M)$ converging
+    in the norm topology to $x \in \M$. Then let $t \in \Circ^d$, by the triangle inequality,
+    \begin{equation*}
+        \|\alpha_t(x)-x\| < \|\alpha_t(x)-\alpha_t(x_n)\| + \|\alpha_t(x_n)-x_n\| + \|x_n - x\|
+    \end{equation*}
+    By assumption, the group action is continuous in the norm topology,
+    so there is a constant $C$ such that $\|\alpha_t(x)-\alpha_t(x_n)\| < C\|x-x_n\|$. 
+    Hence the result follows. 
+\end{proof}
+
+\begin{definition}
+    Suppose that $\varphi \in L^1(\Circ^d,\ha)$, and $x \in \M$. Define the \emph{convolution}
+    \begin{equation*}
+        \varphi * x = \int_{\Circ^d} \varphi(t)\alpha_t(x)\;d\ha(t).
+    \end{equation*}
+\end{definition}
+
+It can be proved that
+\begin{equation*}
+    S_N x = D_N * x
+\end{equation*}
+where 
+\begin{equation*}
+    D_N(t) = \prod_{j=1}^d\frac{t_j^{N_j+1/2}-t_j^{-N_j-1/2}}{t_j^{1/2}-t_j^{-1/2}}
+\end{equation*}
+and
+\begin{equation*}
+    \sigma_N x = F_N*x
+\end{equation*}
+where
+\begin{equation*}
+    F_N(t) = \prod_{j=1}^d\frac{t_j^{N_j}-2+t_j^{-N_j}}{N(t_j^{1/2}-t_j^{-1/2})^2}
+\end{equation*}
+where the fractional powers in the formulae for $D_N$ and $F_N$ are defined
+in a principal value sense. See \cite{me} for proofs.
+
+Now we define approximate identities,
+\begin{definition}
+    A net $\{\Phi_\lambda\}_{\lambda \in \Lambda} \subset L^1(\Circ^d,\ha)$ is called
+    an approximation to the identity if,
+    \begin{enumerate}
+        \item{} For all $\lambda$, we have $\int_{\Circ^d} \Phi_\lambda \;d\ha = 1$.
+        \item{} We have $\sup_{\lambda} \int_{\Circ^d} |\Phi_\lambda|\;d\ha < \infty$
+        \item{} For any $\delta > 0$, we have $\lim_{\lambda \in \Lambda} \int_{|t| > \delta} |\Phi_\lambda|\;d\ha = 0$.
+    \end{enumerate}
+\end{definition}
+
+It can be proved that the sequence $\{F_n\}_{n\in\Ntrl^d}$ is an approximate
+identity (see \cite{me}).
+
+Approximate identities are so named because of the following two results:
+\begin{proposition}
+    Let $x \in \mathcal{U}(\M)$, and let $\{\Phi_\lambda\}_{\lambda \in \Lambda}$ be an 
+    approximate identity. Then we have
+    \begin{equation*}
+        \lim_{\lambda \in \Lambda} \|\Phi_\lambda*x - x\| = 0.
+    \end{equation*}
+\end{proposition}
+\begin{proof}
+    Using the fact that $\int_\Circ \Phi_\lambda\;d\mu = 1$, we compute,
+    \begin{equation*}
+        \Phi_n*x-x = \int_\Circ \Phi_\lambda(t)(\alpha_t(x)-x)\;d\mu(t).
+    \end{equation*}
+    Let $\varepsilon > 0$. Choose $\delta$ small enough such that
+    \begin{equation*}
+        \sup_{|t| < \delta} \|\alpha_t(x)-x\| < \varepsilon.
+    \end{equation*}
+    Now estimate,
+    \begin{equation*}
+        \|\Phi_\lambda*x - x\| \leq \int_{|t| < \delta} |\Phi_\lambda(t)|\|\alpha_t(x)-x\|\;d\mu(t) + (C+1)\int_{|t| \geq \delta} |\Phi_\lambda(t)|\|x\| d\mu(t)
+    \end{equation*}
+    where $C$ is a constant such that $\|\alpha_t(x)\| < C\|x\|$.
+    So taking the limit over $\lambda$, we have
+    \begin{equation*}
+        \lim_{\lambda \in \Lambda} \|\Phi_\lambda*x-x\| < \varepsilon \sup_{\lambda \in \Lambda} \int_\Circ |\Phi_n|\;d\ha.
+    \end{equation*}
+    But $\varepsilon$ is arbitrary, so the result follows.
+\end{proof}
+
+\begin{proposition}
+    We have that
+    \begin{equation*}
+        \mathcal{C}(\M) = \mathcal{U}(\M).
+    \end{equation*}
+\end{proposition}
+\begin{proof}
+    Let $a \in \mathcal{U}(\M)$. Since $\{F_n\}_{n\in\Ntrl^d}$ is an approximate identity, we have
+    that $F_n*a\rightarrow a$ in the norm topology. But $F_n*a \in \Span(\mathcal{P})$.
+    Hence $a \in \mathcal{C}(\M)$.
+\end{proof}
+
+
+As usual, define $\|x\|_p = \tau(|x|^p)^{1/p}$. We require the following lemma:
+\begin{lemma}
+    Let $p \geq 1$. Suppose $\varphi \in L^1(\Circ^d,\ha)$, and $x \in \mathcal{L}^p(\M,\tau)$. Then
+    \begin{equation*}
+        \|\varphi*x\|_p \leq \|\varphi\|_1\|x\|_p.
+    \end{equation*}
+\end{lemma} 
+\begin{proof}
+    First we establish the case $p  =  1$. This is a computation,
+    \begin{equation*}
+        \|\varphi * x\|_1 \leq \int_{\Circ^d} |\varphi(t)|\|\alpha_{t}(a)\|_1\;d\ha(t).
+    \end{equation*}
+    Similarly, we define $\|x\|_\infty = \|x\|$. Thus the $p = \infty$ case,
+    \begin{equation*}
+        \|\varphi*x\|_\infty \leq \|\varphi\|_1\|x\|.
+    \end{equation*}
+    
+    Hence by interpolation, the result follows.
+\end{proof} 
+
+
+\begin{proposition}
+     If $\{\Phi_\lambda\}_{\lambda \in \Lambda}$
+    is an approximate identity, and $x \in \mathcal{L}^p(\M,\tau)$
+    and $p \geq 1$
+    then
+    \begin{equation*}
+        \lim_{\lambda \in \Lambda}\|\Phi_\lambda*x-x\|_p = 0.
+    \end{equation*}    
+\end{proposition}
+\begin{proof}
+    Let $\varepsilon > 0$.
+    Since $\mathcal{U}(\M)$ contains the linear span of $\mathcal{P}$,
+    and the linear span of $\mathcal{P}$ is dense in $\mathcal{L}^p(\M,\tau)$
+    in the $\|.\|_p$ norm, we can find $y \in \mathcal{U}(\M)$ such
+    that $\|x-y\|_p < \varepsilon$. Hence,
+    \begin{align*}
+        \|\Phi_\lambda*x-x\|_p &\leq \|\Phi_\lambda*x-\Phi_\lambda*y\|_p + \|\Phi_\lambda*y-y\|_p + \|y-x\|_p\\
+        &\leq \sup_{\mu \in \Lambda} \|\Phi_\mu\|_1\varepsilon + \|\Phi_\lambda*y-y\|_p + \varepsilon.
+    \end{align*}
+    Now take the limit over $\lambda$, and thus we obtain the result.
+\end{proof}
+
+At last we can prove the following result:
+\begin{proposition}
+    Let $x \in \mathcal{L}^1(\M,\tau)$. Then we have $\hat{x}(n) \rightarrow 0$
+    as $\|n\|\rightarrow\infty$.
+\end{proposition}
+\begin{proof}
+    For $n = (n_1,\ldots,n_d) \in \Itgr^d$, denote $|n| := (n_1,\ldots,n_d)$.
+    We have that $\tau(\sigma_{|N|-1}xu(N)^*) = 0$. Hence,
+    \begin{align*}
+        |\hat{x}(n)| &= |\tau(xu(n)^*)|\\
+&\leq |\tau((x-\sigma_{|n|-1}x)u(n)^*)|\\
+&\leq \|u(n)^*\|\|x-\sigma_{|n|-1}x\|_1\\
+&= \|x-F_{|n|-1}*x\|_1.
+    \end{align*}
+    But the right hand side vanishes as $\|n\|\rightarrow\infty$.
+\end{proof}
+
+\section{The Operators $\delta_j$}
+Let $\M$ be a Von Neumann Algebra, and let $\Circ^d$
+act freely and ergodically on $\M$. 
+
+The generalised differentiation operator $\delta_j$ is defined
+as the \emph{infinitesimal generator} of the action of $\Circ^d$, as follows,
+\begin{definition}
+    Let $j \in \{1,\ldots,d\}$. 
+    
+    For $t \in \Circ$, we have an action $\alpha^j_t$ on $\M$
+    which is the action of the $j$th coordinate of $\Circ^d$ on $\M$
+    
+    For $x \in \mathcal{M}$, we define 
+    \begin{equation*}
+        \delta_j(x) = \lim_{t\rightarrow 1} \frac{\alpha^j_t(x)-x}{|t|}
+    \end{equation*}
+    where $|t|$ is the minimal normalised arc length between $t$ and $1$.
+    
+    The limit is in the sense of the norm topology on $\M$.
+    
+    This limit may not exist for all $x$. Let $\Dom(\delta_j)$
+    be the set of all $x$ such that $\delta_j(x)$ exists.
+\end{definition}
+Note that $\Dom(\delta_j)$ is automatically a vector space.
+
+
+
+\begin{lemma}
+    We have $\mathcal{P} \subset \Dom(\delta_j)$.
+\end{lemma}
+\begin{proof}
+    For $t \in \Circ$, and $u(n) \in \mathcal{P}$ with $n = (n_1,\ldots,n_d)$, we have $\alpha^j_tu(n) = t^n_ju(n)$.
+    
+    Hence,
+    \begin{equation*}
+        \frac{\alpha^j_t(u(n))-u(n)}{|t|} = \frac{t^{n_j}-1}{|t|}u(n).
+    \end{equation*}
+    
+    We parametrise $\Circ$ by $t\mapsto \exp( i \theta)$, for $\theta \in [0,2\pi)$. Then we
+    have
+    \begin{equation*}
+        \frac{t^{n_j}-1}{|t|} = \frac{\exp(in_j\theta)-1}{\theta}.
+    \end{equation*}
+    Hence,
+    \begin{align*}
+        \delta_j(u(n)) &= \lim_{t\rightarrow 1} \frac{t^{n_j}-1}{|t|}u(n)\\
+                &= \lim_{\theta\rightarrow 0} \frac{\exp(in_j\theta)-1}{\theta}u(n)\\
+                &= in_ju(n).
+    \end{align*}
+    Hence, $u(n) \in \Dom(\delta_j)$.
+\end{proof}
+
+
+\begin{proposition}
+    Suppose that $x \in \Dom(\delta_j)$. Then 
+    \begin{equation*}
+        \widehat{\delta_j(x)}(n) = in_j\widehat{x}(n).
+    \end{equation*}
+\end{proposition}
+\begin{proof}
+    By definition, $\Dom(\delta_j) \subseteq \M \subseteq \mathcal{L}^1(\M,\tau)$. 
+    
+    Let $x \in \Dom(\delta_j)$.
+    
+    Hence, we have $F_n*x\rightarrow x$ in the $\mathcal{L}^1$ sense, and since $\delta_j(x) \in \mathcal{L}^1(\Circ)$, we have $F_n*\D(x)\rightarrow \D(x)$ in the $\mathcal{L}^1$ sense. 
+    
+    Note that since $F_n*x$ is in the linear span of $\mathcal{P}$, we
+    have $F_n*x \in \Dom(\delta_j)$. See that
+    \begin{equation*}
+        \delta_j(F_n *x) = \frac{1}{n_1n_2\cdots n_d}\sum_{k=0}^n \delta_j(D_k* x).
+    \end{equation*}
+    where the sum is over multi-indices $k = (k_1,\ldots,k_d)$ with each $1\leq k_m \leq n_m$.
+    We also have,
+    \begin{align*}
+        \delta_j(D_k* x) &= \sum_{j=-k}^k \hat{x}(j)\D(u(j))\\
+        &= \sum_{j=-k}^k ij\hat{x}(j)u(j).        
+    \end{align*}
+    
+    Now we have,
+    \begin{align*}
+        \widehat{\delta_j(x)}(n) &= \lim_{k\rightarrow\infty} \tau(F_k*xu(-n))\\
+                           &= \lim_{k\rightarrow\infty} in_j\hat{x}(n).
+    \end{align*} 
+    
+    
+\end{proof}
+
+
+Now define 
+\begin{equation*}
+    \D_j := \frac{1}{i} \delta_j.
+\end{equation*}
+We define $\Dom(\D_j) = \Dom(\delta_j)$.
+
+Hence we have the formula,
+\begin{equation*}
+    \widehat{\D_j x}(n) = n_j\hat{x}(n).
+\end{equation*}
+
