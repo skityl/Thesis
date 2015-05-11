@@ -1,0 +1,82 @@
+\contentsline {chapter}{Declaration of Authorship}{i}{dummy.1}
+\vspace {1em}
+\contentsline {chapter}{Abstract}{iii}{dummy.2}
+\vspace {1em}
+\contentsline {chapter}{Acknowledgements}{iv}{dummy.3}
+\vspace {1em}
+\contentsline {chapter}{Contents}{v}{dummy.4}
+\vspace {2em}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.6}
+\contentsline {section}{\numberline {1.1}Classical Infinitesimals}{1}{section.7}
+\contentsline {section}{\numberline {1.2}Compact Operators as Infinitesimals}{2}{section.10}
+\contentsline {section}{\numberline {1.3}Expected Properties of infinitesimals}{3}{section.18}
+\contentsline {section}{\numberline {1.4}Quantised Differentials}{5}{section.38}
+\contentsline {section}{\numberline {1.5}Non-commutative geometry}{6}{section.46}
+\contentsline {subsection}{\numberline {1.5.1}Introduction to the non-commutative world}{6}{subsection.47}
+\contentsline {subsection}{\numberline {1.5.2}A brief introduction to Quantum Mechanics}{7}{subsection.51}
+\contentsline {subsection}{\numberline {1.5.3}Non-commutative spaces}{9}{subsection.59}
+\contentsline {chapter}{\numberline {2}Quantised Differentials on $\mathbb {R}$ and $\mathbb {T}$}{10}{chapter.60}
+\contentsline {section}{\numberline {2.1}The Quantised Differential}{10}{section.61}
+\contentsline {section}{\numberline {2.2}Integral representation of the quantised differential on $\mathbb {T}$}{12}{section.66}
+\contentsline {section}{\numberline {2.3}The Cayley Transform}{14}{section.69}
+\contentsline {subsection}{\numberline {2.3.1}Notation}{14}{subsection.70}
+\contentsline {chapter}{\numberline {3}Basic Properties of Hankel Operators}{16}{chapter.71}
+\contentsline {section}{\numberline {3.1}Definition of a Hankel matrix}{16}{section.72}
+\contentsline {section}{\numberline {3.2}Bounded Hankel operators}{17}{section.73}
+\contentsline {section}{\numberline {3.3}Finite Rank Hankel operators}{20}{section.78}
+\contentsline {section}{\numberline {3.4}Compactness of Hankel Operators}{22}{section.80}
+\contentsline {section}{\numberline {3.5}Hankel Operators of Trace Class}{23}{section.84}
+\contentsline {section}{\numberline {3.6}Interpolation}{27}{section.92}
+\contentsline {chapter}{\numberline {4}Abstract Differential Algebra and Spectral Triples}{28}{chapter.95}
+\contentsline {section}{\numberline {4.1}Introduction}{28}{section.96}
+\contentsline {section}{\numberline {4.2}Classical Differential Algebra}{28}{section.97}
+\contentsline {section}{\numberline {4.3}Abstract Differential Algebra}{29}{section.98}
+\contentsline {subsection}{\numberline {4.3.1}Graded Differential Algebras}{29}{subsection.99}
+\contentsline {subsection}{\numberline {4.3.2}K\"ahler Differentials}{30}{subsection.100}
+\contentsline {subsection}{\numberline {4.3.3}Universal Differential Algebra}{32}{subsection.103}
+\contentsline {subsection}{\numberline {4.3.4}Spectral Triples}{33}{subsection.108}
+\contentsline {subsection}{\numberline {4.3.5}Connes Differentials}{33}{subsection.110}
+\contentsline {chapter}{\numberline {5}Weak $\mathcal {L}^p$ membership of quantised differentials}{35}{chapter.112}
+\contentsline {section}{\numberline {5.1}Introduction}{35}{section.113}
+\contentsline {section}{\numberline {5.2}The setting}{35}{section.114}
+\contentsline {section}{\numberline {5.3}The Theorem}{36}{section.125}
+\contentsline {chapter}{\numberline {6}The Chain Rule in Quantised Calculus}{38}{chapter.130}
+\contentsline {section}{\numberline {6.1}Introduction}{38}{section.131}
+\contentsline {section}{\numberline {6.2}The setting}{38}{section.133}
+\contentsline {section}{\numberline {6.3}The Commutator Lemma}{39}{section.137}
+\contentsline {chapter}{\numberline {7}Higher Dimensions}{40}{chapter.139}
+\contentsline {section}{\numberline {7.1}Introduction}{40}{section.140}
+\contentsline {section}{\numberline {7.2}Commutators}{41}{section.143}
+\contentsline {section}{\numberline {7.3}Hilbert-Schmidt Commutators}{41}{section.153}
+\contentsline {section}{\numberline {7.4}Membership of $\mathcal {L}^p$}{42}{section.163}
+\contentsline {section}{\numberline {7.5}Double commutators}{43}{section.170}
+\vspace {2em}
+\contentsline {chapter}{\numberline {A}Classical Harmonic Analysis}{44}{appendix.176}
+\contentsline {section}{\numberline {A.1}Introduction}{44}{section.177}
+\contentsline {section}{\numberline {A.2}Abel summation}{44}{section.180}
+\contentsline {section}{\numberline {A.3}The Poisson Kernel}{46}{section.183}
+\contentsline {section}{\numberline {A.4}Fourier Series of Measures}{48}{section.188}
+\contentsline {section}{\numberline {A.5}Harmonic functions on $\mathbb {D}$}{50}{section.191}
+\contentsline {chapter}{\numberline {B}Lorentz Spaces}{51}{appendix.192}
+\contentsline {section}{\numberline {B.1}Introduction}{51}{section.193}
+\contentsline {section}{\numberline {B.2}Weak $L^p$-spaces}{51}{section.194}
+\contentsline {section}{\numberline {B.3}Non-increasing Rearrangements}{52}{section.195}
+\contentsline {section}{\numberline {B.4}Discrete spaces}{52}{section.199}
+\contentsline {chapter}{\numberline {C}Interpolation}{53}{appendix.200}
+\contentsline {section}{\numberline {C.1}Introduction}{53}{section.201}
+\contentsline {section}{\numberline {C.2}Abstract Interpolation Theory}{54}{section.203}
+\contentsline {section}{\numberline {C.3}Real Interpolation: The $K$ Method}{55}{section.208}
+\contentsline {section}{\numberline {C.4}Complex Interpolation}{55}{section.211}
+\contentsline {section}{\numberline {C.5}Using interpolation}{56}{section.214}
+\contentsline {chapter}{\numberline {D}Group Actions on Von Neumann Algebras}{57}{appendix.217}
+\contentsline {section}{\numberline {D.1}Introduction}{57}{section.218}
+\contentsline {section}{\numberline {D.2}Compact Group actions}{57}{section.219}
+\contentsline {section}{\numberline {D.3}The space $\mathcal {L}^2(\mathcal {M},\tau )$}{59}{section.226}
+\contentsline {section}{\numberline {D.4}Non-commutative Harmonic Analysis}{61}{section.231}
+\contentsline {section}{\numberline {D.5}The Operators $\delta _j$}{66}{section.245}
+\contentsline {chapter}{\numberline {E}Dirac Operators}{69}{appendix.249}
+\contentsline {section}{\numberline {E.1}Introduction}{69}{section.250}
+\contentsline {section}{\numberline {E.2}Music, Clifford bundles and Modules}{69}{section.251}
+\contentsline {section}{\numberline {E.3}Relationship with differentials}{70}{section.253}
+\vspace {2em}
+\contentsline {chapter}{Bibliography}{72}{dummy.255}

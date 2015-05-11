@@ -317,6 +317,7 @@ Our first result shows that Hankel matrices are continuous in their symbol.
 \end{proof}
 
 \begin{proposition}
+\label{feffVMO}
     The class $\VMO(\Circ)$ is the set of measurable functions $f:\Circ\rightarrow\Cplx$
     such that
     \begin{equation*}
@@ -331,10 +332,11 @@ Our first result shows that Hankel matrices are continuous in their symbol.
 \end{proposition}   
 
 \begin{corollary}
-    If $\varphi \in \VMO(\Circ)$, then $\Gamma_\varphi$ is compact.
+    If $\varphi \in C(\Circ)$, then $\Gamma_\varphi$ is compact.
 \end{corollary}
 \begin{proof}
-    We must have that 
+    Since $\Gamma_\varphi$ is finite rank for $\varphi$ a polynomial,
+    and $\|\Gamma_\varphi\| \leq \|\varphi\|_\infty$, the result follows.
 \end{proof} 
 
 \section{Hankel Operators of Trace Class}

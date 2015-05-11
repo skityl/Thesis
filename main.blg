@@ -13,50 +13,45 @@ Warning--I didn't find a database entry for "fefferman"
 Warning--I didn't find a database entry for "interp"
 Warning--I didn't find a database entry for "pedersen"
 Warning--I didn't find a database entry for "me"
-Warning--empty author and editor in Connes94
-Warning--empty title in Connes94
-Warning--empty publisher in Connes94
-Warning--empty year in Connes94
-Warning--empty year in Connes94
 You've used 1 entry,
             2481 wiz_defined-function locations,
-            566 strings with 4541 characters,
-and the built_in function-call counts, 261 in all, are:
-= -- 13
-> -- 0
-< -- 0
-+ -- 2
-- -- 0
-* -- 24
-:= -- 29
-add.period$ -- 1
+            571 strings with 4613 characters,
+and the built_in function-call counts, 296 in all, are:
+= -- 21
+> -- 7
+< -- 1
++ -- 4
+- -- 2
+* -- 14
+:= -- 54
+add.period$ -- 3
 call.type$ -- 1
 change.case$ -- 1
 chr.to.int$ -- 1
-cite$ -- 7
-duplicate$ -- 21
-empty$ -- 37
-format.name$ -- 0
-if$ -- 51
+cite$ -- 1
+duplicate$ -- 19
+empty$ -- 31
+format.name$ -- 3
+if$ -- 58
 int.to.chr$ -- 1
 int.to.str$ -- 2
-missing$ -- 1
-newline$ -- 11
-num.names$ -- 0
-pop$ -- 19
+missing$ -- 2
+newline$ -- 13
+num.names$ -- 3
+pop$ -- 11
 preamble$ -- 1
 purify$ -- 1
 quote$ -- 0
 skip$ -- 11
 stack$ -- 0
-substring$ -- 3
-swap$ -- 1
+substring$ -- 2
+swap$ -- 2
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 4
-warning$ -- 5
-while$ -- 0
+warning$ -- 0
+while$ -- 2
 width$ -- 0
-write$ -- 13
-(There were 15 warnings)
+write$ -- 20
+(There were 10 warnings)

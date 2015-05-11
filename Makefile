@@ -16,5 +16,8 @@ read: $(NAME).pdf
 clean:
 	rm -f *.log *.aux *.lot *.lof *.toc *~ *.out
 
+spell:
+	ispell main.tex Chapters/* Appendices/*
+
 tea:   
 	@echo "Make it yourself!"

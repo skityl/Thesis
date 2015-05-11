@@ -5,7 +5,9 @@
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Con()]{Connes94}
-
+\bibitem[Connes(1994)]{Connes94}
+Alain Connes.
+\newblock \emph{Non-commutative Geometry}.
+\newblock InterEditions Paris, Paris, France, 1994.
 
 \end{thebibliography}
