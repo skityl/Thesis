@@ -1,0 +1,55 @@
+% Chapter 1
+
+\chapter{The Chain Rule in Quantised Calculus} % Main chapter title
+
+\label{TheChainRule} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+
+\lhead{Chapter \ref{TheChainRule}. \emph{The Chain Rule in Quantised Calculus}} % This is for the header on each page - perhaps a shortened title
+
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+In classical analysis, the chain rule states that if $M$,$N$ and $P$ are manifolds, 
+ and the maps $f:M\rightarrow N$ and $g:N\rightarrow P$ are smooth, then
+\begin{equation*}
+    d(f\circ g) = df \circ dg.
+\end{equation*}
+Where both sides of the equation are maps $TM\rightarrow TP$.
+
+\begin{remark}
+    The chain rule is simply a consequence of the functoriality of the tangent
+    bundle construction, $M\mapsto TM$.
+\end{remark}
+
+ It is desirable
+to find a noncommutative generalisation of this identity.
+
+
+\section{The setting}
+We let $\mathcal{L}^{p,\infty}_0$ be the closure of the finite rank
+operators in the $\mathcal{L}^{p,\infty}$-metric topology.
+
+Let $(\A,\Hilb,\D)$ be a spectral triple, satisfying the following properties:
+\begin{enumerate}
+    \item{} For all $a \in \A$, $\qd a \in \mathcal{L}^{p,\infty}$.
+    \item{} $\A$ is closed under the holomorphic functional calculus.
+    \item{} Let $\A_0 \subseteq \mathcal{B}(\Hilb)$ be the collection of all
+    $T$ such that $[\sgn(\D),T]$ is finite rank. Then $\A$ is contained
+    within the norm-closure of $\A_0$.
+\end{enumerate}
+
+\section{The Commutator Lemma}
+\begin{lemma}
+    Let $(\A,\Hilb,\D)$ be as above, and $a \in \A$. Then
+    \begin{equation*}
+        [\qd a,a] \in \mathcal{L}^{p,\infty}_0.
+    \end{equation*}
+\end{lemma}
+\begin{proof}
+    By our assumptions on $(\A,\Hilb,\D)$ there exists a sequence $\{a_n\}_{n=0}^\infty$
+    with $\|a_n-a\| \rightarrow 0$, and 
+    $\qd a_n$ is finite rank. Hence $[\qd a_n,a]$ is finite rank, and
+    \begin{equation*}
+        [\qd a,a_n] = \qd([a_n,a]) + [\qd a,a_n].
+    \end{equation*}
+\end{proof}

@@ -1,0 +1,343 @@
+% Appendix A
+
+\chapter{Classical Harmonic Analysis} % Main appendix title
+
+\label{ClassicalHarmonicAnalysis} % For referencing this appendix elsewhere, use \ref{AppendixA}
+
+\lhead{Appendix \ref{ClassicalHarmonicAnalysis}. \emph{Classical Harmonic Analysis}} % This is for the header on each page - perhaps a shortened title
+
+
+\section{Introduction}
+Given a function $f:\Circ\rightarrow\Cplx$, we have an associated Fourier series, 
+\begin{equation}
+\label{series}
+    f \sim \sum_{n \in \Itgr} \hat{f}(n)z^n
+\end{equation}
+where $z:\Circ\rightarrow\Circ$ is the identity function, and
+\begin{equation}
+\label{coefficient}
+    \hat{f}(n) = \int_\Circ z^{-n} f\;d\ha
+\end{equation}
+where $\ha$ is the normalised Haar (or arc length) measure on $\Circ$. Implicitly
+$f$ is sufficiently regular so that these Fourier coefficients exist.
+
+I have used the symbol ``$\sim$" rather than an equals sign, since in general
+we do not have equality. In general, for $f \in L^1(\Circ,\ha)$, the Fourier
+series might diverge almost everywhere if it is interpreted as a sum.
+
+However, if one turns to alternative methods of summation, it is possible to 
+interpret $\sim$ as an equality. 
+
+Here we consider Abel summation.
+
+\section{Abel summation}
+Abel summation is inspired by Abel's theorem, which we prove now.
+\begin{proposition}
+    Suppose that
+    \begin{equation*}
+        f(z) = \sum_{n=0}^\infty a_n z^n
+    \end{equation*}
+    is a power series converging in $\{z \in \Cplx\;:\;|z| < 1\}$
+    such that the coefficients come from a Banach space $(X,\|\cdot\|)$. Suppose further that the sum
+    \begin{equation*}
+        \sum_{n=0}^\infty a_n
+    \end{equation*}
+    converges. Then,
+    \begin{equation*}
+        \lim_{z\rightarrow 1^-} f(z) = \sum_{n=0}^\infty a_n.
+    \end{equation*}
+    where by $z\rightarrow 1^-$, we mean that $z$ is restricted
+    to the subset of the unit disc where $|1-z| \leq M(1-|z|)$
+    for some constant $M$.
+\end{proposition}
+\begin{proof}
+    Assume without loss of generality that 
+    \begin{equation*}
+        \sum_{n=0}^\infty a_n = 0.
+    \end{equation*}
+    Now define
+    \begin{equation*}
+        s_k = \sum_{n=0}^k a_n
+    \end{equation*}
+    and $s_{-1} = 0$.
+    Then we have
+    \begin{equation*}
+        f(z) = \sum_{n=0}^\infty (s_n-s_{n-1})z^n.
+    \end{equation*}
+    so
+    \begin{equation*}
+        f(z) = (1-z)\sum_{k=0}^\infty s_k z^k.
+    \end{equation*}
+    
+    Let $\varepsilon > 0$, and choose $n$ large enough such that $\|s_k\| < \varepsilon$
+    for $k > n$. Then we have
+    \begin{equation*}
+        \left\|(1-z)\sum_{k=n}^\infty s_k z^k\right\| \leq \varepsilon|1-z|\sum_{k=n}^\infty |z|^k = \varepsilon|1-z| \frac{|z|^n}{1-|z|} \leq M \varepsilon.
+    \end{equation*}
+    
+    When $z$ is suffciently close to $1$, we have
+    \begin{equation*}
+        \left\|(1-z)\sum_{k=0}^{n-1} s_k z^k\right\| < \varepsilon.
+    \end{equation*}
+    Hence, for $z$ sufficiently close to $1$, we have
+    \begin{equation*}
+        \|f(z)\| < (M+1)\varepsilon.
+    \end{equation*}
+\end{proof}
+With this in mind, we define the Abel summation method.
+\begin{definition}
+    Let $\{a_k\}_{k=0}^\infty \subset X$ be a sequence in a Banach space $(X,\|\cdot\|)$. Suppose that for 
+    all $r \in (1-\varepsilon,1)$, for some $\varepsilon > 0$ we have
+    \begin{equation*}
+        \sum_{k=0}^\infty a_k r^k
+    \end{equation*}
+    exists.
+    Then we define the Abel sum, 
+    denoted by,
+    \begin{equation*}
+        A-\sum_{k=0}^\infty a_k
+    \end{equation*}
+    as
+    \begin{equation*}
+        A-\sum_{k=0}^\infty a_k := \lim_{r\rightarrow 1^-} \sum_{k=0}^\infty a_k r^k.
+    \end{equation*}
+    if this limit exists.
+\end{definition}
+Abel's theorem automatically implies that the Abel sum of a series
+agrees with the usual sum, however there are series which are summable
+in the Abel sense but not the classical sense. It is easy to see that,
+\begin{equation*}
+    A-\sum_{n=0}^\infty (-1)^n = \lim_{r\rightarrow 1^-} \sum_{n=0}^\infty (-r)^n = \lim_{r\rightarrow 1^-} \frac{1}{1+r} = \frac{1}{2}.
+\end{equation*}
+
+\section{The Poisson Kernel}
+To sum a Fourier series in the Abel sense, an important technical
+tool is the Poisson Kernel, which we introduce in this section. 
+
+Given $f \in L^1(\Circ,\ha)$, define
+\begin{equation*}
+    A_r f := \sum_{n \in \Itgr} r^{|n|} \hat{f}(n) z^n.
+\end{equation*}
+with $r \in (0,1)$.
+$A_r f$ exists since the Fourier coefficients of $f$ are bounded. By definition,
+\begin{equation*}
+    A-\sum_{n\in \Itgr} \hat{f}(n) z^n = \lim_{r\rightarrow 1^-} A_r f.
+\end{equation*}
+where the limit is taken in an appropriate Banach space.
+
+Like with classical and Ces\`aro sums, Abel sums can be constructed with a convolution.
+\begin{proposition}
+    We can write,
+    \begin{equation*}
+        A_r f = P_r * f.
+    \end{equation*}
+    where
+    \begin{equation*}
+        P_r = 1+\frac{rz}{1-rz} + \frac{r}{z-r}
+    \end{equation*}
+\end{proposition}
+\begin{proof}
+    The Fourier coefficients of $A_r f$ are the Fourier coefficients of
+    $f$ multiplied by the coefficients of
+    \begin{equation*}
+        \sum_{n \in \Itgr} r^{|n|} z^n.
+    \end{equation*}
+    Hence define
+    \begin{equation*}
+        P_r = \sum_{n \in \Itgr} r^{|n|} z^n.
+    \end{equation*}
+    The result follows from summing this geometric series.
+\end{proof}
+
+The reason for the superiority of Abel summation
+over classical summation is that the Poisson kernels form an approximate identity.
+\begin{proposition}
+    The Poisson kernels $\{P_r\}_{r \in (0,1)}$ form an approximate
+    identity.
+\end{proposition}
+\begin{proof}
+    By the formula,
+    \begin{equation*}
+        P_r = \sum_{n \in \Itgr} r^{|n|} z^n,
+    \end{equation*}
+    we have
+    \begin{equation*}
+        \int_\Circ P_r\;d\ha = 1.
+    \end{equation*}
+    
+    To complete the proof, we convert to coordinates. Let $z = \exp(2\pi i\theta)$,
+    for $\theta \in (-1/2,1/2)$, and we can regard $P_r$ as a function of $\theta$.
+    
+    Then we have
+    \begin{align*}
+        P_r(\theta) &= 1 + \frac{re^{2\pi i \theta}}{1-re^{2\pi i \theta}}+\frac{re^{-2\pi i \theta}}{1-re^{-2\pi i \theta}}\\
+        &= 1 + \frac{re^{2\pi i \theta}(1-re^{-2\pi i \theta})+re^{-2\pi i\theta}(1-re^{2\pi i \theta})}{(1-re^{2\pi i \theta})(1-re^{-2\pi i \theta})}\\
+        &= 1 + \frac{2r\cos(2\pi \theta)-2r^2}{1+r^2-2r\cos(2\pi \theta)}\\
+        &= \frac{1-r^2}{1-2r\cos(2\pi\theta)+r^2}
+    \end{align*}
+    Let $\delta > 0$. 
+    Now we estimate,
+    \begin{equation*}
+        \int_{\delta}^{1/2} P_r(\theta)\; d\theta \leq \int_\delta^{1/2} \frac{1-r^2}{1-2r\cos(2\pi \delta)+r^2}\;d\theta \leq \frac{1-r^2}{1-2r\cos(2\pi \delta)+r^2}
+    \end{equation*}
+    Hence this integral vanishes as $r\rightarrow\infty$.
+    
+    Moreover, we have
+    \begin{equation*}
+        1-2r\cos(2\pi \theta) + r^2 \geq (1-r)^2.
+    \end{equation*}
+    Hence $P_r \geq 0$. Therefore, $\|P_r\|_1 = 1$.
+    
+    Thus the Poisson kernels form an approximate identity.
+\end{proof}
+As a consequence of this, we have
+\begin{enumerate}
+    \item{} If $f \in C(\Circ)$, then $A_r f\rightarrow f$ uniformly.
+    \item{} If $f \in L^p(\Circ,\ha)$, for $1\leq p < \infty$, we have $A_rf\rightarrow f$
+    in the $L^p$ sense.
+\end{enumerate}
+Hence, if $f \in L^1(\Circ,\ha)$, we have
+\begin{equation*}
+    f(\zeta) = A-\sum_{n \in \Itgr} \hat{f}(n)\zeta^n
+\end{equation*}
+for almost all $\zeta \in \Circ$.
+
+\section{Fourier Series of Measures}
+Suppose $\mu$ is a complex Borel regular measure on $\Circ$. Associated
+to $\mu$ is a Fourier series,
+\begin{equation*}
+    \mu \sim \sum_{n \in \Itgr} \hat{\mu}(n) z^n
+\end{equation*}
+where
+\begin{equation*}
+    \hat{\mu}(n) = \int_\Circ z^{-n} \;d\mu.
+\end{equation*}
+It was proved in ``Ces\`aro convergence of Fourier series" that this series
+can be interpreted as a sequence of measures converging in the Ces\`aro sense
+and the weak* topology to $\mu$. Here we wish to analyse the Abel sums of the 
+Fourier series of $\mu$. 
+Define for $r \in (0,1)$,
+\begin{equation*}
+    A_r \mu = \sum_{n \in \Itgr} r^{|n|} \hat{\mu}(n) z^n.
+\end{equation*}
+This series converges because $\mu$ is bounded, so the Fourier coefficients 
+are bounded.
+
+Recall that if $f \in C(\Circ)$, we define $f*\mu$ as the function
+\begin{equation*}
+    (f*\mu)(\zeta) := \int_\Circ f(\zeta \tau^{-1})d\mu(\tau).
+\end{equation*}
+This allows us to compute $A_r\mu$ for a measure $\mu$:
+\begin{proposition}
+    If $\mu$ is a complex Borel regular measure on $\Circ$, then
+    \begin{equation*}
+        A_r \mu = P_r * \mu.
+    \end{equation*}
+\end{proposition}
+\begin{proof}
+    We compute,
+    \begin{align*}
+        (P_r * \mu)(\zeta) &= \int_{\Circ} \sum_{n \in \Itgr} r^{|n|} \zeta^n \tau^{-n} d\mu(\tau)\\
+        &= \sum_{n \in \Itgr} \zeta^nr^{|n|}\int_\Circ \tau^{-n} d\mu(\tau).
+    \end{align*}
+    The interchange of the integral and summation is justified by the uniform convergence
+    of the sum defining $P_r$. Hence we have $A_r \mu = P_r * \mu$. 
+\end{proof} 
+
+Recall that a sequence of measures $\{\mu_n\}_{n=0}^\infty$ converges
+in the weak* sense if for any $f \in C(\Circ)$, 
+we have $\int_\Circ f\;d\mu_n \rightarrow \int_\Circ f\;d\mu$.
+Any $f \in L^1(\Circ)$ can be interpreted as a measure $\mu_f$, by $d\mu_f = fd\ha$. 
+
+\begin{proposition}
+    Let $\mu$ be a complex Borel regular measure on $\Circ$. The functions $\{A_r \mu\}_{r \in (0,1)}$,
+    interpreted as measures, converge in the weak* sense to $\mu$ as $r\rightarrow 1^-$.
+\end{proposition}
+\begin{proof}
+    Let $f \in C(\Circ)$. We compute,
+    \begin{align*}
+        \int_\Circ f\;d\mu_{A_r\mu} &= \int_\Circ fP_r*\mu\;d\ha\\
+        &= \int_\Circ\int_{\Circ} f(\zeta) P_r(\zeta\tau^{-1}) d\mu(\tau)d\ha(\zeta).
+    \end{align*}
+    However note that $P_r(\tau) = P_r(\tau^{-1})$, so by Fubini's theorem,
+    \begin{align*}
+        \int_\Circ f\;d\mu_{A_r \mu} &= \int_\Circ \int_\Circ P_r(\tau\zeta^{-1})f(\zeta)d\ha(\zeta)d\mu(\tau)\\
+        &= \int_{\Circ} P_r*f \;d\mu.
+    \end{align*}
+    However, since $f$ is continuous, we have that $P_r*f\rightarrow f$ uniformly
+    as $r\rightarrow 1^-$. Hence
+    \begin{equation*}
+        \lim_{r\rightarrow 1^-} \int_\Circ f\;d\mu_{A_rf} = \int_\Circ f\;d\mu
+    \end{equation*}
+    So $A_r\mu$ converges in the weak* sense to $\mu$.
+\end{proof}
+
+\section{Harmonic functions on $\Disc$}
+Abel summation is much more heavily studied than Ces\`aro summation. The reason
+for this is that there is a close connection between the Abel sums $A_r f$
+for a function $f$ on $\Circ$, and functions on $\Disc := \{ z \in \Cplx\;:\; |z| < 1\}$
+which are \emph{harmonic}.
+
+Given $f \in L^1(\Circ)$, define $\tilde{f}:\Disc\rightarrow\Cplx$
+by
+\begin{equation*}
+    \tilde{f}(r\zeta) = A_rf(\zeta) = (P_r*f)(\zeta)
+\end{equation*}
+for $r \in [0,1]$ and $\zeta \in \Circ$.
+
+Note that, by Young's convolution inequality,
+\begin{equation*}
+    \left(\int_\Circ |\tilde{f}(r\zeta)|^p\;d\ha(\zeta)\right)^{1/p} \leq \|P_r\|_1 \|f\|_{p}.
+\end{equation*}
+Hence,
+\begin{equation*}
+    \sup_{r \in [0,1)} \left(\int_\Circ |\tilde{f}(r\zeta)|^p\;d\ha(\zeta)\right)^{1/p} \leq \|f\|_p.
+\end{equation*} 
+
+This motivates the definition of the \emph{Hardy spaces}:
+\begin{definition}[Hardy Spaces]
+    Let $p \in (0,\infty]$. For $p < \infty$, let $H^p(\Circ)$ denote the space
+    of complex valued functions $f$ which are complex differentiable in the open unit disc
+    such that
+    \begin{equation}
+        \|f\|_{H^p} := \sup_{r \in [0,1)} \left(\int_\Circ |f(r\zeta)|^p \;d\ha(\zeta)\right)^{1/p} < \infty.
+    \end{equation}
+    For $p = \infty$, instead we require
+    \begin{equation*}
+        \|f\|_{H^\infty} := \sup_{\zeta \in \Disc} |f(\zeta)| < \infty.
+    \end{equation*}
+\end{definition}
+
+The link between Abel summation and Hardy spaces is provided by the following theorems,
+proved in \ref{Katznelson}:
+\begin{theorem}
+\label{hardyProjection1}
+    Let $f \in L^p(\Circ)$, for $p \in [1,\infty]$. Then $\tilde{f} \in H^p(\Circ)$
+    if and only if $\hat{f}(n) = 0$ for $n < 0$.
+\end{theorem}
+\begin{theorem}
+\label{hardyProjection2}
+    Let $f \in H^p(\Circ)$, for $p \in [1,\infty]$. Then, for almost all $\zeta \in \Circ$,
+    the limit
+    \begin{equation*}
+        \lim_{r\to 1^-} f(r\zeta)
+    \end{equation*}
+    exists, and defines a function in $L^p(\Circ)$.
+\end{theorem}
+
+Combining theorems \ref{hardyProjection1} and \ref{hardyProjection2}, we 
+have the following result, also proved in \ref{Katznelson}
+\begin{theorem}
+    Let $p \in [1,\infty]$. The space $H^p(\Circ)$ embeds
+    isometrically into the subspace of $L^p(\Circ)$
+    consisting of those $f$ with $\hat{f}(n) = 0$ for $n < 0$. The embedding $\iota$
+    is given by, for $f \in H^p(\Circ)$
+    \begin{equation}
+        \iota(f)(\zeta) = \lim_{r\to 1^-} f(r\zeta)
+    \end{equation}
+    for almost all $\zeta \in \Circ$.
+    
+    The map $f\mapsto \tilde{f}$, when restricted to the subspace
+    of $f$ with $\hat{f}(n) = 0$ for $n < 0$, is the inverse of $\iota$.
+\end{theorem}
+

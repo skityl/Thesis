@@ -1,0 +1,547 @@
+% Chapter 3
+
+\chapter{Basic Properties of Hankel Operators} % Main chapter title
+
+\label{PropertiesOfHankelOperators} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+
+\lhead{Chapter \ref{PropertiesOfHankelOperators}. \emph{Basic Properties of Hankel Operators}} % This is for the header on each page - perhaps a shortened title
+
+%----------------------------------------------------------------------------------------
+
+
+\section{Definition of a Hankel matrix}
+A Hankel matrix is an infinite matrix $\{M_{j,k}\}_{j,k \geq 0}$
+whose $(j,k)th$ entry depends only on $j+k$. If $a = \{a_j\}_{j\geq 0}$,
+Let $M_a = \{a_{j+k}\}_{j,k\geq 0}$ be the Hankel matrix with $(j,k)$th
+entry $a_{j+k}$. That is,
+\begin{equation*}
+    M_a = \begin{pmatrix}
+        a_0 & a_1 & a_2 & a_3 \cdots\\
+        a_1 & a_2 & a_3 & a_4 \cdots\\
+        a_2 & a_3 & a_4 & a_5 \cdots\\
+        a_3 & a_4 & a_5 & a_6 \cdots\\
+        \vdots & \vdots & \vdots & \vdots 
+    \end{pmatrix}.
+\end{equation*}
+An infinite matrix does not necessarily define an operator on $\ell^2(\Ntrl)$, 
+however any infinite matrix can be identified with a linear operator 
+on the dense subset $c_{00}(\Ntrl) \subset \ell^2(\Ntrl)$ of sequences
+of finite support. 
+
+For a sequence $a \in c_{00}(\Ntrl)$, and an infinite matrix $M = (M_{j,k})_{j,k\geq 0}$, 
+we define $Ma \in c_{00}(\Ntrl)$ as $Ma = \{\sum_{k=0}^\infty M_{j,k}a_k\}_{j=0}^\infty$.
+
+Hence we shall interchangeably talk about infinite matrices and linear
+operators $c_{00}(\Ntrl)\rightarrow c_{00}(\Ntrl)$.
+
+Since $c_{00}(\Ntrl)$ is dense in $\ell^2(\Ntrl)$, if an infinite matrix
+considered as an operator on $c_{00}(\Ntrl)$ is bounded on $c_{00}(\Ntrl)$
+in the $\ell^2$-norm, then the matrix extends uniquely to an operator on $\ell^2(\Ntrl)$.
+Conversely, any operator on $c_{00}(\Ntrl)$ which extends to a bounded
+operator on $\ell^2(\Ntrl)$ is bounded on $c_{00}(\Ntrl)$ in the $\ell^2$-norm,
+and the extension to $\ell^2(\Ntrl)$ is unique.
+
+Denote the inner product on $\ell^2(\Ntrl)$ 
+as $(a,b) := \sum_{n=0}^\infty \overline{a_n}b_n$, which we note
+is linear in the second argument.
+
+See Appendix \ref{AppendixA} for the elementary properties of the Fourier transform. 
+
+A \emph{polynomial} on $\Circ$ is a finite linear combination of the \emph{monomials}
+$\{z^n\}_{n \in \Itgr}$. We call the space of polynomials $P(\Circ)$.
+An \emph{analytic polynomial} is a polynomial consisting only of non-negative powers
+of $z$, we denote $P_A(\Circ)$ for the space of analytic polynomials. 
+
+It is easy to see that the Fourier transform gives a vector space isomorphism between $P(\Circ)$
+and $c_{00}(\Itgr)$, and $P_A(\Circ)$ and $c_{00}(\Ntrl)$.
+
+\section{Bounded Hankel operators}
+It if of interest to determine when a Hankel operator defines
+a bounded linear operator on $\ell^2(\Ntrl)$. This is answered completely by the
+\emph{Nehari theorem}, which we cover now.
+\begin{theorem}
+\label{nehari}
+    Let $a = \{a_j\}_{j=0}^\infty$ be a sequence. Then the 
+    associated Hankel matrix $M_a$ defines a bounded linear operator on $\ell^2(\Ntrl)$
+    if and only if there exists $\psi \in L^\infty(\Circ,\ha)$ such that
+    \begin{equation*}
+        \hat{\psi}(m) = a_m
+    \end{equation*}
+    for $m \geq 0$.
+\end{theorem}
+\begin{proof}
+    Suppose first that there is $\psi \in L^\infty(\Circ)$
+    such that $\hat{\psi}(m) = a_m$ for $m\geq 0$. 
+    
+    Choose $f,h \in P_A(\Circ)$, so that $\hat{f},\hat{h} \in c_{00}(\Ntrl)$.
+    
+    Let $g \in P_A(\Circ)$ be given by $g = \sum_{n=0}^\infty \overline{\hat{g}(n)}z^n$.
+    Let $q = fg$.
+    
+    Then we compute,
+    \begin{align*}
+        (\hat{h},M_a\hat{f}) &= \sum_{j,k \geq 0} \overline{\hat{h}(j)}a_{j+k}\hat{f}(k)\\
+        &= \sum_{j,k\geq 0} \overline{\hat{h}(j)}\hat{\psi}(j+k)\hat{f}(k)\\
+        &= \sum_{j \geq 0} \hat{\psi}(j) \sum_{k=0}^j \hat{g}(j)\hat{f}(j-k)\\
+        &= \sum_{j \geq 0} \hat{\psi}(j) \hat{q}(j)\\
+        &= \int_\Circ \psi(\zeta) q(\overline{\zeta}) \;d\ha(\zeta).
+    \end{align*}
+    Hence,
+    \begin{align*}
+        |(\hat{h},M_a\hat{f})| &\leq \|\psi\|_{\infty} \|q\|_1\\
+                               &\leq \|\psi\|_\infty \|f\|_2 \|h\|_2\\
+                               &= \|\psi\|_\infty \|\hat{f}\|_2\|\hat{h}\|_2.
+    \end{align*}
+    And thus $M_a$ is bounded on $\ell^2(\Ntrl)$.
+    
+    Conversely, suppose that $M_a$ is bounded on $\ell^2(\Ntrl)$. 
+    
+    Let $\mathcal{L}$ be the linear functional on $P(\Circ)$ defined by
+    \begin{equation*}
+        \mathcal{L}(q) := \sum_{n\geq 0} a_n \hat{q}(n).
+    \end{equation*}
+    If $a \in \ell^1(\Ntrl)$, then $\mathcal{L}$ is bounded on $H^1(\Circ)$,
+    since the inverse fourier transform of $a$ is in $L^\infty(\Circ)$. 
+    Now let us prove in this case that $\|\mathcal{L}\| \leq \|M_a\|$. 
+    
+    Let $q \in H^1(\Circ)$, with $\|q\|_1 \leq 1$. Then $q = fg$
+    for some $f,g \in H^2(\Circ)$ with $\|f\|_2,\|g\|_2 \leq 1$. 
+    
+    Then we can compute,
+    \begin{align*} 
+        |\mathcal{L}(q)| &= \left|\sum_{n=0}^\infty a_n \sum_{m=0}^n \hat{f}(m)\hat{g}(n-m)\right|\\
+        &= \sum_{n,m\geq 0} a_{n+m} \hat{f}(n) \hat{g}(m)\\
+        &= (M_a \hat{f},\overline{\hat{g}}). 
+    \end{align*}
+    And hence,
+    \begin{equation*}
+        |\mathcal{L}(q)| \leq \|M_a\|\|f\|_2\|g\|_2 \leq \|M_a\|.
+    \end{equation*}
+    So $\mathcal{L}(q)$ is bounded on $H^1(\Circ)$ whenever $a \in \ell^1(\Ntrl)$. 
+    
+    Now we consider $a$ to be an arbitrary sequence such that $M_a$ is bounded. Let $r \in (0,1)$
+    and
+    \begin{equation*}
+        a^{(r)} = \{r^ja_j\}_{j\geq 0}.
+    \end{equation*}
+    Then $a^{(r)} \in \ell^1(\Ntrl)$,
+    
+    Now we can see that $M_{a^{(r)}} = D_r M_a D_r$, where $D_r$
+    is multiplication by the sequence $\{r^j\}_{j\geq 0}$. Since $\|D_r\| \leq 1$, 
+    we must have $\|M_{a^{(r)}}\| \leq \|M_a\|$. Since $a^{(r)} \in \ell^1(\Ntrl)$, 
+    we have that the linear functional
+    \begin{equation*}
+        \mathcal{L}_r(q) := \sum_{n=0}^\infty a_nr^n \hat{q}(n)
+    \end{equation*}
+    is bounded on $H^1(\Circ)$, and the functionals $\{\mathcal{L}_r\}_{r \in (0,1)}$
+    converge strongly to $\mathcal{L}$, and are uniformly bounded. Hence $\mathcal{L}$
+    is continuous on $H^1(\Circ)$. 
+    
+    Now by the Hahn-Banach theorem, since $\mathcal{L}$ is a linear
+    functional on the subspace $H^1(\Circ)$ which has norm bounded
+    by $\|M_a\|$, it is the restriction
+    of a linear functional on $L^1(\Circ)$, with norm bounded by $\|M_a\|$.
+    Hence $\mathcal{L}(q) = (\psi,q)$ for some $\psi \in L^\infty(\Circ)$
+    with $\|\psi\|_\infty \leq \|M_a\|$. This proves the result.    
+\end{proof}
+
+The key idea of this theorem is that it relates the sequence defining
+a Hankel operator with a function on $\Circ$. We can state this in a slightly more
+elegant way using the following result of Fefferman \cite{fefferman},
+\begin{proposition}
+    The space $\BMO(\Circ)$ is defined as the set of measurable
+    functions $f$ on $\Circ$ (modulo almost-everywhere equivalence) such that
+    \begin{equation*}
+        \sup_I \int_I \left|f-\frac{1}{\ha(I)}\int_I f\;d\ha\right|\;d\ha < \infty
+    \end{equation*}
+    where $I$ is taken over all arcs in $\Circ$.
+    
+    Then 
+    \begin{equation*}
+        \BMO(\Circ) = L^\infty(\Circ)+\Proj_+L^\infty(\Circ) = \{f+\Proj_+g\;:\;f,g \in L^\infty(\Circ)\}.
+    \end{equation*}
+\end{proposition}
+
+Using this description of $\BMO(\Circ)$, we can prove the following,
+\begin{corollary}
+    Let $a = \{a_j\}_{j=0}^\infty$ be a sequence. Then $M_a$ defines
+    a bounded operator on $\ell^2(\Ntrl)$ if and only if
+    \begin{equation*}
+        \varphi := \sum_{n=0}^\infty a_n z^n \in \BMO(\Circ)\cap H^1(\Circ).
+    \end{equation*}
+\end{corollary}
+\begin{proof}
+    By theorem \ref{nehari}, $M_a$ is bounded if and only if $\varphi = \Proj_+\psi$
+    for some $\psi \in L^\infty(\Circ)$. Hence if $M_a$ is bounded,
+    then $\varphi \in \BMO(\Circ)\cap H^1(\Circ)$. 
+    
+    Conversely, if $\varphi \in \BMO(\Circ)\cap H^1(\Circ)$,
+    then $\varphi = f+\Proj_+g$ for $f,g \in L^\infty$. Thus
+    $\varphi = \Proj_+\varphi = \Proj_+(f+g)$, so $M_a$ is bounded.
+\end{proof}
+
+From now on, we are no longer interested in Hankel matrices $M_a$ defined by an arbitrary
+sequence $a$, we are only interested in those matrices $M_a$ such that $a$
+arises from the fourier transform of a function. 
+\begin{definition}
+    Let $\varphi \in H^1(\Circ)$. Let $\Gamma_\varphi$
+    be the Hankel matrix with $(i,j)$th entry $\hat{\varphi}(i+j)$.
+\end{definition}
+
+\section{Finite Rank Hankel operators}
+The strongest condition that we can put on a Hankel matrix $\Gamma_\varphi$
+is that it is a finite rank operator on $\ell^2(\Ntrl)$. The problem
+of determining $\varphi$ such that $\Gamma_\varphi$ is finite rank
+was solved by Kronecker, as follows.
+\begin{theorem}
+\label{kronecker}
+    Let $\varphi \in H^1(\Circ)$, and $\Gamma_\varphi$ be the associated Hankel
+    matrix. Then $\Gamma_\varphi$ defines a bounded operator on $\ell^2(\Ntrl)$
+    if and only if $\varphi$ is a rational function.
+\end{theorem}
+\begin{proof}
+    Suppose that $\rank(\Gamma_\varphi) = n$. Then the first $n+1$
+    columns of the matrix of $\Gamma_\varphi$ are linearly dependent. Let $B$
+    denote the backward shift operator, $B(a_0,a_1,\ldots) := (a_1,a_2,\ldots)$
+    and let $F$ be the forward shift operator, $F(a_0,a_1,\ldots) := (0,a_0,a_1,\ldots)$.
+    Let $a = \hat{\varphi}$.
+    
+    Hence there exist complex scalars $\{c_0,c_1,\ldots,c_n\}$ not all
+    equal to zero such that
+    \begin{equation*}
+        c_0a+c_1Ba+\cdots+c_nB^na = 0.
+    \end{equation*}
+    Now let $n,k \geq 0$. It is elementary that
+    \begin{equation*}
+        F^n B^k a = F^{n-k}a-F^{n-k}(a_0,a_1,\ldots,a_{k-1},0,0,\ldots).
+    \end{equation*}
+    So hence we have,
+    \begin{align*}
+        0 &= F^n\sum_{k=0}^n c_k B^ka \\
+          &= \sum_{k=0}^n c_kF^n B^ka\\
+          &= \sum_{k=0}^n c_kF^{n-k}a - p
+    \end{align*}
+    where $p$ is a finitely supported sequence. 
+    
+    Let $q = (c_n,c_{n-1},\ldots,c_0,0,0,\ldots)$. Then we have,
+    \begin{equation*}
+        0 = q * a - p.
+    \end{equation*}
+    Where the $*$ is convolution. Therefore, if we take the inverse fourier transform,
+    \begin{equation*}
+        \varphi\check{a} = \check{p}.
+    \end{equation*}
+    And hence $\varphi$ is a quotient of two polynomials.
+    
+    Conversely, suppose that $\varphi$ is a rational function. Suppose
+    that $\varphi = p/q$, where $p,q \in P(\Circ)$. 
+    Let $n = \max\{\deg p,\deg q\}$.
+    If 
+    \begin{equation*}
+        q = \sum_{k=0}^n c_{n-k}z^k
+    \end{equation*}
+    then since $\varphi q = p$, we have
+    \begin{equation*}
+        \sum_{k=0}^n c_k F^{n-k} a = p.
+    \end{equation*}
+    Now multiply by $B^n$,
+    \begin{align*}
+        B^n\sum_{k=0}^n  c_k F^{n-k} a &= \sum_{k=0}^n c_k B^k a\\
+        &= 0.
+    \end{align*}
+    
+    Let $m \leq n$ be the largest number for which $c_m \neq 0$. Then $B^m a$
+    is a linear combination of the $B^k a$ with $k \leq m-1$,
+    \begin{equation*}
+        B^m a = \sum_{k=0}^{m-1} d_k B^k a
+    \end{equation*}
+    for some coefficients $d_k$. 
+    
+    We now proceed by induction to show that any row is a linear combination
+    of the first $n$ rows. 
+    
+    Let $k > m$. Then we have,
+    \begin{align*}
+        B^k a &= B^{k-m} B^m a\\
+        &= \sum_{j=0}^{m-1} d_j B^{k-m+1}a.
+    \end{align*}
+    Since $k-m+j < k$, we have that the terms on the right hand side are
+    linear combinations of the first $m$ rows by the inductive hypothesis.
+    Hence $\rank(\Gamma_\varphi) \leq m$. 
+\end{proof}
+
+\section{Compactness of Hankel Operators}
+If $\varphi \in L^1(\Circ)$, we are interested in conditions
+on $\varphi$ such that $\Gamma_\varphi$ is compact. 
+
+Our first result shows that Hankel matrices are continuous in their symbol.
+\begin{proposition}
+    Let $\varphi \in L^\infty(\Circ)$, then
+    \begin{equation*}
+        \|\Gamma_\varphi\| \leq \|\varphi\|_\infty.
+    \end{equation*}
+    and therefore if $\varphi \in C(\Circ)$, then $\Gamma_\varphi$ is compact.
+\end{proposition}
+\begin{proof}
+    It was shown in the proof of theorem \ref{nehari} that if $g,f$ are sequences
+    of finite support, then
+    \begin{equation*}
+        |(g,\Gamma_\varphi f)| \leq \|\varphi\|_\infty \|g\|_2\|f\|_2.
+    \end{equation*}
+    Hence $\|\Gamma_\varphi\| \leq \|\varphi\|_\infty$.
+\end{proof}
+
+\begin{proposition}
+\label{feffVMO}
+    The class $\VMO(\Circ)$ is the set of measurable functions $f:\Circ\rightarrow\Cplx$
+    such that
+    \begin{equation*}
+        \lim_{\ha(I)\rightarrow0} \int_I \left|f-\frac{1}{\ha(I)}\int_I f\;d\ha\right|\;d\ha = 0
+    \end{equation*}
+    where the limit is over all arcs $I \subseteq \Circ$. 
+    
+    It is a result of Fefferman \cite{fefferman} that,
+    \begin{equation*}
+        \VMO(\Circ) = C(\Circ)+\Proj_+C(\Circ).
+    \end{equation*}
+\end{proposition}   
+
+\begin{corollary}
+    If $\varphi \in C(\Circ)$, then $\Gamma_\varphi$ is compact.
+\end{corollary}
+\begin{proof}
+    Since $\Gamma_\varphi$ is finite rank for $\varphi$ a polynomial,
+    and $\|\Gamma_\varphi\| \leq \|\varphi\|_\infty$, the result follows.
+\end{proof} 
+
+\section{Hankel Operators of Trace Class}
+We recall the definition of the $\mathcal{L}^1$ norm on $\mathcal{B}(\Hilb)$,
+\begin{definition}
+    Let $\Hilb$ be a separable Hilbert space, and let $T \in \mathcal{B}(\Hilb)$. 
+    For a non-negative integer $n$, we define the $n$th singular value,
+    \begin{equation*}
+        s_n(T) := \inf\{\|T-F\| \;:\;F \in \mathcal{B}(\Hilb),\rank(F) \leq n\}.
+    \end{equation*}
+    For $p \in (0,\infty)$, we define the $\mathcal{L}^p$ norm of $T$
+    as
+    \begin{equation*}
+        \|T\|_p = \left(\sum_{n=0}^\infty |s_n(T)|^p\right)^{1/p}
+    \end{equation*}
+    with the convention that $\|T\|_p = \infty$ if the sum does not
+    converge. The space $\mathcal{L}^p$ is the set of $T \in \mathcal{B}(\Hilb)$
+    such that $\|T\|_p < \infty$.
+\end{definition}
+
+
+
+In particular we are interested in the case $p = 1$. We are interested
+in finding conditions on a function $\varphi$ holomorphic in the unit disc
+such that $\Gamma_\varphi$ is in $\mathcal{L}^1$. 
+
+\begin{lemma}
+    Let $\Hilb$ be a separable Hilbert space. Suppose
+    that $x,y \in \Hilb$, and let $T$ be the rank one operator
+    defined by $T(\zeta) = \langle x,\zeta\rangle y$. Then $\|T\|_1 = \|x\|\|y\|$.
+\end{lemma}
+
+The answer is provided by the \emph{Besov classes}. Many different definitions
+of Besov spaces can be found, but the one of most relevance to us is given below.
+\begin{definition}
+    We define a sequence of polynomials $\{W_n\}_{n \in \Itgr} \subset P(\Circ)$ as follows.
+    First,
+    \begin{equation*}
+        W_0 = z^{-1}+1+z.
+    \end{equation*}
+    And now for $n > 0$, we define $W_n$ by asserting that $\widehat{W}(2^n) = 1$,
+    $\widehat{W}(2^{n-1}) = 0$, $\widehat{W}(2^{n+1}) = 0$, and $\widehat{W}$
+    is a linear increasing function between $2^{n-1}$ and $2^n$, and a
+    linear decreasing function between $2^n$ and $2^{n+1}$. We
+    assert that $\widehat{W}(n)$ is symmetric in $n$, and is zero for all
+    values not already defined.
+    
+    Now, for $p,q > 0$, and $s \geq 0$, we define the \emph{Besov class}
+    $B_{pq}^s(\Circ)$ to be the space of distributions $f$ on $\Circ$ such that
+    \begin{equation*}
+        \sum_{n\geq 0} 2^{nsq} \|W_n*f\|_{p}^q < \infty.
+    \end{equation*}  
+    We shall denote $B_{pp}^s$ as $B_p^s$.
+\end{definition}
+
+In particular, we are going to prove that if $\varphi \in B_1^1(\Circ)$, then
+$\Gamma_\varphi \in \mathcal{L}^1$. First, we need a lemma.
+\begin{lemma}
+    Let $f \in P_A(\Circ)$ be an analytic polynomial of degree at most $m$. Then,
+    \begin{equation*}
+        \|\Gamma_f\|_1 \leq (m+1)\|f\|_1.
+    \end{equation*}
+\end{lemma}
+\begin{proof}
+    Let $\zeta \in \Circ$, now define the following elements
+    of $\ell^2(\Ntrl)$, 
+    \begin{align*}
+        x_\zeta(j) &= \begin{cases}
+            \zeta^j,\;0 \leq j \leq m,\\
+            0,\;j > m
+        \end{cases}\\
+        y_\zeta(j) &= \begin{cases}
+            f(\zeta)\zeta^{-k},\;0\leq k \leq m,\\
+            0,\;k > m.
+        \end{cases}
+    \end{align*}
+    That is, $x_\zeta = (1,\zeta,\zeta^2,\ldots,\zeta^m,0,0,\ldots)$
+    and $y_\zeta = f(\zeta)\overline{x_\zeta}$.
+    
+    Let $A_\zeta$ be the rank one operator, $A_\zeta(x) = (x_\zeta,x)y_\zeta$,
+    so that $\|A_\zeta\|_1 = \|x_\zeta\|_2\|y_\zeta\|2 = (m+1)|f(\zeta)|$
+    
+    Then we have a componentwise equality of infinite matrices,
+    \begin{equation*}
+        \Gamma_f = \int_\Circ A_\zeta\;d\ha(\zeta).
+    \end{equation*}
+    Hence, $\|\Gamma_f\|_1 \leq (m+1)\|f\|_1$ by the triangle inequality.
+\end{proof}
+\begin{theorem}
+    Let $\varphi \in B_1^1$. Then $\Gamma_\varphi \in \mathcal{L}^1$. 
+\end{theorem}
+\begin{proof}
+    We have the following $L^\infty$-convergent sequence,
+    \begin{equation*}
+        \varphi = \sum_{n\geq 0} W_n*\varphi.
+    \end{equation*}
+    Hence,
+    \begin{equation*}
+        \Gamma_\varphi = \sum_{n\geq 0} \Gamma_{W_n*\varphi}.
+    \end{equation*}
+    So since the degree of $W_n$ is $2^{n+1}$, we have
+    \begin{equation*}
+        \|\Gamma_\varphi\|_1 \leq \sum_{n\geq 0} 2^{n+1}\|W_n*\varphi\|_1.
+    \end{equation*}
+\end{proof}
+
+This proves the sufficiency of the condition $\varphi \in B_1^1$ so that $\Gamma_\varphi$
+is trace class. The proof of the necessity of this condition is more difficult,
+\begin{theorem}
+    Let $\varphi$ be a function holomorphic in the unit disc. Then
+    if $\Gamma_\varphi \in \mathcal{L}^1$, then $\varphi \in B_1^1$. 
+\end{theorem}
+\begin{proof}
+    Define a pair of sequences of polynomials $\{Q_n\}_{n=0}^\infty$ as follows,
+    \begin{equation*}
+        \widehat{Q}_n(k) = \begin{cases}
+            0, \;k \leq 2^{n-1}\\
+            1-\frac{|k-2^n|}{2^{n-1}},\;2^{n-1}\leq k \leq 2^n+2^{n-1},\\
+            0\;k \geq 2^n+2^{n-1}.
+        \end{cases}
+    \end{equation*}
+    and a sequence $\{R_n\}_{n=0}^\infty$,
+    \begin{equation*}
+        \widehat{R}_n(k) = \begin{cases}
+                0,\;k \leq 2^n\\
+                1-\frac{|k-2^n-2^{n-1}|}{2^{n-1}},\;2^{n}\leq 2^{n+1}\\
+                0,\;k \geq 2^{n+1}.
+        \end{cases}
+    \end{equation*}
+    This is a decomposition of the sequence $\{W_n\}_{n=0}^\infty$, 
+    given by $W_n = Q_n+\frac{1}{2}R_n$. 
+    
+    First we prove that
+    \begin{equation*}
+        \sum_{n\geq 0} 2^{2n+1}\|Q_{2n+1}*\varphi\|_1 < \infty.
+    \end{equation*}
+    
+    To this end, we wish to construct an operator $B$
+    such that
+    \begin{equation*}
+        \langle \Gamma_\varphi,B\rangle = \sum_{n\geq 0} 2^{2n} \|Q_{2n+1}*\varphi\|_1.
+    \end{equation*}
+    
+    Now define the sequence of squares,
+    for $n\geq 1$,
+    \begin{equation*}
+        S_n = [2^{2n-1},2^{2n-1}+2^{2n}-1]\times [2^{2n-1}+1,2^{2n-1}+2^{2n}].
+    \end{equation*}
+    Note that this sequence is pairwise disjoint.
+    
+    Let $\{\psi_n\}_{n=0}^\infty$ be a sequence in $L^\infty(\Circ)$, yet to be
+    defined with $\|\psi_n\|_{\infty} \leq 1$. Now we
+    define the matrix $B = \{B_{j,k}\}_{j,k\geq 0}$ by
+    \begin{equation*}
+        B_{j,k} = \begin{cases}
+            \widehat{\psi}_n(j+k),(j,k) \in S_n,n\geq 1,\\
+            0,(j,k) \notin \bigcup_{n\geq 1} S_n.
+        \end{cases}
+    \end{equation*}
+    We wish to prove that $B$ is bounded, and in fact $\|B\|\leq 1$. 
+    Let $\{e_n\}_{n\geq 0}$ be the standard basis for $\ell^2(\Ntrl)$,
+    with $e_n(m) = \delta_{n,m}$. Define the subspaces
+    \begin{align*}
+        \Hilb_n &= \span\{e_j\;:\;2^{2n-1}\leq j \leq 2^{2n-1}+2^{2n}-1\},\\
+        \Hilb_n' &= \span\{e_j\;:\;2^{2n-1}+1\leq j\leq 2^{2n-1}+2^{2n}\}.
+    \end{align*}
+    Let $P_n$ and $P_n'$ be the orthogonal projection onto $\Hilb_n$ and $\Hilb_n'$
+    respectively.
+    So that
+    \begin{equation*}
+        B = \sum_{n\geq 1} P_n'\Gamma_{\psi_n}P_n,
+    \end{equation*}
+    where $P_n$ and $P_n'$ are the orthogonal projections onto $\Hilb_n$
+    and $\Hilb_n'$ respectively.
+    
+    Now since the spaces $\{\Hilb_n\}_{n\geq 1}$ are pairwise orthogonal,
+    as are the spaces $\{\Hilb_n'\}_{n\geq 1}$, we have
+    \begin{align*}
+        \|B\| &\leq \sup_{n\geq 1} \|P_n'\Gamma_{\psi_n}P_n\|\\
+         &\leq \sup_{n} \|\Gamma_{\psi_n}\|\\
+         &\leq \sup_{n} \|\psi_n\|_\infty \\
+         &\leq 1.
+    \end{align*}
+    
+    Now, we compute
+    \begin{align*}
+        \langle \Gamma_\varphi,B \rangle &= \sum_{n\geq 1} \langle \Gamma_\varphi,P_n'\Gamma_{\psi_n}P_n\rangle\\
+        &= \sum_{n\geq 1} \sum_{j=2^{2n}}^{2^{2n}+2^{2n+1}}(2^{2n}-|j-2^{2n+1}|\overline{\widehat{\varphi}}(j)\widehat{\psi_n}(j)\\
+        &= \sum_{n\geq 1} 2^{2n} (Q_{2n+1}*\varphi,\psi_n).
+    \end{align*}
+    Now, using the sharpness of H\"older's inequality, we can choose
+    a sequence $\{\psi_n\}_{n=0}^\infty$ so that $\langle Q_{2n+1}*\varphi,\psi_n\rangle$
+    is arbitrarily close to $\|Q_{2n+1}*\varphi\|_1$. Hence,
+    \begin{equation*}
+        \sum_{n\geq 1}2^{2n+1}\|Q_{2n+1}*\varphi\|_1 = 2\langle \Gamma_\varphi,B\rangle \leq 2\|\Gamma_\varphi\|_1.
+    \end{equation*}
+    In exactly the same way, we may prove that
+    \begin{equation*}
+        \sum_{n\geq 1}2^{2n}\|Q_{2n}*\varphi\|_1 < \infty
+    \end{equation*} 
+    that
+    \begin{equation*}
+        \sum_{n\geq 0} 2^{2n+1} \|R_{2n+1}*\varphi\|_1 < \infty
+    \end{equation*}
+    and
+    \begin{equation*}
+        \sum_{n\geq 1} 2^{2n}\|R_{2n}*\varphi\|_1 < \infty
+    \end{equation*}
+    and therefore that $\varphi \in B_1^1$.
+\end{proof} 
+
+\begin{remark}
+    We thus conclude that
+    \begin{equation*}
+        \frac{1}{6}\sum_{n\geq 1}2^n \|W_n*\varphi\|_1 \leq \|\Gamma_\varphi\|_1 \leq 2\sum_{n\geq 0} 2^n\|W_n*\varphi\|_1.
+    \end{equation*}
+\end{remark}
+
+\section{Interpolation}
+\begin{lemma}
+    Let $K$ be the real interpolation functor, described in \cite{interp}. Then
+    \begin{equation*}
+        K(\mathcal{L}^1,\mathcal{K})_{\theta,q} = \mathcal{L}_{p,q}.
+    \end{equation*} 
+    for $p = (1-\theta)^{-1}$.
+\end{lemma}
+
+
+\begin{corollary}
+    Hence, we have that $\Gamma_\varphi \in \mathcal{L}_{p,q}$
+    if and only if $\varphi \in (B_1^1,\VMO)_{\theta,q}$, where $p = (1-\theta)^{-1}$.
+\end{corollary}
+

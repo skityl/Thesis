@@ -14,7 +14,7 @@ read: $(NAME).pdf
 	$(READ) $<
 
 clean:
-	rm -f *.log *.aux *.lot *.lof *.toc *~ *.out
+	rm -f *.log *.aux *.lot *.lof *.toc *~ *.out *.blg *.bbl
 
 spell:
 	ispell main.tex Chapters/* Appendices/*

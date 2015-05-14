@@ -71,22 +71,22 @@
 \begin{minipage}{0.4\textwidth}
 \begin{flushleft} \large
 \emph{Author:}\\
-\href{http://www.johnsmith.com}{\authornames} % Author name - remove the \href bracket to remove the link
+{\authornames} % Author name - remove the \href bracket to remove the link
 \end{flushleft}
 \end{minipage}
 \begin{minipage}{0.4\textwidth}
 \begin{flushright} \large
 \emph{Supervisor:} \\
-\href{http://www.jamessmith.com}{\supname} % Supervisor name - remove the \href bracket to remove the link  
+{\supname} % Supervisor name - remove the \href bracket to remove the link  
 \end{flushright}
 \end{minipage}\\[3cm]
  
 \large \textit{A thesis submitted in fulfilment of the requirements\\ for the degree of \degreename}\\[0.3cm] % University requirement text
 \textit{in the}\\[0.4cm]
-\groupname\\\deptname\\[2cm] % Research group name and department name
+\deptname\\[2cm] % Research group name and department name
  
 {\large \today}\\[4cm] % Date
-%\includegraphics{Logo} % University/department logo - uncomment to place it
+%\includegraphics{mathslogo.jpg} % University/department logo - uncomment to place it
  
 \vfill
 \end{center}
@@ -197,13 +197,13 @@ Acknowledgements go here.
 % Include the chapters of the thesis as separate files from the Chapters folder
 % Uncomment the lines as you write the chapters
 
-\input{Chapters/Chapter1}
-\input{Chapters/Chapter2} 
-\input{Chapters/Chapter3}
-\input{Chapters/Chapter4} 
-\input{Chapters/Chapter5} 
-\input{Chapters/Chapter6} 
-\input{Chapters/Chapter7} 
+\input{Chapters/Introduction}
+\input{Chapters/QuantisedDifferentialsOnRandT} 
+\input{Chapters/PropertiesOfHankelOperators}
+\input{Chapters/WeakLpMembership} 
+\input{Chapters/AbstractDifferentialAlgebra} 
+\input{Chapters/HigherDimensions} 
+\input{Chapters/TheChainRule} 
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - APPENDICES
@@ -216,11 +216,12 @@ Acknowledgements go here.
 % Include the appendices of the thesis as separate files from the Appendices folder
 % Uncomment the lines as you write the Appendices
 
-\input{Appendices/AppendixA}
-\input{Appendices/AppendixB}
-\input{Appendices/AppendixC}
-\input{Appendices/AppendixD}
-\input{Appendices/AppendixE}
+\input{Appendices/ClassicalHarmonicAnalysis}
+\input{Appendices/LorentzSpaces}
+\input{Appendices/Interpolation}
+\input{Appendices/GroupActions}
+\input{Appendices/Dirac}
+\input{Appendices/IdealsOfOperators}
 
 \addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
 

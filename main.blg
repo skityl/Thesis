@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2013/TeX Live for SUSE Linux)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: unsrtnat.bst
@@ -7,51 +7,49 @@ Warning--I didn't find a database entry for "robinson"
 Warning--I didn't find a database entry for "sia"
 Warning--I didn't find a database entry for "lcf"
 Warning--I didn't find a database entry for "infinitesimalBook"
-Warning--I didn't find a database entry for "meCesaro"
-Warning--I didn't find a database entry for "meAbel"
 Warning--I didn't find a database entry for "fefferman"
 Warning--I didn't find a database entry for "interp"
 Warning--I didn't find a database entry for "pedersen"
 Warning--I didn't find a database entry for "me"
-You've used 1 entry,
+You've used 2 entries,
             2481 wiz_defined-function locations,
-            571 strings with 4613 characters,
-and the built_in function-call counts, 296 in all, are:
-= -- 21
-> -- 7
-< -- 1
-+ -- 4
-- -- 2
-* -- 14
-:= -- 54
-add.period$ -- 3
-call.type$ -- 1
-change.case$ -- 1
-chr.to.int$ -- 1
-cite$ -- 1
-duplicate$ -- 19
-empty$ -- 31
-format.name$ -- 3
-if$ -- 58
+            573 strings with 4709 characters,
+and the built_in function-call counts, 554 in all, are:
+= -- 41
+> -- 14
+< -- 2
++ -- 8
+- -- 4
+* -- 25
+:= -- 96
+add.period$ -- 6
+call.type$ -- 2
+change.case$ -- 2
+chr.to.int$ -- 2
+cite$ -- 2
+duplicate$ -- 38
+empty$ -- 61
+format.name$ -- 6
+if$ -- 114
 int.to.chr$ -- 1
-int.to.str$ -- 2
-missing$ -- 2
-newline$ -- 13
-num.names$ -- 3
-pop$ -- 11
+int.to.str$ -- 3
+missing$ -- 4
+newline$ -- 18
+num.names$ -- 6
+pop$ -- 23
 preamble$ -- 1
-purify$ -- 1
+purify$ -- 2
 quote$ -- 0
-skip$ -- 11
+skip$ -- 21
 stack$ -- 0
-substring$ -- 2
-swap$ -- 2
+substring$ -- 4
+swap$ -- 4
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 4
+type$ -- 8
 warning$ -- 0
-while$ -- 2
+while$ -- 4
 width$ -- 0
-write$ -- 20
-(There were 10 warnings)
+write$ -- 32
+(There were 8 warnings)
