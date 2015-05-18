@@ -1,0 +1,57 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/TeX Live for SUSE Linux)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+The style file: unsrtnat.bst
+Database file #1: Bibliography.bib
+Warning--entry type for "sia" isn't style-file defined
+--line 95 of file Bibliography.bib
+Warning--I didn't find a database entry for "robinson"
+Warning--I didn't find a database entry for "lcf"
+Warning--I didn't find a database entry for "infinitesimalBook"
+Warning--I didn't find a database entry for "fefferman"
+Warning--I didn't find a database entry for "interp"
+Warning--I didn't find a database entry for "pedersen"
+Warning--I didn't find a database entry for "me"
+Warning--empty year in sia
+You've used 3 entries,
+            2481 wiz_defined-function locations,
+            576 strings with 4803 characters,
+and the built_in function-call counts, 810 in all, are:
+= -- 62
+> -- 21
+< -- 3
++ -- 12
+- -- 6
+* -- 36
+:= -- 134
+add.period$ -- 9
+call.type$ -- 3
+change.case$ -- 4
+chr.to.int$ -- 3
+cite$ -- 4
+duplicate$ -- 52
+empty$ -- 91
+format.name$ -- 9
+if$ -- 170
+int.to.chr$ -- 1
+int.to.str$ -- 4
+missing$ -- 4
+newline$ -- 23
+num.names$ -- 9
+pop$ -- 35
+preamble$ -- 1
+purify$ -- 3
+quote$ -- 0
+skip$ -- 34
+stack$ -- 0
+substring$ -- 6
+swap$ -- 6
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 15
+warning$ -- 1
+while$ -- 6
+width$ -- 0
+write$ -- 43
+(There were 9 warnings)
