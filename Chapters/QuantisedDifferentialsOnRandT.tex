@@ -36,9 +36,9 @@ The important operator $\Proj_+$ is given by $\Proj_+(z^n) := \max{\sgn(n),0}z^n
 
 \begin{proposition}
     For $\varphi \in L^1(\Circ)$, the \emph{quantised differential} of $\varphi$ is the (potentially unbounded, densely defined) linear operator
-    \begin{equation*}
+    \begin{equation}
         \qd\varphi := 2[\Proj_+,M_\varphi].
-    \end{equation*}
+    \end{equation}
 \end{proposition}
 \begin{proof}
     This is a consequence of the observation that $F = 2\Proj_+-\Id$,
@@ -55,18 +55,18 @@ the Hilbert space $H^2(\Circ)\oplus H^2_-(\Circ)$.
 
 \begin{lemma}
     Let $\varphi \in L^2(\Circ)$ and define $\varphi_+ := \Proj_+ \varphi$ and $\varphi_- := \Proj_- \varphi$. Then $\qd\varphi:H^2(\Circ)\oplus H^2_-(\Circ)\rightarrow H^2(\Circ)\oplus H^2_-(\Circ)$ may be written as
-    \begin{equation*}
+    \begin{equation}
         \qd\varphi(f\oplus g) = 
             2(\Proj_+M_{\varphi_+})g \oplus
             -2(\Proj_-M_{\varphi_-})f
-    \end{equation*}
+    \end{equation}
     for $f \in H^2(\Circ)$ and $g \in H^2_-(\Circ)$.
 \end{lemma}
 \begin{proof}
     This is a simple computation. Let $f \in H^2(\Circ)$ and $g \in H^2_-(\Circ)$. Then,
-    \begin{equation*}
+    \begin{equation}
         \qd\varphi(f+g) = 2[\Proj_+,M_{\varphi_+}+M_{\varphi_-}](f+g).
-    \end{equation*}
+    \end{equation}
     Hence,
     \begin{align*}
         \qd\varphi(f+g) &= 2[\Proj_+,M_{\varphi_+}]f + 2[\Proj_+,M_{\varphi_-}]f + 2[\Proj_+,M_{\varphi_+}]g + 2[\Proj_+,M_{\varphi_-}]g\\
@@ -75,9 +75,9 @@ the Hilbert space $H^2(\Circ)\oplus H^2_-(\Circ)$.
     since $\Proj_+f = f$ and $\Proj_+g = 0$.
     
     By the identity $\Proj_+ = \Id-\Proj_-$, we find
-    \begin{equation*}
+    \begin{equation}
         \qd\varphi(f+g) = 2(\Proj_+M_{\varphi_+})g - 2(\Proj_-M_{\varphi_-})f.
-    \end{equation*}
+    \end{equation}
 \end{proof}
 
 
@@ -86,9 +86,9 @@ the boundedness of operators of the form $\Proj_+M_\psi:H^2_-(\Circ)\rightarrow 
 this further with the following lemma:
 \begin{lemma}
     Let $\psi \in L^2(\Circ)$. Then
-    \begin{equation*}
+    \begin{equation}
         (\Proj_+M_\psi)^* = \Proj_-M_{\overline{\psi}}.
-    \end{equation*}
+    \end{equation}
     and therefore $\Proj_+M_\psi$ is bounded if and only if $\Proj_-M_{\overline{\psi}}$ is.
 \end{lemma}
 \begin{proof}
@@ -111,9 +111,9 @@ this further with the following lemma:
 \end{proof}
 
 For $\psi \in L^2(\Circ)$, define
-\begin{equation*}
+\begin{equation}
     H_\psi := \Proj_-M_\psi:H^2\rightarrow H^2_-.
-\end{equation*}
+\end{equation}
 
 
 In other words, we may write $\qd \varphi:H^2(\Circ)\oplus H^2_-(\Circ)\to H^2(\Circ)\oplus H^2_-(\Circ)$
@@ -142,42 +142,42 @@ an alternative description of the quantised differential as an integral operator
 as an integral operator is well known and was extensively used by A. Connes in \cite{Connes94}.
 \begin{lemma}
 \label{singularIntegral}
-    \begin{equation*}
+    \begin{equation}
         \mathrm{p.v.}\int_\Circ \frac{1}{\tau-1}\;d\ha(\tau) = -\frac{1}{2}
-    \end{equation*}
+    \end{equation}
     where the principal value is defined to be
-    \begin{equation*}
+    \begin{equation}
         \lim_{\varepsilon\rightarrow 0} \int_{|\tau-1|>\varepsilon} \frac{1}{\tau-1}\;d\ha(\tau).
-    \end{equation*}
+    \end{equation}
 \end{lemma} 
 \begin{proof}
     Note that
-    \begin{equation*}
+    \begin{equation}
         \pvint_\Circ \frac{1}{\tau-1}\;d\ha(\tau) = \pvint_{\im(\tau) > 0} \frac{1}{\overline{\tau}-1}+\frac{1}{\tau-1}\;d\ha(\tau).
-    \end{equation*}
+    \end{equation}
     Now split up the integral into upper and lower semicircular parts,
-    \begin{equation*}
+    \begin{equation}
         \pvint_\Circ \frac{1}{\tau-1}\;d\ha(\tau) = \pvint_{\operatorname{Im}(\tau)>0} 2\operatorname{Re}\left(\frac{1}{\tau-1}\right)\;d\ha(\tau).
-    \end{equation*}
+    \end{equation}
     However, if $\tau = \exp(i\theta) \neq 1$, then
     \begin{align*}
         \operatorname{Re}\left(\frac{1}{\tau-1}\right) &= \operatorname{Re}\left(\frac{e^{-i\theta/2}}{2i\sin(\theta/2)}\right)\\
         &= -\frac{1}{2}.
     \end{align*}
     Hence,
-    \begin{equation*}
+    \begin{equation}
         \pvint_\Circ \frac{1}{\tau-1}\;d\ha(\tau) = 2\pvint_{\operatorname{Im}(\tau)>0} -\frac{1}{2}\;d\ha(\tau) = -\frac{1}{2}.
-    \end{equation*}
+    \end{equation}
 \end{proof}
 \begin{theorem}
     Let $\varphi \in L^2(\Circ)$. Then
-    \begin{equation*}
+    \begin{equation}
         \Proj_+\varphi(\zeta) = \mathrm{p.v.}\int_\Circ \frac{\varphi(\tau)}{1-\overline{\tau}\zeta}\;d\ha(\tau)+\frac{1}{2}\varphi(\zeta)
-    \end{equation*}
+    \end{equation}
     and hence,
-    \begin{equation*}
+    \begin{equation}
         F\varphi(\zeta) = 2\mathrm{p.v.}\int_\Circ \frac{\varphi(\tau)}{1-\overline{\tau}\zeta}\;d\ha(\tau).
-    \end{equation*}
+    \end{equation}
     where in both equations, the principal value means that the integral is to be taken along the set $\{ \tau\in \Circ\;:|\tau-\zeta| > \varepsilon\}$
     and then consider the limit $\varepsilon\rightarrow 0$.
 \end{theorem}
@@ -185,9 +185,9 @@ as an integral operator is well known and was extensively used by A. Connes in \
     First we check this for $\varphi = \zeta^n$ for $n \in \Intgr$.
     
     First let $n \geq 0$. Then
-    \begin{equation*}
+    \begin{equation}
         \mathrm{p.v.}\int_\Circ \frac{\tau^n}{1-\overline{\tau}\zeta}\;d\ha(\tau) = \mathrm{p.v.}\int_\Circ \frac{z^n\tau^n}{1-\overline{\tau}}\;d\ha(\tau)
-    \end{equation*}
+    \end{equation}
     by translation invariance.
     Hence,
     \begin{align*}
@@ -200,9 +200,9 @@ as an integral operator is well known and was extensively used by A. Connes in \
     where the last step follows from lemma \ref{singularIntegral}.
     
     Suppose $n > 0$, then
-    \begin{equation*}
+    \begin{equation}
         \mathrm{p.v.}\int_\Circ \frac{\tau^{-n}}{1-\overline{\tau}\zeta}\;d\ha(\tau) = \zeta^{-n} \mathrm{p.v.}\int_{\Circ} \frac{\tau^{1-n}}{\tau-1}\;d\ha(\tau)
-    \end{equation*}
+    \end{equation}
     by translation invariance. Hence,
     \begin{align*}
         \mathrm{p.v.}\int_\Circ \frac{\tau^{-n}}{1-\overline{\tau}\zeta}\;d\ha(\tau) &=z \zeta^{-n} \mathrm{p.v.} \int_\Circ \frac{1}{\tau^n-\tau^{n-1}}\;d\ha(\tau)\\
@@ -211,22 +211,36 @@ as an integral operator is well known and was extensively used by A. Connes in \
     \end{align*}
     
     Hence, 
-    \begin{equation*}
+    \begin{equation}
         \pvint_\Circ \frac{\tau^n}{1-\overline{\tau}\zeta}\;d\ha(\tau) = \begin{cases}
             \frac{1}{2}\zeta^n\text{ if }n \geq 0\\
             -\frac{1}{2}\zeta^n\text{ if }n < 0.
         \end{cases}
-    \end{equation*}
+    \end{equation}
     
-    So the result follows.
+    Hence we have
+    \begin{equation}
+        F\varphi(\zeta) = 2\mathrm{p.v.} \int_\Circ \frac{\varphi(\tau)}{1-\overline{\tau}\zeta}\;d\ha(\tau).
+    \end{equation}
+    for $\varphi = z^n$. To extend this to arbitrary $\varphi \in L^2(\Circ)$, we see that $\varphi = \sum_{n \in \Itgr} \hat{\varphi}(n)z^n$, which
+    converges in the $L^2$ sense. Since $\sum_{n\in\Itgr} \hat{\varphi}(n)z^n$ converges in the $L^2$ sense, it converges in the $L^1$ sense.
+    
+    Now fix $\varepsilon > 0$. By the dominated convergence theorem, we have
+    \begin{equation}
+        \int_{|\tau-\zeta| > \varepsilon} \frac{\varphi(\tau)}{1-\overline{\tau}\zeta}\;d\ha(\tau) = \sum_{n \in \Itgr} \hat{\varphi}(n)\int_{|\tau-\zeta|> \varepsilon} \frac{\tau^n}{1-\overline{\tau}\zeta}\;d\ha(\tau).
+    \end{equation}
+    Now we take the limit $\varepsilon \to 0$. Again by the dominated convergence theorem for sums, the result follows.
     
 \end{proof}
 
 So we have the following integral form of the quantised derivative. Let $\varphi,f \in L^2(\Circ)$.
 Then
-\begin{equation*}
-    \qd\varphi(f)(\zeta) = ([F,M_\varphi]f)(\zeta) = 2\pvint_\Circ \frac{\varphi(\tau)-\varphi(\zeta)}{1-\overline{\tau}z}f(\tau)\;d\ha(\tau).
-\end{equation*}
+\begin{align}
+    \qd\varphi(f)(\zeta) &= ([F,M_\varphi]f)(\zeta) \\
+                         &= F(\varphi f)-\varphi(F(f))\\
+                         &= \pvint_{\Circ} \frac{\varphi(\tau)f(\tau)}{1-\overline{\tau}\zeta}-\frac{\varphi(\zeta)f(\tau)}{1-\overline{\tau}\zeta}\;d\ha(\tau)\\
+                         &=  \pvint_\Circ \frac{\varphi(\tau)-\varphi(\zeta)}{1-\overline{\tau}z}f(\tau)\;d\ha(\tau).
+\end{align}
 for almost all $\zeta \in \Circ$.
 
 \section{The Cayley Transform}
@@ -242,18 +256,18 @@ $\Cplx$ is denoted $\ha_2$.
 
 Throughout these notes, $\omega$ denotes the \emph{Cayley transform}.
 $\omega:\Cplx\setminus\{1\}\rightarrow \Cplx$, and 
-\begin{equation*}
+\begin{equation}
     \omega(\zeta) = i\frac{1+\zeta}{1-\zeta},\;\zeta \in \Disc.
-\end{equation*}
+\end{equation}
 
 For a Banach space $E$, and a measure space $(X,\Sigma,\mu)$, we define
-\begin{equation*}
+\begin{equation}
     \|f\|_{L^p(X;E)} = \left(\int_X \|f\|_E^p \;d\mu\right)^{1/p}
-\end{equation*}
+\end{equation}
 for $p \in (0,\infty)$, and
-\begin{equation*}
+\begin{equation}
     \|f\|_{L^\infty(X;E)} = \sup_{x \in X} \|f(x)\|_E
-\end{equation*}
+\end{equation}
 for a weakly measurable $f:X\rightarrow E$. We define $L^p(X;E)$ as the set
 of measurable $f:X\rightarrow E$ with $\|f\|_{L^p(X;E)} < \infty$. As usual, 
 we identify together functions on a measure space $(X,\Sigma,\mu)$ 
@@ -268,14 +282,14 @@ Suppose $\zeta \in \Circ$. Provided that $\zeta \neq 1$, we see that $\omega(\ze
 is defined, and $\omega$ maps $\Circ\setminus\{1\}$ smoothly to $\Rl$. Thus for
 $f \in L^0(\Rl;E)$, we can define $\tilde{f} \in L^0(\Circ;E)$
 by 
-\begin{equation*}
+\begin{equation}
     \tilde{f} := f\circ \omega^{-1}.
-\end{equation*}
+\end{equation}
 
 Thus we can define the important operator $U:L^0(\Circ;E)\rightarrow L^0(\Rl;E)$,
-\begin{equation*}
+\begin{equation}
     (U f)(x) = \frac{1}{\sqrt{\pi}}\frac{(f\circ \omega^{-1})(x)}{x+i}.
-\end{equation*}
+\end{equation}
 
 It is the purpose of these notes to collate various results concerning the images
 of certain subspaces of $L^0(\Circ;E)$ under $U$.
