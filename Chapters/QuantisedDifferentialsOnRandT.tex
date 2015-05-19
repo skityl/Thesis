@@ -266,7 +266,7 @@ For a Banach space $E$, and a measure space $(X,\Sigma,\mu)$, we define
 \end{equation}
 for $p \in (0,\infty)$, and
 \begin{equation}
-    \|f\|_{L^\infty(X;E)} = \sup_{x \in X} \|f(x)\|_E
+    \|f\|_{L^\infty(X;E)} = \inf\{C > 0 \;:\; \mu\{x \in X \;:\; \|f(x)\|_E > C\} = 0\}
 \end{equation}
 for a weakly measurable $f:X\rightarrow E$. We define $L^p(X;E)$ as the set
 of measurable $f:X\rightarrow E$ with $\|f\|_{L^p(X;E)} < \infty$. As usual, 
@@ -291,6 +291,10 @@ Thus we can define the important operator $U:L^0(\Circ;E)\rightarrow L^0(\Rl;E)$
     (U f)(x) = \frac{1}{\sqrt{\pi}}\frac{(f\circ \omega^{-1})(x)}{x+i}.
 \end{equation}
 
-It is the purpose of these notes to collate various results concerning the images
-of certain subspaces of $L^0(\Circ;E)$ under $U$.
+\begin{proposition}
+    Let $\D_\Circ$ denote the differentiation operator on the circle,
+    and let $\D_\Rl$ denote differentation on the line. Then $\sgn(\D_\Circ)$
+    and $\sgn(\D_\Rl)$ are unitarily equivalent, with the equivalence being
+    given by the Cayley transform $U$.
+\end{proposition}
 
