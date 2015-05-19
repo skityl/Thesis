@@ -39,7 +39,7 @@
   \let\@this\@empty
   \if@tempswa \else \PassOptionsToClass{#1}{\baseclass}\fi
 }
-\@checkoptions{11pt}{{10pt}{11pt}{12pt}}
+\@checkoptions{9pt}{{9pt}{10pt}{11pt}{12pt}}
 \PassOptionsToClass{a4paper}{\baseclass}
 \ProcessOptions\relax
 \LoadClass{\baseclass}
@@ -66,7 +66,8 @@
 \usepackage{setspace}
 \onehalfspacing
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{2.0ex plus0.5ex minus0.2ex}
+%\setlength{\parskip}{2.0ex plus0.5ex minus0.2ex}
+\setlength{\parskip}{1.0ex plus0.1ex minus0.1ex}
 \usepackage{vmargin}
 
 \RequirePackage[utf8]{inputenc} % Allows the use of international characters (e.g. Umlauts)

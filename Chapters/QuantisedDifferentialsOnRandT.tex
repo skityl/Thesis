@@ -10,8 +10,29 @@
 
 \section{The Quantised Differential on $\Circ$}
 We shall introduce a Fourier analytic description of the quantised differential
-of a function on the circle. An introduction to elementary Fourier analysis and
+of a function on the circle. Let $\Circ = \{\zeta \in \Cplx\;:\;|\zeta|=1\}$
+be the unit circle in the complex plane, which is a compact group
+equipped with a normalised Haar measure, which we denote $\ha$.
+
+When we write function spaces $L^p(\Circ)$, we shall
+implicitly mean $L^p(\Circ,\ha)$.
+
+We write $z:\Circ\to\Circ$ for the identity function, $z = \id_\Circ$.
+
+For $f \in L^1(\Circ)$ and $n \in \Itgr$, we write the $n$th Fourier coefficient as,
+\begin{equation}
+    \hat{f}(n) = \int_{\Circ} z^{-n}f\;d\ha.
+\end{equation}
+
+A review of elementary Fourier analysis and
 notation is given in Appendix \ref{ClassicalHarmonicAnalysis}.
+
+Recall that we have the operator $\D$ that acts on functions on $\Circ$, defined
+by $\D(z^n) = nz^n$. We also have $F := \sgn(\D)$, which acts by $F(z^n) = \sgn(n)z^n$.
+
+By definition, $H^2(\Circ) := \Proj_+L^2(\Circ)$.
+
+The important operator $\Proj_+$ is given by $\Proj_+(z^n) := \max{\sgn(n),0}z^n$.
 
 \begin{proposition}
     For $\varphi \in L^1(\Circ)$, the \emph{quantised differential} of $\varphi$ is the (potentially unbounded, densely defined) linear operator
@@ -20,23 +41,14 @@ notation is given in Appendix \ref{ClassicalHarmonicAnalysis}.
     \end{equation*}
 \end{proposition}
 \begin{proof}
-    This is a consequence of the representation $F = 2\Proj_+-\Id$,
+    This is a consequence of the observation that $F = 2\Proj_+-\Id$,
     where $\Id$ is the identity operator.
-    
-    We now prove that $F = 2\Proj_+-\Id$. Since $F$ is the image
-    of a self adjoint operator under a bounded function, $F$ is bounded,
-    and $2\Proj_+-\Id$ is bounded. Hence $F$ and $2\Proj_+-\Id$
-    are equal if and only if they are equal on the orthonormal basis $\{z^n\}_{n\in\Itgr}$. 
-    
-    For $n \in \Itgr$, $z^n$ is an eigenfunction of $\D$, with eigenvalue
-    $n$, so $F(z^n) = \sgn(n)z^n$. Since $(2\Proj_+-\Id)(z^n) = \sgn(n)z^n$,
-    the equality is proved.
 \end{proof}
 In this chapter, we will discuss alternative descriptions of $\qd \varphi$.
 
 Since $H^2(\Circ)$
 is a closed subspace of $L^2(\Circ)$, being the image of $L^2(\Circ)$
-under a bounded projection, it has an orthogonal complement $H^2_-(\Circ)$.
+under a bounded projection, it has an orthogonal complement which we denote $H^2_-(\Circ)$.
 
 Hence, we may consider the quantised derivative $\qd\varphi$ as an operator on
 the Hilbert space $H^2(\Circ)\oplus H^2_-(\Circ)$.
@@ -125,7 +137,9 @@ This means that $H_\psi$ is represented by a \emph{Hankel matrix}. So we require
 results on Hankel matrices. This is covered in Chapter \ref{PropertiesOfHankelOperators}.
 
 \section{Integral representation of the quantised differential on $\Circ$}
-The following theorem allows us to describe the quantised differential as an integral operator.
+In the preceding section we have realised the quantised differential as a Hankel operator. Now we present
+an alternative description of the quantised differential as an integral operator. The representation
+as an integral operator is well known and was extensively used by A. Connes in \cite{Connes94}.
 \begin{lemma}
 \label{singularIntegral}
     \begin{equation*}
@@ -141,7 +155,7 @@ The following theorem allows us to describe the quantised differential as an int
     \begin{equation*}
         \pvint_\Circ \frac{1}{\tau-1}\;d\ha(\tau) = \pvint_{\im(\tau) > 0} \frac{1}{\overline{\tau}-1}+\frac{1}{\tau-1}\;d\ha(\tau).
     \end{equation*}
-    Hence,
+    Now split up the integral into upper and lower semicircular parts,
     \begin{equation*}
         \pvint_\Circ \frac{1}{\tau-1}\;d\ha(\tau) = \pvint_{\operatorname{Im}(\tau)>0} 2\operatorname{Re}\left(\frac{1}{\tau-1}\right)\;d\ha(\tau).
     \end{equation*}
@@ -158,49 +172,49 @@ The following theorem allows us to describe the quantised differential as an int
 \begin{theorem}
     Let $\varphi \in L^2(\Circ)$. Then
     \begin{equation*}
-        \Proj_+\varphi(z) = \mathrm{p.v.}\int_\Circ \frac{\varphi(\tau)}{1-\overline{\tau}z}\;d\ha(\tau)+\frac{1}{2}\varphi(z)
+        \Proj_+\varphi(\zeta) = \mathrm{p.v.}\int_\Circ \frac{\varphi(\tau)}{1-\overline{\tau}\zeta}\;d\ha(\tau)+\frac{1}{2}\varphi(\zeta)
     \end{equation*}
     and hence,
     \begin{equation*}
-        F\varphi(z) = 2\mathrm{p.v.}\int_\Circ \frac{\varphi(\tau)}{1-\overline{\tau}z}\;d\ha(\tau).
+        F\varphi(\zeta) = 2\mathrm{p.v.}\int_\Circ \frac{\varphi(\tau)}{1-\overline{\tau}\zeta}\;d\ha(\tau).
     \end{equation*}
-    where in both equations, the principal value means that the integral is to be taken along the set $\{ \zeta\;:|\zeta-z| > \varepsilon\}$
+    where in both equations, the principal value means that the integral is to be taken along the set $\{ \tau\in \Circ\;:|\tau-\zeta| > \varepsilon\}$
     and then consider the limit $\varepsilon\rightarrow 0$.
 \end{theorem}
 \begin{proof}
-    It is sufficient to check this on the basis elements $e_n(z) = z^n$ for $n \in \Intgr$.
+    First we check this for $\varphi = \zeta^n$ for $n \in \Intgr$.
     
     First let $n \geq 0$. Then
     \begin{equation*}
-        \mathrm{p.v.}\int_\Circ \frac{\tau^n}{1-\overline{\tau}z}\;d\ha(\tau) = \mathrm{p.v.}\int_\Circ \frac{z^n\tau^n}{1-\overline{\tau}}\;d\ha(\tau)
+        \mathrm{p.v.}\int_\Circ \frac{\tau^n}{1-\overline{\tau}\zeta}\;d\ha(\tau) = \mathrm{p.v.}\int_\Circ \frac{z^n\tau^n}{1-\overline{\tau}}\;d\ha(\tau)
     \end{equation*}
     by translation invariance.
     Hence,
     \begin{align*}
-        \mathrm{p.v.}\int_{\Circ} \frac{\tau^n}{1-\overline{\tau}z}\;d\ha(\tau) &= z^n\mathrm{p.v.}\int_\Circ \frac{\tau^{n+1}}{\tau-1}\;d\ha(\tau) \\
-        &= z^n \mathrm{p.v.}\int_\Circ \frac{\tau^{n+1}-1}{\tau-1}+\frac{1}{\tau-1}\;d\ha(\tau)\\
-        &= z^n \mathrm{p.v.}\int_\Circ 1+\tau+\tau^2+\cdots+\tau^{n}\;d\ha(\tau)+z^n\mathrm{p.v.}\int_\Circ \frac{1}{\tau-1}\;d\ha(\tau)\\
-        &= z^n + z^n\mathrm{p.v.}\int_\Circ \frac{1}{\tau-1}\;d\ha(\tau)\\
-        &= \frac{1}{2}z^n
+        \mathrm{p.v.}\int_{\Circ} \frac{\tau^n}{1-\overline{\tau}\zeta}\;d\ha(\tau) &= \zeta^n\mathrm{p.v.}\int_\Circ \frac{\tau^{n+1}}{\tau-1}\;d\ha(\tau) \\
+        &= \zeta^n \mathrm{p.v.}\int_\Circ \frac{\tau^{n+1}-1}{\tau-1}+\frac{1}{\tau-1}\;d\ha(\tau)\\
+        &= \zeta^n \mathrm{p.v.}\int_\Circ 1+\tau+\tau^2+\cdots+\tau^{n}\;d\ha(\tau)+\zeta^n\mathrm{p.v.}\int_\Circ \frac{1}{\tau-1}\;d\ha(\tau)\\
+        &= \zeta^n + z^n\mathrm{p.v.}\int_\Circ \frac{1}{\tau-1}\;d\ha(\tau)\\
+        &= \frac{1}{2}\zeta^n
     \end{align*}
     where the last step follows from lemma \ref{singularIntegral}.
     
     Suppose $n > 0$, then
     \begin{equation*}
-        \mathrm{p.v.}\int_\Circ \frac{\tau^{-n}}{1-\overline{\tau}z}\;d\ha(\tau) = z^{-n} \mathrm{p.v.}\int_{\Circ} \frac{\tau{1-n}}{\tau-1}\;d\ha(\tau)
+        \mathrm{p.v.}\int_\Circ \frac{\tau^{-n}}{1-\overline{\tau}\zeta}\;d\ha(\tau) = \zeta^{-n} \mathrm{p.v.}\int_{\Circ} \frac{\tau^{1-n}}{\tau-1}\;d\ha(\tau)
     \end{equation*}
     by translation invariance. Hence,
     \begin{align*}
-        \mathrm{p.v.}\int_\Circ \frac{\tau^{-n}}{1-\overline{\tau}z}\;d\ha(\tau) &= z^{-n} \mathrm{p.v.} \int_\Circ \frac{1}{\tau^n-\tau^{n-1}}\;d\ha(\tau)\\
-        &= z^{-n}\overline{\mathrm{p.v.}\int_\Circ \frac{\tau^n}{1-\tau}}\\
-        &= -\frac{1}{2}z^{-n}.
+        \mathrm{p.v.}\int_\Circ \frac{\tau^{-n}}{1-\overline{\tau}\zeta}\;d\ha(\tau) &=z \zeta^{-n} \mathrm{p.v.} \int_\Circ \frac{1}{\tau^n-\tau^{n-1}}\;d\ha(\tau)\\
+        &= \zeta^{-n}\overline{\mathrm{p.v.}\int_\Circ \frac{\tau^n}{1-\tau}}\\
+        &= -\frac{1}{2}\zeta^{-n}.
     \end{align*}
     
     Hence, 
     \begin{equation*}
-        \pvint_\Circ \frac{\tau^n}{1-\overline{\tau}z}\;d\ha(\tau) = \begin{cases}
-            \frac{1}{2}z^n\text{ if }n \geq 0\\
-            -\frac{1}{2}z^n\text{ if }n < 0.
+        \pvint_\Circ \frac{\tau^n}{1-\overline{\tau}\zeta}\;d\ha(\tau) = \begin{cases}
+            \frac{1}{2}\zeta^n\text{ if }n \geq 0\\
+            -\frac{1}{2}\zeta^n\text{ if }n < 0.
         \end{cases}
     \end{equation*}
     
@@ -211,8 +225,9 @@ The following theorem allows us to describe the quantised differential as an int
 So we have the following integral form of the quantised derivative. Let $\varphi,f \in L^2(\Circ)$.
 Then
 \begin{equation*}
-    \qd\varphi(f)(z) = ([F,M_\varphi]f)(z) = 2\pvint_\Circ \frac{\varphi(z)-\varphi(\tau)}{1-\overline{\tau}z}f(\tau)\;d\ha(\tau).
+    \qd\varphi(f)(\zeta) = ([F,M_\varphi]f)(\zeta) = 2\pvint_\Circ \frac{\varphi(\tau)-\varphi(\zeta)}{1-\overline{\tau}z}f(\tau)\;d\ha(\tau).
 \end{equation*}
+for almost all $\zeta \in \Circ$.
 
 \section{The Cayley Transform}
 
