@@ -36,6 +36,7 @@ Let $(\A,\Hilb,\D)$ be a spectral triple, satisfying the following properties:
     \item{} Let $\A_0 \subseteq \mathcal{B}(\Hilb)$ be the collection of all
     $T$ such that $[\sgn(\D),T]$ is finite rank. Then $\A$ is contained
     within the norm-closure of $\A_0$.
+    \item{} $\A$ is commutative.
 \end{enumerate}
 
 \section{The Commutator Lemma}
@@ -49,7 +50,12 @@ Let $(\A,\Hilb,\D)$ be a spectral triple, satisfying the following properties:
     By our assumptions on $(\A,\Hilb,\D)$ there exists a sequence $\{a_n\}_{n=0}^\infty$
     with $\|a_n-a\| \rightarrow 0$, and 
     $\qd a_n$ is finite rank. Hence $[\qd a_n,a]$ is finite rank, and
-    \begin{equation*}
-        [\qd a,a_n] = \qd([a_n,a]) + [\qd a,a_n].
-    \end{equation*}
+    \begin{equation}
+        [\qd a,a_n] &= \qd([a_n,a]) + [\qd a_n,a]
+                    &= [\qd a_n,a] \in \mathcal{L}^{p,\infty}_0.
+    \end{equation}
 \end{proof}
+
+\begin{lemma}
+    
+\end{lemma}

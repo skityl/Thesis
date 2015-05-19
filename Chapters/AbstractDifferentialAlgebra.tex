@@ -252,7 +252,54 @@ So in order to produce a theory of differential algebra in the noncommutative se
 need to introduce more structure on the algebra $A$. Thus we are
 led to the concept of a spectral triple.
 
-\section*{Non-commutative Geometry}
+
+
+
+\section{Non-commutative Geometry}
+\subsection{Spectral Triples}
+Recall from Chapter \ref{Introduction} that a general non-commutative
+space should be thought of as a pair $(\A,\Hilb)$, where $\A$
+is an algebra of operators on a Hilbert space $\Hilb$. 
+
+
+We shall consider noncommutative spaces equipped with a ``Dirac Operator", $(\A,\Hilb,\D)$
+such that $\A$ is contianed in a semi-finite Von Neumann
+algebra $\N$ which is contained in $\mathcal{B}(\Hilb)$.
+
+A (commutative) example of this is as follows: Let $(M,g)$ be a compact Riemannian manifold,
+and let $\A = C^\infty(M)$, and $\Hilb = L^2(M,g)$. However
+this is not enough information to recover the geometry of $M$. A convenient
+way to recover the geometry of $M$ from algebraic data is to give a Dirac operator.
+The definition of a general Dirac operator is given in Appendix \ref{Dirac}. 
+
+
+\begin{definition}[Spectral Triple]
+    A (semifinite) spectral triple is a triple $(\A,\Hilb,\D)$, where
+    $\Hilb$ is a Hilbert space with $\A \subseteq \mathcal{B}(\Hilb)$
+    a $*$-algebra of operators.
+    
+    $\D$ is a densely defined unbounded operator on $\Hilb$ satisfying the follownig
+    two properties:
+    \begin{enumerate}
+        \item{} $[\D,a]$ is densely defined and extends to a bounded operator in $\N$
+        for all $a \in \A$.
+        \item{} $(\lambda -\D)^{-1}$ is $\tau$-compact for all $\lambda \in \Cplx\setminus \Rl$.
+    \end{enumerate}
+    
+    A spectral triple $(\A,\Hilb,\D)$ can be either \emph{even} or \emph{odd}:
+    \begin{itemize}
+        \item{} We say that $(\A,\Hilb,\D)$ is even if there exists a
+        $\Itgr/2\Itgr$ grading on the linear operators on $\Hilb$ such that $\A$
+        is even and $\D$ is odd. Equivalently, there is an operator $\Gamma$
+        on $\Hilb$ with $\Gamma^2 = 1$ and $\Gamma^* = \Gamma$ such that $a\Gamma = \Gamma a$ for all $a \in \A$
+        and $\D\Gamma=-\Gamma\D$. 
+        \item{} If no such operator $\Gamma$ exists, then we say that $(\A,\Hilb,\D)$
+        is odd.
+    \end{itemize}
+\end{definition}
+
+
+
 \subsection{Connes Differentials}
 Given a spectral triple, $(\A,\Hilb,\D)$, we would like to construct an ``exterior algebra"
 on $\A$. Connes does this by identifying the $1$-form $da$ with $[D,a]$.
@@ -284,4 +331,61 @@ Since $J$ is a differential ideal, the operator $d$ on $\Omega \A$
 extends to $\Omega_\D \A$.  
 
 
+\begin{definition}[Quantum Differentiability]
+    A spectral triple $(\A,\Hilb,\D)$ is called $QC^k$ for $k \geq 0$
+    if $\A$ is contained in the domain of the operator $\delta^k$, where $\delta(a) = [|\D|,a]$.
+\end{definition}
+
+\begin{definition}[Summability]
+    A spectral triple $(\A,\Hilb,\D)$ is called $(p,\infty)$ summable
+    for $p > 0$ if $(1+\D^2)^{-1/2} \in \mathcal{L}^{p,\infty}$.
+\end{definition}
+
+        
+\section{Quantised Differentials in Noncommutative Geometry}
+We have already given a thorough description of the quantised differentials $\qd f$
+when $f$ is a function on the circle. It so happens that we can find
+analogous, although weaker, results in far greater generality.
+
+It is in fact easier to move to a setting that is extremely general.
+
+\begin{definition}
+    Let $(\A,\Hilb,\D)$ be a spectral triple, either even or odd. Since $\D$
+    is a self adjoint operator, by the Borel functional calculus
+    we can define the operator $F := \sgn(\D)$. For $a \in \A$, we define
+    \begin{equation}
+        \qd a := [F,a].
+    \end{equation}
+\end{definition}
+
+It is here that we see the distinction between \emph{derivatives}
+and \emph{differentials}. In a spectral triple, the algebra
+of Connes forms plays the role of derivatives of functions, and the quantised
+differentials are a different object entirely.
+
+\begin{theorem}
+    Let $p \geq 1$, and
+    let $(\A,\Hilb,\D)$ be a $(p,\infty)$ summable $QC^1$ spectral triple such that $\D$
+    is invertible. Then, for all $a \in \A$
+    \begin{equation}
+        \qd a \in \mathcal{L}^{p,\infty}.
+    \end{equation}
+\end{theorem}
+\begin{proof}
+    Since $\D = |\D|F$, we can compute
+    \begin{equation}
+        [\D,a] = |\D|[F,a] + [|\D|,a]F.
+    \end{equation}
+    Or in other words,
+    \begin{equation}
+        da = |\D|\qd a + \delta(a)F.
+    \end{equation}
+    Since $\D$ is invertible, $|\D|$ is invertible. Thus,
+    \begin{equation*}
+        \qd a = |\D|^{-1}da + |\D|^{-1}\delta(a)F.
+    \end{equation*}
+    By assumption, $da,\delta(a) \in \mathcal{B}(\Hilb)$. Thus,
+    since $(\A,\Hilb,\D)$ is $(p,\infty)$-summable, $|\D|^{-1} \in \mathcal{L}^{p,\infty}$.
+    Hence, $\qd a \in \mathcal{L}^{p,\infty}$.
+\end{proof} 
 
