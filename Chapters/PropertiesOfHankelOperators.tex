@@ -291,6 +291,17 @@ Our first result shows that Hankel matrices are continuous in their symbol.
     Hence $\|\Gamma_\varphi\| \leq \|\varphi\|_\infty$.
 \end{proof}
 
+\begin{corollary}
+\label{ctsCmpt}
+    If $\varphi \in C(\Circ)$, then $\Gamma_\varphi$ is compact.
+\end{corollary}
+\begin{proof}
+    Since $\Gamma_\varphi$ is finite rank for $\varphi$ a polynomial,
+    and $\|\Gamma_\varphi\| \leq \|\varphi\|_\infty$, the result follows.
+\end{proof} 
+
+To complete our characterisation of compact Hankel operators, we require
+the following result of Fefferman, found in \cite{Garnett}:
 \begin{proposition}
 \label{feffVMO}
     The class $\VMO(\Circ)$ is the set of measurable functions $f:\Circ\rightarrow\Cplx$
@@ -304,15 +315,18 @@ Our first result shows that Hankel matrices are continuous in their symbol.
     \begin{equation*}
         \VMO(\Circ) = C(\Circ)+\Proj_+C(\Circ).
     \end{equation*}
-\end{proposition}   
+\end{proposition}
 
-\begin{corollary}
-    If $\varphi \in C(\Circ)$, then $\Gamma_\varphi$ is compact.
-\end{corollary}
+So we have the following:
+\begin{proposition}
+    Let $\varphi \in \VMO(\Circ)$. Then $\Gamma_\varphi$ is compact.
+\end{proposition}
 \begin{proof}
-    Since $\Gamma_\varphi$ is finite rank for $\varphi$ a polynomial,
-    and $\|\Gamma_\varphi\| \leq \|\varphi\|_\infty$, the result follows.
-\end{proof} 
+    if $\varphi \in \VMO(\Circ)$, then by proposition \ref{feffVMO}, $\varphi = f+\Proj_+g$ for $f,g \in C(\Circ)$. Hence,
+    $\Proj_+\varphi = \Proj_+(f+g)$. Hence, there exists $h \in C(\Circ)$
+    with $\Gamma_{\varphi} = \Gamma_h$, simply by choosing $h = f+g$. Hence by corollary \ref{ctsCmpt}, we see that $\Gamma_\varphi$
+    is compact.
+\end{proof}
 
 \section{Hankel Operators of Trace Class}
 We recall the definition of the $\mathcal{L}^1$ norm on $\mathcal{B}(\Hilb)$,
