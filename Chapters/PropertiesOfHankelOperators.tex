@@ -334,12 +334,12 @@ We recall the definition of the $\mathcal{L}^1$ norm on $\mathcal{B}(\Hilb)$,
     Let $\Hilb$ be a separable Hilbert space, and let $T \in \mathcal{B}(\Hilb)$. 
     For a non-negative integer $n$, we define the $n$th singular value,
     \begin{equation*}
-        s_n(T) := \inf\{\|T-F\| \;:\;F \in \mathcal{B}(\Hilb),\rank(F) \leq n\}.
+        \mu_n(T) := \inf\{\|T-F\| \;:\;F \in \mathcal{B}(\Hilb),\rank(F) \leq n\}.
     \end{equation*}
     For $p \in (0,\infty)$, we define the $\mathcal{L}^p$ norm of $T$
     as
     \begin{equation*}
-        \|T\|_p = \left(\sum_{n=0}^\infty |s_n(T)|^p\right)^{1/p}
+        \|T\|_p = \left(\sum_{n=0}^\infty |\mu_n(T)|^p\right)^{1/p}
     \end{equation*}
     with the convention that $\|T\|_p = \infty$ if the sum does not
     converge. The space $\mathcal{L}^p$ is the set of $T \in \mathcal{B}(\Hilb)$

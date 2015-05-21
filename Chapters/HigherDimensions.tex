@@ -582,7 +582,16 @@ out that all such Von Neumann algebras have a convenient description.
 
 \begin{proposition}
     Let $\theta$ be a $d\times d$ anti-symmetric real matrix. The Von Neumann
-    algebra $\A_\theta$
+    algebra $\A_\theta$ is the universal Von Neumann algebra generated
+    by $d$ distinct unitaries $U_1,\ldots,U_d$ satisfying the commutation
+    relation
+    \begin{equation}
+        U_k U_j = e^{2\pi i\theta_{kj}} U_j U_k.
+    \end{equation}
+    
+    Let $\M$ be a Von Neumann algebra such that there is an action
+    $\alpha:\Circ^d\times \M\to\M$ that is free and ergodic. Then $\M$
+    is isometrically isomorphic to $\A_\theta$ for some $\theta$.
 \end{proposition}
 
 
