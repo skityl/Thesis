@@ -312,6 +312,101 @@ and a proof can be found in
     $L^2(\Circ)$.
 \end{remark}
 
+
+\subsection{Initial results}
+It is obvious from the definition that $U$ is linear. 
+
+Now define, for $g \in L^0(\Rl;E)$,
+\begin{equation*}
+    (\mathcal{F})g(\zeta) = \frac{\sqrt{\pi}}{2i}\frac{(g\circ \omega)(\zeta)}{1-\zeta},\;\zeta\in\Circ.
+\end{equation*}
+
+\begin{lemma}
+    $U$ and $\mathcal{F}$ are inverse functions, hence $U$ is a bijection.
+\end{lemma}
+\begin{proof}
+    Let $g \in L^0(\Rl;E)$, and let $t \in \Rl$. Then we simply compute,
+    \begin{align*}
+        (U\circ\mathcal{F})(g)(t) &= \frac{\sqrt{\pi}}{2i}\frac{g(t)}{1-\omega^{-1}(t)} \frac{1}{\sqrt{\pi}}\frac{1}{t+i}\\
+        &= \frac{1}{2i(1-\omega^{-1}(t))(t+i)}g(t)\\
+        &= g(t).
+    \end{align*}
+    So $U\circ \mathcal{F}$ is the identity function on $L^0(\Rl)$.
+    
+    Similarly, let $f \in L^0(\Rl;E)$, and $\zeta \in \Circ$, then
+    \begin{align*}
+        (\mathcal{F}\circ U)(f)(\zeta) &= \frac{\sqrt{\pi}}{2i}\frac{1}{1-\zeta}\frac{g(\zeta)}{i+\omega(\zeta)}\\
+        &= g(\zeta).
+    \end{align*}
+    
+    So $\mathcal{F}\circ U$ is the identity function on $L^0(\Circ;E)$.
+\end{proof}
+
+$\omega$ may be regarded as a function from $\Circ\setminus\{1\}\rightarrow \Rl$. 
+If we define $\omega(1)$ to be some arbitrary value, say $\omega(1) = 0$, we
+have a measureable function $\omega:\Circ\rightarrow\Rl$.
+
+Thus there is a pushforward of the Haar measure $\ha$ on $\Circ$
+to $\Rl$, denoted $\omega_*(\ha)$, defined
+by
+\begin{equation*}
+    \omega_*(\ha)(A) = \ha(\omega^{-1}(A))    
+\end{equation*}
+for all Lebesgue measurable sets $A$.
+
+
+We may describe this with the following result,
+\begin{lemma}
+    The pushforward measure, $\omega_*(\ha)$ has Lebesgue Radon-Nikodym 
+    derivative
+    \begin{equation*}
+        \frac{d\omega_*(\ha)}{d\lambda} = \frac{1}{\pi|i+t|^2}
+    \end{equation*}
+\end{lemma}
+\begin{proof}
+    Let $a$ be the arc length measure on $\Circ$, so $\ha = \frac{a}{2\pi}$, now
+    let $A \subseteq \Rl$ be lebesgue measurable, then
+    \begin{align*}
+        \omega_*(a)(A) &= \int_A \left|\frac{d(\omega^{-1}(t)}{dt}\right|\;d\lambda(t)\\
+        &= \int_A \frac{2}{|i+t|^2}d\lambda(t).
+    \end{align*}
+    Hence, the required result follows.
+\end{proof}
+
+
+A less obvious result is the following, 
+\begin{theorem}
+    $U$ is an isometry from $L^2(\Circ;E)$ to $L^2(\Rl;E)$. 
+\end{theorem}
+\begin{proof}
+    Let $f \in L^2(\Circ;E)$. Then
+    \begin{align*}
+        \|U f\|_{L^2(\Rl;E)}^2 &= \int_{\Rl} \frac{1}{\pi|i+t|^2}\|(f\circ\omega^{-1})(t)\|_E^2\;d\lambda\\
+        &= \int_\Rl \|(f\circ\omega^{-1})(t)\|_E^2\;d(\omega_*\ha)(t)\\
+        &= \int_\Circ \|f\|_E^2 d\ha.
+    \end{align*}
+    So $U$ embeds $L^2(\Circ;E)$ into $L^2(\Rl;E)$ isometrically.
+    We may similarly prove the opposite embedding.
+\end{proof}
+
+
+We also have,
+\begin{theorem}
+    $U L^\infty(\Circ;E) \subset L^\infty(\Rl;E)$. The inclusion
+    here is continuous, and it is not true that $L^\infty(\Rl;E) = U L^\infty(\Circ;E)$.
+\end{theorem}
+\begin{proof}
+    This is evident from the definition of $U$. Let $f \in L^\infty(\Circ;E)$. Then,
+    \begin{align*}
+        \|U f\|_{L^\infty(\Rl;E)} &= \sup_{t \in \Rl} \frac{1}{\sqrt{\pi}|i+t|}\|(f\circ \omega^{-1})(t)\|_{E} \\
+        &< \sup_{z \in \Circ} \|f(z)\|_E\\
+        &= \|f\|_{L^\infty(\Circ;E)}.
+    \end{align*}
+    
+    However, consider a constant function $c \in L^\infty(\Rl;E)$.
+    We see that $U^{-1}c$ is unbounded.
+\end{proof}
+
 \begin{proposition}
     Let $f \in L^1(\Circ)$. Then $UM_fU^{-1} = M_{f\circ\omega^{-1}}$. 
 \end{proposition}
