@@ -75,7 +75,7 @@
 %----------------------------------------------------------------------------------------
 %	MARGINS
 %----------------------------------------------------------------------------------------
-\setmarginsrb  { 1.5in}  % left margin
+\setmarginsrb  { 1.2in}  % left margin
                         { 0.6in}  % top margin
                         { 1.0in}  % right margin
                         { 0.8in}  % bottom margin
@@ -199,19 +199,19 @@
 %-------------------------------------------------   
 \keywords{} % Keywords for your thesis - this is not currently used anywhere in the template, cite it with \keywordnames if you want it
 %-------------------------------------------------   
-\university{\texorpdfstring{\href{http://www.university.com} % Your university's URL
+\university{\texorpdfstring{\href{https://www.unsw.edu.au/} % Your university's URL
                 {UNSW Australia}} % Your university's name - this is currently used in the title page
                 {UNSW Australia}}
 %-------------------------------------------------   
-\UNIVERSITY{\texorpdfstring{\href{University Web Site URL Here (include http://)} % Your university's URL
+\UNIVERSITY{\texorpdfstring{\href{https://www.unsw.edu.au/} % Your university's URL
                 {UNSW AUSTRALIA}} % Your university's name in capitals - this is currently used in the abstract page
                 {UNSW AUSTRALIA}}
 %-------------------------------------------------                
-\department{\texorpdfstring{\href{Department or School Web Site URL Here (include http://)} % Your department's URL
+\department{\texorpdfstring{\href{http://maths.unsw.edu.au/} % Your department's URL
                 {School of Mathematics and Statistics}} % Your department's name - used in the title page and abstract
                 {School of Mathematics and Statistics}}
 %-------------------------------------------------                
-\DEPARTMENT{\texorpdfstring{\href{Department or School Web Site URL Here (include http://)} % Your department's URL
+\DEPARTMENT{\texorpdfstring{\href{http://maths.unsw.edu.au/} % Your department's URL
                 {SCHOOL OF MATHEMATICS AND STATISTICS}} % Your department's name in capitals - this is not currently used anywhere in the template, cite it with \DEPTNAME if you want it
                 {SCHOOL OF MATHEMATICS AND STATISTICS}}
 %-------------------------------------------------                
@@ -223,11 +223,11 @@
                 {RESEARCH GROUP NAME (IN BLOCK CAPITALS)}} % Your research group's name in capitals - this is not currently used anywhere in the template, cite it with \GROUPNAME if you want it
                 {RESEARCH GROUP NAME (IN BLOCK CAPITALS)}}
 %-------------------------------------------------                
-\faculty{\texorpdfstring{\href{Faculty Web Site URL Here (include http://)} % Your faculty's URL
+\faculty{\texorpdfstring{\href{http://www.science.unsw.edu.au/} % Your faculty's URL
                 {Faculty of Science}} % Your faculty's name - this is currently used in the abstract page
                 {Faculty of Science}}
 %-------------------------------------------------                
-\FACULTY{\texorpdfstring{\href{Faculty Web Site URL Here (include http://)} % Your faculty's URL
+\FACULTY{\texorpdfstring{\href{http://www.science.unsw.edu.au/} % Your faculty's URL
                 {FACULTY OF SCIENCE}} % Your faculty's name in capitals - this is not currently used anywhere in the template, cite it with \FACNAME if you want it
                 {FACULTY OF SCIENCE}}
 %----------------------------------------------------------------------------------------    

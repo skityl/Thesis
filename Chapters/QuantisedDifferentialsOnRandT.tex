@@ -30,9 +30,9 @@ notation is given in Appendix \ref{ClassicalHarmonicAnalysis}.
 Recall that we have the operator $\D$ that acts on functions on $\Circ$, defined
 by $\D(z^n) = nz^n$. We also have $F := \sgn(\D)$, which acts by $F(z^n) = \sgn(n)z^n$.
 
-By definition, $H^2(\Circ) := \Proj_+L^2(\Circ)$.
+The important operator $\Proj_+$, called the Riesz Projection, is given by $\Proj_+(z^n) := \max\{\sgn(n),0\}z^n$.
 
-The important operator $\Proj_+$ is given by $\Proj_+(z^n) := \max\{\sgn(n),0\}z^n$.
+By definition, $H^2(\Circ) := \Proj_+L^2(\Circ)$.
 
 \begin{proposition}
     For $\varphi \in L^1(\Circ)$, the \emph{quantised differential} of $\varphi$ is the (potentially unbounded, densely defined) linear operator
@@ -288,16 +288,22 @@ by
 
 Thus we can define the important operator $U:L^0(\Circ;E)\rightarrow L^0(\Rl;E)$,
 \begin{equation}
-    (U f)(x) = \frac{1}{\sqrt{\pi}}\frac{(f\circ \omega^{-1})(x)}{x+i}.
+    (U f)(x) = \frac{1}{\sqrt{\pi}}\frac{(f\circ \omega^{-1})(x)}{x+i},
+\end{equation}
+and $U^{-1}:L^0(\Rl;E)\to L^0(\Circ;E)$,
+\begin{equation}
+        (U^{-1}h)(\zeta) = \sqrt{\pi}(\omega(\zeta)+i)(h\circ\omega)(\zeta).
 \end{equation}
 
 \subsection{Images under the Cayley Transform}
 
+The following is a consequence of the classical Paley-Weiner theorem,
+and a proof can be found in 
 \begin{proposition}
     Let $\D_\Circ$ denote the differentiation operator on the circle,
     and let $\D_\Rl$ denote differentation on the line. Then $\sgn(\D_\Circ)$
     and $\sgn(\D_\Rl)$ are unitarily equivalent, with the equivalence being
-    given by the Cayley transform $U$.
+    given by operator $U$.
 \end{proposition}
 
 \begin{remark}
@@ -307,6 +313,22 @@ Thus we can define the important operator $U:L^0(\Circ;E)\rightarrow L^0(\Rl;E)$
 \end{remark}
 
 \begin{proposition}
-    Let $\varphi \in \BMO(\Circ)$. Then $U\qd \varphi U^{-1} = \qd U\varphi$.
+    Let $f \in L^1(\Circ)$. Then $UM_fU^{-1} = M_{f\circ\omega^{-1}}$. 
+\end{proposition}
+\begin{proof}
+    Let $h \in L^2(\Rl)$, and $x \in \Rl$. Then,
+    \begin{align}
+        (UM_fU^{-1}h)(x) &= UM_f(\sqrt{\pi}(\omega(\zeta)+i)(h\circ\omega)(\zeta))\\
+        &= U(f(\zeta)(\sqrt{pi}(\omega(\zeta)+i)(h\circ\omega)(\zeta))\\
+        &= h(x)(f\circ\omega^{-1}(x))\\
+        &= M_{f\circ \omega^{-1}}h.
+    \end{align}
+\end{proof}
+
+\begin{proposition}
+\label{cayley}
+    Let $\varphi \in L^1(\Circ)$. Then $U\qd \varphi U^{-1} = \qd (\varphi\circ \omega^{-1})$.
+    
+    Similarly, if $f \in L^1(\Rl)$, then $\qd f = U\qd (f\circ\omega) U^{-1}$.
 \end{proposition}
 
