@@ -50,12 +50,21 @@ Let $(\A,\Hilb,\D)$ be a spectral triple, satisfying the following properties:
     By our assumptions on $(\A,\Hilb,\D)$ there exists a sequence $\{a_n\}_{n=0}^\infty$
     with $\|a_n-a\| \rightarrow 0$, and 
     $\qd a_n$ is finite rank. Hence $[\qd a_n,a]$ is finite rank, and
-    \begin{equation}
-        [\qd a,a_n] &= \qd([a_n,a]) + [\qd a_n,a]
+    \begin{align}
+        [\qd a,a_n] &= \qd([a_n,a]) + [\qd a_n,a]\\
                     &= [\qd a_n,a] \in \mathcal{L}^{p,\infty}_0.
-    \end{equation}
+    \end{align}
 \end{proof}
 
 \begin{lemma}
-    
+    Let $(\A,\Hilb,\D)$ be as above. Let $p \in \Cplx[x_1,\ldots,x_n]$ be a polynomial,
+    and $a_1,\ldots,a_n \in \A$. 
+    Then,
+    \begin{equation}
+        \qd p(a_1,\ldots,a_n) \equiv \sum_{k=1}^n \frac{\partial p}{\partial x_k}(a_1,\ldots,a_n)\;\qd a_k\; \mod{\mathcal{L}^{p,\infty}_0}
+    \end{equation}
 \end{lemma}
+\begin{proof}
+    
+\end{proof}
+
