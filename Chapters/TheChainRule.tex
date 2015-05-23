@@ -29,6 +29,9 @@ to find a noncommutative generalisation of this identity.
 We let $\mathcal{L}^{p,\infty}_0$ be the closure of the finite rank
 operators in the $\mathcal{L}^{p,\infty}$-metric topology.
 
+The important property of $\mathcal{L}^{p,\infty}$ that we will needed
+for this setting is that it is a symmetrically normed ideal. [CITE]
+
 Let $(\A,\Hilb,\D)$ be a spectral triple, satisfying the following properties:
 \begin{enumerate}
     \item{} For all $a \in \A$, $\qd a \in \mathcal{L}^{p,\infty}$.
@@ -41,20 +44,31 @@ Let $(\A,\Hilb,\D)$ be a spectral triple, satisfying the following properties:
 
 \section{The Commutator Lemma}
 \begin{lemma}
-    Let $(\A,\Hilb,\D)$ be as above, and $a \in \A$. Then
+\label{commutator}
+    Let $(\A,\Hilb,\D)$ be as above, and $a,b \in \A$. Then
     \begin{equation*}
-        [\qd a,a] \in \mathcal{L}^{p,\infty}_0.
+        [\qd a,b] \in \mathcal{L}^{p,\infty}_0.
     \end{equation*}
 \end{lemma}
 \begin{proof}
-    By our assumptions on $(\A,\Hilb,\D)$ there exists a sequence $\{a_n\}_{n=0}^\infty$
-    with $\|a_n-a\| \rightarrow 0$, and 
-    $\qd a_n$ is finite rank. Hence $[\qd a_n,a]$ is finite rank, and
-    \begin{align}
-        [\qd a,a_n] &= \qd([a_n,a]) + [\qd a_n,a]\\
-                    &= [\qd a_n,a] \in \mathcal{L}^{p,\infty}_0.
-    \end{align}
+    Consider the map $T:\A\to\mathcal{L}^{p,\infty}$,
+    \begin{equation*}
+        T(x) = [\qd a,x].
+    \end{equation*}
+    Since $T(x)$
+    is a polynomial in $x$, $T$ is continuous from $\A$ to $\mathcal{L}^{p,\infty}$
+    since $\mathcal{L}^{p,\infty}$ is a symmetrically normed ideal. Now since
+    $\A$ is commutative,
+    \begin{equation*}
+        [\qd a,x] = [a,\qd x].
+    \end{equation*}
+    
+    Hence, for $x \in \A_0$, we have $T(x)$ is finite rank. Since $\A_0$
+    is dense in $\A$, we conclude that $T(x) \in \mathcal{L}^{p,\infty}_0$
+    for $x \in \A$. Now set $x = b$ and the claim is proved.
 \end{proof}
+
+\section{The Chain rule}
 
 \begin{lemma}
     Let $(\A,\Hilb,\D)$ be as above. Let $p \in \Cplx[x_1,\ldots,x_n]$ be a polynomial,
@@ -65,6 +79,45 @@ Let $(\A,\Hilb,\D)$ be a spectral triple, satisfying the following properties:
     \end{equation}
 \end{lemma}
 \begin{proof}
+    First we consider the case where $p$ is a monomial of a single variable,
+    that is $p(x_1,\ldots,x_n) = x_j^k$ for some $j,k$. We can compute,
+    \begin{align}
+        \qd p(a_1,\ldots,a_n) &= [F,a_j^k] \\
+        &= \sum_{m=1}^{k} a_j^{m-1} [F,a_j] a_j^{k-m}
+    \end{align}
+    By lemma \ref{commutator}, this implies
+    \begin{align}
+        \qd p(a_1,\ldots,a_n) \equiv ka_j^{k-1}\; \qd a_j\; \mod{\mathcal{L}^{p,\infty}_0}.
+    \end{align}
+    
+    Hence the claim is proved for $p(x_1,\ldots,x_n) = x_j^k$. The general claim
+    follows from the following Leibniz rule:
+    \begin{align}
+        \qd (ab) &= (\qd a)b + b(\qd a)\\
+                 &\equiv b(\qd a) + a(\qd b) \;\mod{\mathcal{L}^{p,\infty}_0}
+    \end{align}
+    and linearity.
+\end{proof}
+
+\begin{proposition}
+    Let $(\A,\Hilb,\D)$ be a spectral triple as above. Let $a := (a_1,\ldots,a_n) \in \A^n$,
+    and let $\varphi$ be a complex valued function that is holomorphic
+    on a neighbourhood of the joint spectrum, $\sigma(a_1)\times \cdots \sigma(a_n) \subset \Cplx^n$.
+    
+    Since $a_1,\ldots,a_n$ pairwise commute, we can define $\varphi(a)$
+    by the holomorphic functional calculus.    
+    
+    Then,
+    \begin{equation*}
+        \qd \varphi(a) \equiv d\varphi \qd a \;\mod{\mathcal{L}^{p,q}_0},
+    \end{equation*}
+    where this is shorthand for,
+    \begin{equation*}
+        \qd \varphi(a_1,\ldots,a_n) \equiv \sum_{j=1}^n \frac{\partial \varphi}{\partial z_j}(a)\qd a_j \;\mod{\mathcal{L}^{p,\infty}_0}.
+    \end{equation*}
+\end{proposition}
+\begin{proof}
     
 \end{proof}
+
 

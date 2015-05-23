@@ -202,81 +202,11 @@ Hence, if $f \in L^1(\Circ,\ha)$, we have
 \end{equation*}
 for almost all $\zeta \in \Circ$.
 
-\section{Fourier Series of Measures}
-Suppose $\mu$ is a complex Borel regular measure on $\Circ$. Associated
-to $\mu$ is a Fourier series,
-\begin{equation*}
-    \mu \sim \sum_{n \in \Itgr} \hat{\mu}(n) z^n
-\end{equation*}
-where
-\begin{equation*}
-    \hat{\mu}(n) = \int_\Circ z^{-n} \;d\mu.
-\end{equation*}
-It was proved in ``Ces\`aro convergence of Fourier series" that this series
-can be interpreted as a sequence of measures converging in the Ces\`aro sense
-and the weak* topology to $\mu$. Here we wish to analyse the Abel sums of the 
-Fourier series of $\mu$. 
-Define for $r \in (0,1)$,
-\begin{equation*}
-    A_r \mu = \sum_{n \in \Itgr} r^{|n|} \hat{\mu}(n) z^n.
-\end{equation*}
-This series converges because $\mu$ is bounded, so the Fourier coefficients 
-are bounded.
-
-Recall that if $f \in C(\Circ)$, we define $f*\mu$ as the function
-\begin{equation*}
-    (f*\mu)(\zeta) := \int_\Circ f(\zeta \tau^{-1})d\mu(\tau).
-\end{equation*}
-This allows us to compute $A_r\mu$ for a measure $\mu$:
-\begin{proposition}
-    If $\mu$ is a complex Borel regular measure on $\Circ$, then
-    \begin{equation*}
-        A_r \mu = P_r * \mu.
-    \end{equation*}
-\end{proposition}
-\begin{proof}
-    We compute,
-    \begin{align*}
-        (P_r * \mu)(\zeta) &= \int_{\Circ} \sum_{n \in \Itgr} r^{|n|} \zeta^n \tau^{-n} d\mu(\tau)\\
-        &= \sum_{n \in \Itgr} \zeta^nr^{|n|}\int_\Circ \tau^{-n} d\mu(\tau).
-    \end{align*}
-    The interchange of the integral and summation is justified by the uniform convergence
-    of the sum defining $P_r$. Hence we have $A_r \mu = P_r * \mu$. 
-\end{proof} 
-
-Recall that a sequence of measures $\{\mu_n\}_{n=0}^\infty$ converges
-in the weak* sense if for any $f \in C(\Circ)$, 
-we have $\int_\Circ f\;d\mu_n \rightarrow \int_\Circ f\;d\mu$.
-Any $f \in L^1(\Circ)$ can be interpreted as a measure $\mu_f$, by $d\mu_f = fd\ha$. 
-
-\begin{proposition}
-    Let $\mu$ be a complex Borel regular measure on $\Circ$. The functions $\{A_r \mu\}_{r \in (0,1)}$,
-    interpreted as measures, converge in the weak* sense to $\mu$ as $r\rightarrow 1^-$.
-\end{proposition}
-\begin{proof}
-    Let $f \in C(\Circ)$. We compute,
-    \begin{align*}
-        \int_\Circ f\;d\mu_{A_r\mu} &= \int_\Circ fP_r*\mu\;d\ha\\
-        &= \int_\Circ\int_{\Circ} f(\zeta) P_r(\zeta\tau^{-1}) d\mu(\tau)d\ha(\zeta).
-    \end{align*}
-    However note that $P_r(\tau) = P_r(\tau^{-1})$, so by Fubini's theorem,
-    \begin{align*}
-        \int_\Circ f\;d\mu_{A_r \mu} &= \int_\Circ \int_\Circ P_r(\tau\zeta^{-1})f(\zeta)d\ha(\zeta)d\mu(\tau)\\
-        &= \int_{\Circ} P_r*f \;d\mu.
-    \end{align*}
-    However, since $f$ is continuous, we have that $P_r*f\rightarrow f$ uniformly
-    as $r\rightarrow 1^-$. Hence
-    \begin{equation*}
-        \lim_{r\rightarrow 1^-} \int_\Circ f\;d\mu_{A_rf} = \int_\Circ f\;d\mu
-    \end{equation*}
-    So $A_r\mu$ converges in the weak* sense to $\mu$.
-\end{proof}
-
 \section{Harmonic functions on $\Disc$}
-Abel summation is much more heavily studied than Ces\`aro summation. The reason
-for this is that there is a close connection between the Abel sums $A_r f$
+The reason that Abel summation is so important in harmonic analysis
+ is that there is a close connection between the Abel sums $A_r f$
 for a function $f$ on $\Circ$, and functions on $\Disc := \{ z \in \Cplx\;:\; |z| < 1\}$
-which are \emph{harmonic}.
+which are \emph{holomorphic}.
 
 Given $f \in L^1(\Circ)$, define $\tilde{f}:\Disc\rightarrow\Cplx$
 by

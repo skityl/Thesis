@@ -10,8 +10,8 @@
 
 
 \section{Introduction}
-For several decades now, mathematicians have been attempting to find analogues
-of theorems of differential and algebraic geometry in noncommutative 
+For several decades now, mathematicians have been attempting to find analogies
+of theorems of differential and algebraic geometry in non-commutative 
 algebra.
 The biggest obstacle to learning this topic is that many of the definitions
 were arrived at through many years of hard work, and may seem unmotivated at first.
@@ -127,7 +127,7 @@ The utility of $\Omega^1_{\com}(A)$ is that it allows us to study all
 derivations on $A$. 
 
 In full abstraction, a derivation on $A$ is a map $\theta:A\rightarrow M$, where
-$M$ is some left $A$-module, such that $\theta$ satisfies the leibniz rule,
+$M$ is some left $A$-module, such that $\theta$ satisfies the Leibniz rule,
 \begin{equation*}
     \theta(ab) = a\theta(b)+b\theta(a).
 \end{equation*}
@@ -160,7 +160,7 @@ It is in fact universal with this property,
 \end{proof}
 
 We would now like to create a similar algebra of differentials for a non-commutative
-associative algebra $A$ over $R$. In the noncommutative case, we must restrict
+associative algebra $A$ over $R$. In the non-commutative case, we must restrict
 attention to derivations that take values in $A$-bimodules, rather than left
 $A$ modules.
 \begin{definition}
@@ -174,7 +174,7 @@ $A$ modules.
 \end{definition}
 This the motivation behind this definition is not at all clear. However, this
 does agree with the commutative case and this provides the appropriate definition
-for noncommutative K\"ahler differentials. To see this, we define the map
+for non-commutative K\"ahler differentials. To see this, we define the map
 $d:A\rightarrow \Omega^1(A)$, by
 \begin{equation*}
     d(a) = 1_A\otimes a-a\otimes 1_A.
@@ -231,25 +231,27 @@ by
     \end{displaymath}
 \end{theorem}
 
-\section*{The Insufficiency of K\"ahler Differentials}
+\subsection{The Insufficiency of K\"ahler Differentials}
+The ostensible purpose of K\"ahler differentials is to provide
+a generalisation of the construction of the exterior algebra
+bundle of a manifold to the noncommutative setting.
 
-We now have a good definition of $\Omega(A)$ for any potentially
-non-commutative algebra $A$, and it would seem that this is the final
-word on generalising the algebra of differential forms to the noncommutative setting.
+However the graded algebra of K\"ahler differentials
+is in general considerably bigger than necessary for this purpose. 
 
-However, this is incorrect, as the following proposition shows:
-\begin{proposition}
-    Let $A = C^\infty(\Rl)$. Then if $f$ and $g$ do not satisfy some polynomial relation,
-    then in the algebra of K\"ahler differentials $df$ and $dg$ are algebraically
-    independent over $A$. In particular, $d\exp(x) \neq \exp(x)dx$. 
-\end{proposition}
+For a manifold $M$, the classical exterior algebra
+bundle $\Omega(M)$ has the property that $\Omega^k(M)$
+is zero dimensional when $k$ exceeds the dimension of $M$. However 
+for an algebra $A$, the dimensions of the spaces $\Omega^k(A)$
+of K\"ahler differentials never become zero unless $A$
+is already zero dimensional. 
 
-Hence, the usual algebra of differential forms is not isomorphic
-to the algebra of K\"ahler differentials, but is instead a quotient of it. 
+Therefore in order to create a definition of the exterior
+algebra bundle over a (potentially noncommutative) algebra $A$ which
+more closely resembles the exterior algebra bundle over a manifold.
 
-So in order to produce a theory of differential algebra in the noncommutative setting, we
-need to introduce more structure on the algebra $A$. Thus we are
-led to the concept of a spectral triple.
+The solution is to give more information about $A$, and construct
+an algebra of differential forms as a specific quotient of $\Omega(A)$.
 
 
 
@@ -261,8 +263,8 @@ space should be thought of as a pair $(\A,\Hilb)$, where $\A$
 is an algebra of operators on a Hilbert space $\Hilb$. 
 
 
-We shall consider noncommutative spaces equipped with a ``Dirac Operator", $(\A,\Hilb,\D)$
-such that $\A$ is contianed in a semi-finite Von Neumann
+We shall consider non-commutative spaces equipped with a ``Dirac Operator", $(\A,\Hilb,\D)$
+such that $\A$ is contained in a semi-finite Von Neumann
 algebra $\N$ which is contained in $\mathcal{B}(\Hilb)$.
 
 A (commutative) example of this is as follows: Let $(M,g)$ be a compact Riemannian manifold,
@@ -273,11 +275,11 @@ The definition of a general Dirac operator is given in Appendix \ref{Dirac}.
 
 
 \begin{definition}[Spectral Triple]
-    A (semifinite) spectral triple is a triple $(\A,\Hilb,\D)$, where
+    A (semi-finite) spectral triple is a triple $(\A,\Hilb,\D)$, where
     $\Hilb$ is a Hilbert space with $\A \subseteq \mathcal{B}(\Hilb)$
     a $*$-algebra of operators.
     
-    $\D$ is a densely defined unbounded operator on $\Hilb$ satisfying the follownig
+    $\D$ is a densely defined unbounded operator on $\Hilb$ satisfying the following
     two properties:
     \begin{enumerate}
         \item{} $[\D,a]$ is densely defined and extends to a bounded operator in $\N$
@@ -341,7 +343,7 @@ extends to $\Omega_\D \A$.
 \end{definition}
 
         
-\section{Quantised Differentials in Noncommutative Geometry}
+\section{Quantised Differentials in Non-commutative Geometry}
 We have already given a thorough description of the quantised differentials $\qd f$
 when $f$ is a function on the circle. It so happens that we can find
 analogous, although weaker, results in far greater generality.
