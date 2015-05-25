@@ -44,9 +44,9 @@ if there is a right multiplication map $\gamma:\Cliff(M,g) \otimes V\rightarrow 
 
 A \emph{connection} on $V$ is a linear map
 \begin{equation}
-    \nabla:V\rightarrow T^*M\otimes V.
+    \nabla:\Gamma(V)\rightarrow \Omega^1(M)\otimes \Gamma(V).
 \end{equation}
-satisfying the Leibniz rule, for $f \in C^\infty(M)$ and $v \in V$,
+satisfying the Leibniz rule, for $f \in C^\infty(M)$ and $v \in \Gamma(V)$,
 \begin{equation}
     \nabla(fv) = df \otimes v +f\nabla(v).
 \end{equation}
@@ -54,7 +54,7 @@ satisfying the Leibniz rule, for $f \in C^\infty(M)$ and $v \in V$,
 Now we may define a \emph{Dirac operator}. Suppose $V$
 is a clifford bundle with connection $\nabla$. Then the composition of linear maps,
 \begin{equation}
-    V \xrightarrow{\nabla} T^*M \otimes V \xrightarrow{\sharp\otimes I} TM\otimes V \xrightarrow{\gamma} V
+    \Gamma(V) \xrightarrow{\nabla} \Omega^1(M) \otimes \Gamma(V) \xrightarrow{\sharp\otimes I} \mathcal{X}(M)\otimes \Gamma(V) \xrightarrow{\gamma} \Gamma(V)
 \end{equation}
 is called the Dirac operator associated with $V$ and $\nabla$. 
 
