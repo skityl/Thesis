@@ -103,6 +103,7 @@ $\M$. First we recall the definition of the $\sigma$-weak topology.
 
 
 \begin{proposition}
+\label{densePolynomials}
     Let $G$ be a compact abelian group acting freely and ergodically 
     on a Von Neumann algebra $\M$. Let
     \begin{equation}
@@ -608,7 +609,22 @@ out that all such Von Neumann algebras have a convenient description.
     $\alpha:\Circ^d\times \M\to\M$ that is free and ergodic. Then $\M$
     is isometrically isomorphic to $\N_\theta$ for some $\theta$.
 \end{proposition}
-
+\begin{proof}
+    By proposition \ref{densePolynomials}, $\M$ is generated
+    by a family of unitaries $\{u(n)\;:\;n \in \Itgr^d\}$. We have that
+    for $n,m \in \Itgr^d$,
+    \begin{equation}
+        u(n)u(m)u(n+m)^*
+    \end{equation}
+    is fixed under the action of $\Circ^d$. Hence there is a scalar $\lambda_{n,m}$
+    such that
+    \begin{equation}
+        u(n+m) = \lambda_{n,m}u(n)u(m)
+    \end{equation}
+    and $|\lambda_{n,m}| = 1$ since $u(n)$, $u(m)$ and $u(n+m)$
+    are unitary.
+    
+\end{proof}
 
 \section{Quantised Derivatives on Non-commutative Tori}
 

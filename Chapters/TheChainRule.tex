@@ -22,41 +22,74 @@ Where both sides of the equation are maps $TM\rightarrow TP$.
 \end{remark}
 
  It is desirable
-to find a noncommutative generalisation of this identity.
+to find a noncommutative generalisation of this identity. In classical analysis,
+as practiced by Newton and Leibniz, the chain rule could be stated as:
+\begin{equation}
+\label{classicalChainRule}
+    df(x) = f'(x)dx+o(dx)
+\end{equation}
+where $f:\Rl\to\Rl$, and $dx$ denotes some infinitesimal increment.
+The term $o(dx)$ denotes an infinitesimal quantity much smaller than $dx$. 
+One could then ``ignore sufficiently small infinitesimals" to get,
+\begin{equation}
+    df(x) = f'(x)dx.
+\end{equation}  
+
+In the setting of quantised calculus, ``ignoring sufficiently small infinitesimals"
+means working modulo some ideal of compact operators whose singular values
+decay sufficiently rapidly.
 
 
 \section{The setting}
-We let $\mathcal{L}^{p,\infty}_0$ be the closure of the finite rank
-operators in the $\mathcal{L}^{p,\infty}$-metric topology.
+Let $\Hilb$ be, as usual, a complex separable Hilbert space. We
+define symmetrically normed ideals of $\mathcal{B}(\Hilb)$.
+\begin{definition}
+    Let $\mathcal{E}$ be a two-sided ideal of $\mathcal{B}(\Hilb)$
+    equipped with a norm $\|\cdot\|_{\mathcal{E}}$ which satisfies the inequality
+    \begin{equation}
+        \|ACB\|_{\mathcal{E}} \leq \|A\|\|C\|_\mathcal{E}\|\|B\|
+    \end{equation}
+    for $A,B \in \mathcal{B}(\Hilb)$ and $C \in \mathcal{E}$.
+\end{definition}
 
-The important property of $\mathcal{L}^{p,\infty}$ that we will needed
-for this setting is that it is a symmetrically normed ideal. [CITE]
+\begin{definition}
+    If $\mathcal{E}$ is an ideal of operators containing the ideal of finite rank
+    operators, we denote the closure of the finite rank operators in the $\|\cdot\|_\mathcal{E}$
+    norm as $\mathcal{E}_0$.
+\end{definition}
 
-Let $(\A,\Hilb,\D)$ be a spectral triple, satisfying the following properties:
-\begin{enumerate}
-    \item{} For all $a \in \A$, $\qd a \in \mathcal{L}^{p,\infty}$.
-    \item{} $\A$ is closed under the holomorphic functional calculus.
-    \item{} Let $\A_0 \subseteq \mathcal{B}(\Hilb)$ be the collection of all
-    $T$ such that $[\sgn(\D),T]$ is finite rank. Then $\A$ is contained
-    within the norm-closure of $\A_0$.
-    \item{} $\A$ is commutative.
-\end{enumerate}
+\begin{definition}[Almost circular spectral triples]
+    Let $(\A,\Hilb,\D)$ be a spectral triple. We say that $(\A,\Hilb,\D)$
+    is \emph{almost circular} with respect
+    to the symmetrically normed ideal $\mathcal{E}$
+     if the following properties are satisfied:
+    \begin{enumerate}
+        \item{} For all $a \in \A$, $\qd a \in \mathcal{E}$.
+        \item{} $\A$ is closed under the holomorphic functional calculus.
+        \item{} Let $\A_0 \subseteq \mathcal{B}(\Hilb)$ be the collection of all
+        $T$ such that $[\sgn(\D),T]$ is finite rank. Then $\A$ is contained
+        within the norm-closure of $\A_0$.
+        \item{} $\A$ is commutative.
+        \item{} $\mathcal{E}$ contains the compact operators.
+    \end{enumerate}
+\end{definition}
+
 
 \section{The Commutator Lemma}
 \begin{lemma}
 \label{commutator}
-    Let $(\A,\Hilb,\D)$ be as above, and $a,b \in \A$. Then
+    Let $(\A,\Hilb,\D)$ be almost circular with respect to the ideal $\mathcal{E}$, and $a,b \in \A$. Then
     \begin{equation*}
-        [\qd a,b] \in \mathcal{L}^{p,\infty}_0.
+        [\qd a,b] \in \mathcal{E}_0.
     \end{equation*}
 \end{lemma}
 \begin{proof}
-    Consider the map $T:\A\to\mathcal{L}^{p,\infty}$,
+    Consider the map $T:\A\to\mathcal{E}$,
     \begin{equation*}
         T(x) = [\qd a,x].
     \end{equation*}
     Since $T(x)$
-    is a polynomial in $x$, $T$ is continuous from $\A$ to $\mathcal{L}^{p,\infty}$
+    is a polynomial in $x$, $T$ is continuous from $\A$ to $\mathcal{E}$
     since $\mathcal{L}^{p,\infty}$ is a symmetrically normed ideal. Now since
     $\A$ is commutative,
     \begin{equation*}
@@ -64,18 +97,19 @@ Let $(\A,\Hilb,\D)$ be a spectral triple, satisfying the following properties:
     \end{equation*}
     
     Hence, for $x \in \A_0$, we have $T(x)$ is finite rank. Since $\A_0$
-    is dense in $\A$, we conclude that $T(x) \in \mathcal{L}^{p,\infty}_0$
+    is dense in $\A$, we conclude that $T(x) \in \mathcal{E}_0$
     for $x \in \A$. Now set $x = b$ and the claim is proved.
 \end{proof}
 
 \section{The Chain rule}
 
 \begin{lemma}
-    Let $(\A,\Hilb,\D)$ be as above. Let $p \in \Cplx[x_1,\ldots,x_n]$ be a polynomial,
+    Let $(\A,\Hilb,\D)$ be almost circular with respect
+    to the ideal $\mathcal{E}$. Let $p \in \Cplx[x_1,\ldots,x_n]$ be a polynomial,
     and $a_1,\ldots,a_n \in \A$. 
     Then,
     \begin{equation}
-        \qd p(a_1,\ldots,a_n) \equiv \sum_{k=1}^n \frac{\partial p}{\partial x_k}(a_1,\ldots,a_n)\;\qd a_k\; \mod{\mathcal{L}^{p,\infty}_0}
+        \qd p(a_1,\ldots,a_n) \equiv \sum_{k=1}^n \frac{\partial p}{\partial x_k}(a_1,\ldots,a_n)\;\qd a_k\; \mod{\mathcal{E}_0}
     \end{equation}
 \end{lemma}
 \begin{proof}
@@ -87,37 +121,58 @@ Let $(\A,\Hilb,\D)$ be a spectral triple, satisfying the following properties:
     \end{align}
     By lemma \ref{commutator}, this implies
     \begin{align}
-        \qd p(a_1,\ldots,a_n) \equiv ka_j^{k-1}\; \qd a_j\; \mod{\mathcal{L}^{p,\infty}_0}.
+        \qd p(a_1,\ldots,a_n) \equiv ka_j^{k-1}\; \qd a_j\; \mod{\mathcal{E}_0}.
     \end{align}
     
     Hence the claim is proved for $p(x_1,\ldots,x_n) = x_j^k$. The general claim
     follows from the following Leibniz rule:
     \begin{align}
         \qd (ab) &= (\qd a)b + b(\qd a)\\
-                 &\equiv b(\qd a) + a(\qd b) \;\mod{\mathcal{L}^{p,\infty}_0}
+                 &\equiv b(\qd a) + a(\qd b) \;\mod{\mathcal{E}_0}
     \end{align}
     and linearity.
 \end{proof}
 
 \begin{proposition}
     Let $(\A,\Hilb,\D)$ be a spectral triple as above. Let $a := (a_1,\ldots,a_n) \in \A^n$,
-    and let $\varphi$ be a complex valued function that is holomorphic
-    on a neighbourhood of the joint spectrum, $\sigma(a_1)\times \cdots \sigma(a_n) \subset \Cplx^n$.
+    and let $\varphi$ be a complex valued function holomorphic
+    on a neighbourhood of
+    the joint spectrum, $\sigma(a) := \sigma(a_1)\times \cdots \sigma(a_n) \subset \Cplx^n$.
     
     Since $a_1,\ldots,a_n$ pairwise commute, we can define $\varphi(a)$
     by the holomorphic functional calculus.    
     
     Then,
-    \begin{equation*}
+    \begin{equation}
         \qd \varphi(a) \equiv d\varphi \qd a \;\mod{\mathcal{L}^{p,q}_0},
-    \end{equation*}
+    \end{equation}
     where this is shorthand for,
-    \begin{equation*}
-        \qd \varphi(a_1,\ldots,a_n) \equiv \sum_{j=1}^n \frac{\partial \varphi}{\partial z_j}(a)\qd a_j \;\mod{\mathcal{L}^{p,\infty}_0}.
-    \end{equation*}
+    \begin{equation}
+        \qd \varphi(a_1,\ldots,a_n) \equiv \sum_{j=1}^n \frac{\partial \varphi}{\partial z_j}(a)\qd a_j \;\mod{\mathcal{E}_0}.
+    \end{equation}
 \end{proposition}
 \begin{proof}
+    Consider the function $Q:C^1(\sigma(a))\to \mathcal{L}^{p,\infty}$
+    given by
+    \begin{equation}
+        Q(\varphi) = \qd \varphi(a) - d\varphi(a)\qd a.
+    \end{equation}
+    Note that this is indeed well defined: $\qd\varphi(a) \in \mathcal{L}^{p,\infty}$
+    since $\A$ is closed under the holomorphic functional calculus.
+    Now note that,
+    \begin{equation}
+        \|Q(\varphi)\|_{p,\infty} \leq 2\|\varphi(a)\| + 2\|d\varphi(a)\|\|a\|.
+    \end{equation}
+    where $\|a\| := \max_{j = 1,\ldots,n} \|a_j\|$
+    and $\|\varphi(a)\| := \max_{j=1,\ldots,n} \left\|\frac{\partial \varphi}{\partial z_j}(a)\right\|$.
     
 \end{proof}
 
+
+\begin{example}
+    An example of an almost circular spectral triple is $(C^\infty(\Circ),L^2(\Circ),\D_\Circ)$.
+    The ideal $\mathcal{E}$ should be chosen to be $\mathcal{L}^{1,\infty}$. Then
+    the class of elements $a \in C^\infty(\Circ)$ such that $\qd a$ is finite
+    rank is exactly the rational functions. 
+\end{example}
 
