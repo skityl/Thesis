@@ -611,19 +611,17 @@ out that all such Von Neumann algebras have a convenient description.
 \end{proposition}
 \begin{proof}
     By proposition \ref{densePolynomials}, $\M$ is generated
-    by a family of unitaries $\{u(n)\;:\;n \in \Itgr^d\}$. We have that
-    for $n,m \in \Itgr^d$,
-    \begin{equation}
-        u(n)u(m)u(n+m)^*
-    \end{equation}
-    is fixed under the action of $\Circ^d$. Hence there is a scalar $\lambda_{n,m}$
-    such that
-    \begin{equation}
-        u(n+m) = \lambda_{n,m}u(n)u(m)
-    \end{equation}
-    and $|\lambda_{n,m}| = 1$ since $u(n)$, $u(m)$ and $u(n+m)$
-    are unitary.
+    by a family of unitaries $\{u(n)\;:\;n \in \Itgr^d\}$.
     
+    We have that there is a unique normalised trace $\tau$, such that
+    \begin{equation}
+        \mathcal{L}^2(\M,\tau) = \left\{\sum_{n \in \Itgr^d} c_nu(n)\;:\; c \in \ell^2(\Itgr^d)\right\}
+    \end{equation}
+    Let us consider the action of $u(n)$ on $\mathcal{L}^2(\M,\tau)$. We
+    see that this is the same as the action of $U_1^{n_1}\cdots U_d^{n_d}$
+    on $\ell^2(\Itgr^d)$. Since the unitaries $u(n)$ generate $\M$ 
+    in the $\sigma$-weak topology, we conclude that $\M$
+    is isomorphic to $\N_\theta$ for some $\theta$.
 \end{proof}
 
 \section{Quantised Derivatives on Non-commutative Tori}
@@ -712,6 +710,7 @@ Hence,
 
 So therefore
 \begin{align}
+\label{HSConditions}
     \|[F(D),u(n)]\|_{2}^2 &= \sum_{j,k \in \Itgr^d} |F(n+k)-F(k)|^2 \delta_{j,n+k}\\
                           &= \sum_{k \in \Itgr^d} |F(n+k)-F(k)|^2.
 \end{align}
@@ -775,7 +774,63 @@ result.
 To prove this ``no go" theorem, we must clarify the meaning of a quantised differential
 on a higher dimensional torus. We shall consider the two dimensional commutative case only.
 \begin{definition}
+\label{twoDirac}
+    Let $\sigma_1$ and $\sigma_2$ be the first and second
+    Pauli matrices, that is:
+    \begin{align*}
+        \sigma_1 := \begin{pmatrix}
+            0 & 1\\
+            1 & 0
+        \end{pmatrix}\\
+        \sigma_2 := \begin{pmatrix}
+            0 & -i\\
+            i & 0
+        \end{pmatrix}.
+    \end{align*}
+    Let $u$ and $v$ be the first and second coordinate
+    functions on the two-torus $\Circ^2 := \{(z,w) \in \Cplx^2\;:\;|z| = |w| = 1\}$,
+    given by $u(z,w) = z$ and $v(z,w) = w$. Then we have the differentiation
+    operators $\D_1$ and $\D_2$, given by $\D_1(u^nv^m) = nu^nv^m$
+    and $\D_2(u^nv^m) = mu^nv^m$.
     
+    Then the Dirac operator on the torus is defined to be:
+    \begin{align*}
+        \D &:= \sigma_1 \otimes \D_1 + \sigma_2 \otimes \D_2\\
+        &= \begin{pmatrix}
+            0 & \D_1-i\D_2\\
+            \D_1 + i\D_2 & 0
+        \end{pmatrix}.
+    \end{align*}
+    which acts on the Hilbert space $\Cplx^2 \otimes L^2(\Circ^2)$.
+    The Hilbert transform on the two torus is then defined to be:
+    \begin{align*}
+        \sgn(\D) &:= \frac{\D}{|\D|}\\
+        &= \sigma_1 \otimes \frac{\D_1}{\sqrt{\D_1^2+\D_2^2}} + \sigma_2 \otimes \frac{\D_2}{\sqrt{\D_1^2+\D_2^2}}
+    \end{align*}
+    
+    For $f \in L^1(\Circ^2)$, we have the potentially not everywhere defined
+    or bounded pointwise multiplication operator $M_f$. Define,
+    \begin{equation}
+        \qd f := [\sgn(\D),M_f]
+    \end{equation}    
+    as the quantised differential on the two-torus.
 \end{definition}
+\begin{proposition}
+    Let $u$ be the first coordinate function with quantised differential
+    $\qd u$ as in definition \ref{twoDirac}. Then $\qd u \notin \mathcal{L}^2$.
+\end{proposition}
+\begin{proof}
+    It is sufficient to look at the commutator,
+    \begin{equation}
+        \left[\frac{\D_1}{\sqrt{\D_1^2+\D_2^2}},M_u\right].
+    \end{equation}
+    By \ref{HSConditions}, we have that this operator is $\mathcal{L}^2$
+     only if
+    \begin{equation}
+        \sum_{k\in\Itgr^2\setminus \{(0,0),(-1,0)\}} \left|\frac{k_1+1}{\sqrt{(k_1+1)^2+k_2^2}}-\frac{k_1}{\sqrt{k_1^2+k_2^2}}\right|^2 < \infty.
+    \end{equation}
+    
+\end{proof}
+
 
 

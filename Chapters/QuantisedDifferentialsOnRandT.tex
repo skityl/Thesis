@@ -391,16 +391,33 @@ We also have,
     We see that $U^{-1}c$ is unbounded.
 \end{proof}
 
-
-The following is a consequence of the classical Paley-Weiner theorem,
-and a proof can be found in [CITE].
+The following theorem is absolutely crucial for the link
+between quantised calculus on the circle and the line.
+This proof is based on one given in an unpublished note by A
+Carey, F Gesztesy, G Levitina, D Potapov, F Sukochev and D Zanin:
 \begin{proposition}
 \label{paleyWeiner}
     Let $\D_\Circ$ denote the differentiation operator on the circle,
     and let $\D_\Rl$ denote differentation on the line. Then $\sgn(\D_\Circ)$
     and $\sgn(\D_\Rl)$ are unitarily equivalent, with the equivalence being
     given by operator $U$.
+    
 \end{proposition}
+\begin{proof}
+    It follows from ``Lemma about the image of $H^2$" in \cite[p. 253]{nikolskii}
+    and the Paley-Wiener theorem in \cite[p.254]{nikolskii}
+    that $U$ maps the Hardy space $H^2(\Circ)$
+    into the Hardy space $H^2(\Rl) := \mathcal{F}^{-1}(\chi_{[0,\infty)}L^2(\Rl))$
+    where $\mathcal{F}$ is the Fourier transform. 
+    
+    One notes that $\sgn(\D_\Circ) = 2\Proj_+-\Id$ and $\sgn(\D_\Rl) = 2\mathbb{P}_+-\Id$,
+    where $\mathbb{P}_+$ is the projection onto $H^2(\Rl)$. 
+    
+    Hence since $H^2(\Circ)$ and $H^2(\Rl)$ are subspaces mapped into each other
+    by the unitary $U$, we concludet that the projections $\Proj_+$
+    and $\mathbb{P}$
+    are unitarily equivalent by $U$.
+\end{proof} 
 
 \begin{remark}
     Let $f \in L^1(\Circ)$. Then $M_f$ is a

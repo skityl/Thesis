@@ -169,6 +169,11 @@ elegant way using the following result of Fefferman, which can be found in \cite
     \end{equation*}
     where $I$ is taken over all arcs in $\Circ$.
     
+    $\BMO(\Circ)$ is a Banach space when equipped with the norm,
+    \begin{equation*}
+        \|f\|_{\BMO(\Circ)} = \sup_I \int_I \left|f-\frac{1}{\ha(I)}\int_I f\;d\ha\right|\;d\ha + |\hat{f}(0)|
+    \end{equation*}
+    
     Then 
     \begin{equation*}
         \BMO(\Circ) = L^\infty(\Circ)+\Proj_+L^\infty(\Circ) = \{f+\Proj_+g\;:\;f,g \in L^\infty(\Circ)\}.
@@ -200,6 +205,42 @@ arises from the fourier transform of a function.
     Let $\varphi \in H^1(\Circ)$. Let $\Gamma_\varphi$
     be the Hankel matrix with $(i,j)$th entry $\hat{\varphi}(i+j)$.
 \end{definition}
+
+The properties of Hankel operators, as we shall now demonstrate in part, can be summarised
+in the following table: \\
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+$\varphi$ & $\Gamma_\varphi$\\
+\hline
+Rational & Finite rank\\
+$\VMO$ & Compact\\
+$B_{pp}^{1/p}$ & $\mathcal{L}^p$\\
+$\BMO$ & Bounded\\
+\hline
+\end{tabular}\\
+\end{center}
+The left hand column of the table is a list of function spaces,
+and the right hand side is a list of operator spaces. This is a table
+of necessary and sufficient conditions on $\varphi$ so that $\Gamma_\varphi$
+lies in some operator space.
+
+At the moment not all of the terms in the table have been defined. The Besov
+classes $B_{pp}^{1/p}$ will be introduced in Definition \ref{besovDefinition},
+and the class $\VMO$ is defined in Proposition \ref{feffVMO}.
+
+We will not prove every relation implied by the above table. In particular, we will
+only prove that $\varphi \in \VMO(\Circ)$ implies that $\Gamma_\varphi$ is compact,
+and that $\varphi \in B_{pp}^{1/p}$ implies that $\Gamma_\varphi \in \mathcal{L}^p$.
+Using these sufficient conditions, we will be able to find sufficient conditions
+on $\varphi$ so that $\Gamma_\varphi$ is in $\mathcal{L}^{p,q}$ for $p \in [1,\infty]$
+and $q \in (0,\infty]$. 
+
+More detailed results are proved in the book by V.V. Peller, \cite{Peller2003},
+where both the necessity and sufficiency of all the results in the above table are proved.
+
+The presentation here is based on Peller's, but we will only prove the results
+necessary for a basic introduction to quantised calculus.
 
 \section{Finite Rank Hankel operators}
 The strongest condition that we can put on a Hankel matrix $\Gamma_\varphi$
@@ -324,6 +365,9 @@ the following result of Fefferman, found in \cite{Garnett}:
     \end{equation*}
     where the limit is over all arcs $I \subseteq \Circ$. 
     
+    $\VMO(\Circ)$ is alternatively viewed as the closure of the trigonometric
+    polynomials in $\BMO(\Circ)$.
+    
     It is a result of Fefferman \cite{Garnett} that,
     \begin{equation*}
         \VMO(\Circ) = C(\Circ)+\Proj_+C(\Circ).
@@ -340,6 +384,8 @@ So we have the following:
     with $\Gamma_{\varphi} = \Gamma_h$, simply by choosing $h = f+g$. Hence by corollary \ref{ctsCmpt}, we see that $\Gamma_\varphi$
     is compact.
 \end{proof}
+
+
 
 \section{Hankel Operators of Trace Class}
 We recall the definition of the $\mathcal{L}^1$ norm on $\mathcal{B}(\Hilb)$,
@@ -374,6 +420,7 @@ such that $\Gamma_\varphi$ is in $\mathcal{L}^1$.
 The answer is provided by the \emph{Besov classes}. Many different definitions
 of Besov spaces can be found, but the one of most relevance to us is given below.
 \begin{definition}
+    \label{besovDefinition}
     We define a sequence of polynomials $\{W_n\}_{n \in \Itgr} \subset P(\Circ)$ as follows.
     First,
     \begin{equation*}
@@ -558,36 +605,119 @@ is trace class. The proof of the necessity of this condition is more difficult,
 \end{remark}
 
 \section{Interpolation}
-The following is proved in \cite{DDP92}:
-\begin{lemma}
-    Let $K$ be the real interpolation functor, described in \cite{interp}. 
-    Let $p,q \in (0,\infty]$
-    Then
-    \begin{equation*}
-        K(\mathcal{L}^1,\mathcal{K})_{\theta,q} = \mathcal{L}_{p,q}.
-    \end{equation*} 
-    for $p = (1-\theta)^{-1}$.
-\end{lemma}
+For this section, $\mathcal{L}^\infty$ denotes the space of compact operators.
+
+Up to now we have proved necessary and sufficient conditions
+on $\varphi$ so that $\Gamma_\varphi$ lies in a certain ideal one at a time.
+In particular, we have with great effort proved that $\Gamma_\varphi \in \mathcal{L}^1$
+if and only if $\varphi \in B_{11}^1(\Circ)$.
+This amounts to a continuous
+injection:
+\begin{equation}
+\label{emb1}
+    B_{11}^1(\Circ) \to \mathcal{L}^1
+\end{equation}
+with equivalence of norms.
+We denote $\Gamma\mathcal{L}^\infty$
+as the class of compact Hankel operators.
+
+We also know that we have an injection
+\begin{equation}
+\label{emb2}
+    \VMO(\Circ) \to \mathcal{L}^\infty.
+\end{equation}
 
 
-\begin{corollary}
-    Hence, we have that $\Gamma_\varphi \in \mathcal{L}_{p,q}$
-    if $\varphi \in K(B_1^1,\VMO)_{\theta,q}$, where $p = (1-\theta)^{-1}$.
-\end{corollary}
+It is a remarkable fact that using the embeddings \ref{emb1}
+and \ref{emb2} alone we can find sufficient conditions on $\varphi$
+so that $\Gamma_\varphi \in \mathcal{L}^{p,q}$ for $p\in [1,\infty]$,$q \in (0,\infty]$.
+
+We accomplish this via interpolation theory.
+The basic material is covered in Appendix \ref{Interpolation}. The pair $(B_{11}^1(\Circ),\VMO(\Circ))$.
+The map $\varphi \mapsto \Gamma_\varphi$ takes the pair
+$(B_{11}^1(\Circ),\VMO(\Circ))$ to $(\mathcal{L}^1,\mathcal{L}^\infty)$.
+Hence for any interpolation functor $F:\NLS_1\to\NLS$ (using the notation
+of Appendix \ref{Interpolation}, we have that if $\varphi \in F(B_{11}^1(\Circ),\VMO(\Circ))$,
+then $\Gamma_{\varphi} \in F(\mathcal{L}^1,\mathcal{L}^\infty)$.
+
+In order to therefore find sufficient conditions on $\varphi$ so that $\Gamma_\varphi \in \mathcal{L}^{p,q}$,
+we simply need to find an interpolation functor $F_{p,q}$ such that $F_{p,q}(\mathcal{L}^1,\mathcal{L}^\infty) = \mathcal{L}^{p,q}$.
+
+It turns out that there is indeed such a functor, the $K$ functor from real interpolation theory.
+For a definition see Appendix \ref{Interpolation}. We can choose $F_{p,q} = K(\cdot,\cdot)_{\theta,q}$
+where $\theta = 1-p^{-1}$. This is due to the following result:
+\begin{proposition}
+    Let $p \in (0,\infty)$ and $q \in (0,\infty]$. If $\theta = 1-p^{-1}$, then $K(\mathcal{L}^1,\mathcal{L}^\infty)_{\theta,q} = \mathcal{L}^{p,q}$.
+\end{proposition}
+\begin{proof}
+    The details of this interpolation result are included by in \cite{DDP92}.
+    
+    The key estimate is as follows.
+    Let $T \in \mathcal{L}^1+\mathcal{L}^\infty = \mathcal{L}^\infty$.
+    Using a result from G.E. Karadzhov \cite{Karadzhov},
+    the $K$ functional, $K(t,T,\mathcal{L}^1,\mathcal{L}^\infty)$, given in
+    definition \ref{Kdefinition}, can be estimated by
+    \begin{equation}
+        c_1\left(\sum_{j=0}^n \mu_j(T)^p\right)^{1/p} \leq K(t,T,\mathcal{L}^1,\mathcal{L}^\infty) \leq c_2\left(\sum_{j=0}^n \mu_j(T)^p\right)^{1/p},
+    \end{equation}
+    for $n^{1/p} \leq t \leq (n+1)^{1/p}$, for some positive constants $c_1,c_2$. This
+    estimate can be found in \cite{Karadzhov}.
+\end{proof}
+
+
+%The following is proved in \cite{DDP92}:
+%\begin{lemma}
+%    Let $K$ be the real interpolation functor, described in \cite{interp}. 
+%    Let $p,q \in (0,\infty]$
+%    Then
+%    \begin{equation*}
+%        K(\mathcal{L}^1,\mathcal{K})_{\theta,q} = \mathcal{L}_{p,q}.
+%    \end{equation*} 
+%    for $p = (1-\theta)^{-1}$.
+%\end{lemma}
+
+
+%\begin{corollary}
+%    Hence, we have that $\Gamma_\varphi \in \mathcal{L}_{p,q}$
+%    if $\varphi \in K(B_1^1,\VMO)_{\theta,q}$, where $p = (1-\theta)^{-1}$.
+%\end{corollary}
+
+So we have shown that if $\varphi \in K(B_{11}^1(\Circ),\VMO(\Circ))_{1-1/p,q}$,
+then $\Gamma_\varphi \in \mathcal{L}^{p,q}$. Peller \cite[Theorem 4.4, p. 256]{Peller2003} shows
+that this condition is not just sufficient but also necessary. Of particular interest
+is the case $p = q$. This is solved by the following result, which is \cite[Theorem 4.3, p.255]{Peller2003}:
+\begin{proposition}
+    Let $p \in (1,\infty)$. Then $K(B_{11}^1(\Circ),\VMO(\Circ)) = B_{pp}^{1/p}(\Circ)$. 
+\end{proposition}
 
 \section{Extrapolation}
-We have determined sufficient conditions for $\Gamma_\varphi \in \mathcal{L}_{p,q}$.
+We have determined sufficient conditions for $\Gamma_\varphi \in \mathcal{L}^{p,q}$,
+for $p \in [1,\infty]$ and $q \in (0,\infty]$.
 We now turn our attention to more exotic ideals of $\mathcal{B}(\ell^2(\Ntrl))$. The
 Macaev-Dixmier ideal $\M_{1,\infty}$ is described in detail Appendix \ref{IdealsOfOperators}.
 
-Most important for our purposes is the equivalence of norms,
+Most important for our purposes is the equivalence of norms, proved in \cite{CRSS},
 \begin{equation}
     \|x\|_{\M_{1,\infty}} = \sup_{s \in (0,1)} s\|x\|_{\mathcal{L}_{s+1}}.
 \end{equation}
+
+First we need the following result, proved in the proof of \cite[Theorem 3.1,p.250]{Peller2003}.
+\begin{proposition}
+    Let $\varphi \in H^1(\Circ)$, and let $p \in (1,2)$. Then there is a constant $C$
+    not depending on $p$ such that
+    \begin{equation}
+        \|\Gamma_{\varphi}\|_{\mathcal{L}^p}^p \leq 2^{1-p} \sum_{n\geq 0} 2^n\|W_n*\varphi\|_p^p
+    \end{equation}
+    Where the right hand side is defined to be $\|\varphi\|_{B_{pp}^{1/p}}$.
+\end{proposition}
 
 Hence, we have
 \begin{proposition}
     Let $\varphi$ be a function on $\Circ$ such that $\sup_{s \in (0,1)} s\|\varphi\|_{B_{s+1,s+1}^{1/(s+1)}} < \infty$.
     Then $\qd \varphi \in \M_{1,\infty}$.
-\end{proposition}   
+\end{proposition}
+
+
+
+
 

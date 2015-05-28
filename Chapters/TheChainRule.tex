@@ -9,20 +9,9 @@
 %----------------------------------------------------------------------------------------
 
 \section{Introduction}
-In classical analysis, the chain rule states that if $M$,$N$ and $P$ are manifolds, 
- and the maps $f:M\rightarrow N$ and $g:N\rightarrow P$ are smooth, then
-\begin{equation*}
-    d(f\circ g) = df \circ dg.
-\end{equation*}
-Where both sides of the equation are maps $TM\rightarrow TP$.
-
-\begin{remark}
-    The chain rule is simply a consequence of the functoriality of the tangent
-    bundle construction, $M\mapsto TM$.
-\end{remark}
 
  It is desirable
-to find a noncommutative generalisation of this identity. In classical analysis,
+to find a noncommutative generalisation of the chain rule. In classical analysis,
 as practiced by Newton and Leibniz, the chain rule could be stated as:
 \begin{equation}
 \label{classicalChainRule}
@@ -104,6 +93,7 @@ define symmetrically normed ideals of $\mathcal{B}(\Hilb)$.
 \section{The Chain rule}
 
 \begin{lemma}
+\label{polychain}
     Let $(\A,\Hilb,\D)$ be almost circular with respect
     to the ideal $\mathcal{E}$. Let $p \in \Cplx[x_1,\ldots,x_n]$ be a polynomial,
     and $a_1,\ldots,a_n \in \A$. 
@@ -134,39 +124,56 @@ define symmetrically normed ideals of $\mathcal{B}(\Hilb)$.
 \end{proof}
 
 \begin{proposition}
-    Let $(\A,\Hilb,\D)$ be a spectral triple as above. Let $a := (a_1,\ldots,a_n) \in \A^n$,
-    and let $\varphi$ be a complex valued function holomorphic
-    on a neighbourhood of
-    the joint spectrum, $\sigma(a) := \sigma(a_1)\times \cdots \sigma(a_n) \subset \Cplx^n$.
-    
-    Since $a_1,\ldots,a_n$ pairwise commute, we can define $\varphi(a)$
-    by the holomorphic functional calculus.    
-    
-    Then,
+    Let $(\A,\Hilb,\D)$ be an almost circular spectral triple with respect
+    to the ideal $\mathcal{E}$. Let $a \in \A$,
+    and let $\varphi$ be holomorphic on a simply connected neighbourhood of $\sigma(a)$.
+    Then define $\varphi(a)$ by the holomorphic functional calculus. Then,
     \begin{equation}
-        \qd \varphi(a) \equiv d\varphi \qd a \;\mod{\mathcal{E}_0},
-    \end{equation}
-    where this is shorthand for,
-    \begin{equation}
-        \qd \varphi(a_1,\ldots,a_n) \equiv \sum_{j=1}^n \frac{\partial \varphi}{\partial z_j}(a)\qd a_j \;\mod{\mathcal{E}_0}.
+        \qd \varphi(a) \equiv \varphi'(a)\qd a\;\mod{\mathcal{E}_0}
     \end{equation}
 \end{proposition}
 \begin{proof}
-    Consider the function $Q:C^1(\sigma(a))\to \mathcal{E}$
-    given by
-    \begin{equation}
-        Q(\varphi) = \qd \varphi(a) - d\varphi(a)\qd a.
-    \end{equation}
-    Note that this is indeed well defined: $\qd\varphi(a) \in \mathcal{E}$
-    since $\A$ is closed under the holomorphic functional calculus.
-    Now note that,
-    \begin{equation}
-        \|Q(\varphi)\|_{p,\infty} \leq 2\|\varphi(a)\| + 2\|d\varphi(a)\|\|a\|.
-    \end{equation}
-    where $\|a\| := \max_{j = 1,\ldots,n} \|a_j\|$
-    and $\|\varphi(a)\| := \max_{j=1,\ldots,n} \left\|\frac{\partial \varphi}{\partial z_j}(a)\right\|$.
-    
+    By lemma \ref{polychain}, the result is true when $\varphi$
+    is a polynomial. Since $\varphi$ is holomorphic on a simply connected set,
+    there is a sequence $\{p_n\}_{n=1}^\infty$ that converges to $\varphi$
+    uniformly on $\sigma(a)$, and $\{p_n'\}_{n=1}^\infty$ converges
+    uniformly to $\varphi$. Thus the result follows.
 \end{proof}
+
+%\begin{proposition}
+%    Let $(\A,\Hilb,\D)$ be a spectral triple as above. Let $a := (a_1,\ldots,a_n) \in \A^n$,
+%    and let $\varphi$ be a complex valued function holomorphic
+%    on a neighbourhood of
+%    the joint spectrum, $\sigma(a) := \sigma(a_1)\times \cdots \sigma(a_n) \subset \Cplx^n$.
+%    
+%    Since $a_1,\ldots,a_n$ pairwise commute, we can define $\varphi(a)$
+%    by the holomorphic functional calculus.    
+%    
+%    Then,
+%    \begin{equation}
+%        \qd \varphi(a) \equiv d\varphi \qd a \;\mod{\mathcal{E}_0},
+%    \end{equation}
+%    where this is shorthand for,
+%    \begin{equation}
+%        \qd \varphi(a_1,\ldots,a_n) \equiv \sum_{j=1}^n \frac{\partial \varphi}{\partial z_j}(a)\qd a_j \;\mod{\mathcal{E}_0}.
+%    \end{equation}
+%\end{proposition}
+%\begin{proof}
+%    Consider the function $Q:C^1(\sigma(a))\to \mathcal{E}$
+%    given by
+%    \begin{equation}
+%        Q(\varphi) = \qd \varphi(a) - d\varphi(a)\qd a.
+%    \end{equation}
+%    Note that this is indeed well defined: $\qd\varphi(a) \in \mathcal{E}$
+%    since $\A$ is closed under the holomorphic functional calculus.
+%    Now note that,
+%    \begin{equation}
+%        \|Q(\varphi)\|_{p,\infty} \leq 2\|\varphi(a)\| + 2\|d\varphi(a)\|\|a\|.
+%    \end{equation}
+%    where $\|a\| := \max_{j = 1,\ldots,n} \|a_j\|$
+%    and $\|\varphi(a)\| := \max_{j=1,\ldots,n} \left\|\frac{\partial \varphi}{\partial z_j}(a)\right\|$.
+    
+%\end{proof}
 
 
 \begin{example}

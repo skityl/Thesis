@@ -110,12 +110,34 @@ To complete our description, we need the following:
     
 So we get the following:
 \begin{corollary}
-    Let $\varphi\in K(B_{11}^1,\VMO)$. Then $\qd \varphi \in \mathcal{L}_{p,q}$. 
+    Let $\varphi\in K(B_{11}^1,\VMO(\Circ))_{(1-p)^{-1},q}$. Then $\qd \varphi \in \mathcal{L}_{p,q}$. 
 \end{corollary}
 
 \section{Quantised Differentials on $\Rl$}
 Using proposition \ref{cayley}, we can transfer our results
 about quantised differentials on $\Circ$ to differentials on $\Rl$.
+
+\begin{definition}
+    The spaces $\BMO(\Rl)$ and $\VMO(\Rl)$ are defined
+    very similarly to the corresponding spaces on $\Circ$. 
+    
+    In particular, for a function $f \in L^1_{loc}(\Rl)$, for
+    an interval $I$ (sufficiently small so that the integral exists),
+    \begin{equation}
+        f_I := \frac{1}{\lambda(I)}\int_I f\;d\lambda.
+    \end{equation}
+    The $\BMO(\Rl)$ semi-norm is
+    \begin{equation}
+        \|f\|_{\BMO(\Rl)} = \sup_{I} \frac{1}{\lambda(I)}\int_I |f-f_I|\;d\lambda.
+    \end{equation}
+\end{definition}
+
+The chief importance of the $\BMO$ spaces in harmonic analysis
+lies in their conformal invariance. This is clarified in the following proposition,
+
+\begin{proposition}
+
+\end{proposition}
 
 \begin{proposition}
     Let $\varphi \in L^\infty(\Rl)$. Then $\qd \varphi$
@@ -123,6 +145,16 @@ about quantised differentials on $\Circ$ to differentials on $\Rl$.
 \end{proposition}
 \begin{proposition}
     Let $\varphi \in L^\infty(\Rl)$. Then $\qd \varphi$ is compact
-    when $\varphi \circ \omega^{-1} \in \VMO(\Circ)$.
+    if and only if $\varphi \circ \omega^{-1} \in \VMO(\Circ)$.
+    
+    Using the Fefferman decomposition, this means that 
+    there exist functions $g,f \in C(\Circ)$ so that
+    $\varphi = g\circ\omega + (\Proj_+f)\circ \omega$. 
+\end{proposition}
+
+\begin{proposition}
+    Let $\varphi\in L^1(\Circ)$ be a function such that
+    
+    $\varphi_+,\varphi_- \in K(B_{11}^1(\Circ),\VMO(\Circ)_{1-1/p,q}$. Then $\qd \varphi \in \mathcal{L}^{p,q}$.
 \end{proposition}
 
