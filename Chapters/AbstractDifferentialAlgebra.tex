@@ -10,14 +10,22 @@
 
 
 \section{Introduction}
-For several decades now, mathematicians have been attempting to find analogies
-of theorems of differential and algebraic geometry in non-commutative 
-algebra.
-The biggest obstacle to learning this topic is that many of the definitions
-were arrived at through many years of hard work, and may seem unmotivated at first.
+We now return to the discussion of the origin of quantised calculus. Non-commutative
+geometry, as described in Chapter \ref{Introduction}, is invisaged
+as the study of pairs $(\A,\Hilb)$, where $\A$ is an algebra
+of operators on a Hilbert space $\Hilb$.
 
-We now discuss how to construct the non-commutative analogue of the exterior
-algebra bundle on a spectral triple. This analogue is called the algebra of \emph{Connes Differentials}.
+A classical example is $\Hilb_1 = L^2([0,1])$, and $\A_1 = L^\infty([0,1])$,
+encoded as pointwise multiplication operators. 
+Since we have an isomorphism between $\Hilb_1$ and $\Hilb_2 = L^2(\Circ)$, and
+this induces an algebra isomorphism between $\A_1$ and $\A_2 = L^\infty(\Circ)$.
+
+Therefore at the level of operator algebras, the pair $(\A_1,\Hilb_1)$ is indistinguishable
+from $(\A_2,\Hilb_2)$. However, topologically, $[0,1]$ is very distinct
+from $\Circ$. Therefore, to encode the ``geometry" of a non-commutative
+space $(\A,\Hilb)$, we require more information. To attempt to find
+an solution to this problem, we shall explore how geometry is encoded
+in algebra in differential geometry.
 
 \section{Classical Differential Algebra}
 Let $M$ be an $n$ dimensional manifold. The cotangent bundle $\Omega^1(M)$
@@ -211,7 +219,7 @@ And the algebra,
 We extend the function $d:A\rightarrow \Omega^1(A)$ to $\Omega A$
 by
 \begin{equation*}
-    d(ada_1da_2\cdots da_n) = dada_1da_2\cdots da_n.
+    d(a\otimes da_1\otimes da_2\otimes \cdots \otimes da_n) = da\otimes da_1\otimes da_2\otimes \cdots\otimes da_n.
 \end{equation*}
  
 \begin{theorem}
@@ -234,7 +242,7 @@ by
 \subsection{The Insufficiency of K\"ahler Differentials}
 The ostensible purpose of K\"ahler differentials is to provide
 a generalisation of the construction of the exterior algebra
-bundle of a manifold to the noncommutative setting.
+bundle of a manifold to the non-commutative setting.
 
 However the graded algebra of K\"ahler differentials
 is in general considerably bigger than necessary for this purpose. 
@@ -247,7 +255,7 @@ of K\"ahler differentials never become zero unless $A$
 is already zero dimensional. 
 
 Therefore in order to create a definition of the exterior
-algebra bundle over a (potentially noncommutative) algebra $A$ which
+algebra bundle over a (potentially non-commutative) algebra $A$ which
 more closely resembles the exterior algebra bundle over a manifold.
 
 The solution is to give more information about $A$, and construct

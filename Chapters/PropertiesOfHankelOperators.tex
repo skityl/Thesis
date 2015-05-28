@@ -1,10 +1,10 @@
 % Chapter 3
 
-\chapter{Basic Properties of Hankel Operators} % Main chapter title
+\chapter{Properties of Hankel Operators} % Main chapter title
 
 \label{PropertiesOfHankelOperators} % For referencing the chapter elsewhere, use \ref{Chapter1} 
 
-\lhead{Chapter \ref{PropertiesOfHankelOperators}. \emph{Basic Properties of Hankel Operators}} % This is for the header on each page - perhaps a shortened title
+\lhead{Chapter \ref{PropertiesOfHankelOperators}. \emph{Properties of Hankel Operators}} % This is for the header on each page - perhaps a shortened title
 
 %----------------------------------------------------------------------------------------
 
@@ -165,13 +165,13 @@ elegant way using the following result of Fefferman, which can be found in \cite
     The space $\BMO(\Circ)$ is defined as the set of measurable
     functions $f$ on $\Circ$ (modulo almost-everywhere equivalence) such that
     \begin{equation*}
-        \sup_I \int_I \left|f-\frac{1}{\ha(I)}\int_I f\;d\ha\right|\;d\ha < \infty
+        \sup_I \int_I \frac{1}{\ha(I)}\left|f-\frac{1}{\ha(I)}\int_I f\;d\ha\right|\;d\ha < \infty
     \end{equation*}
     where $I$ is taken over all arcs in $\Circ$.
     
     $\BMO(\Circ)$ is a Banach space when equipped with the norm,
     \begin{equation*}
-        \|f\|_{\BMO(\Circ)} = \sup_I \int_I \left|f-\frac{1}{\ha(I)}\int_I f\;d\ha\right|\;d\ha + |\hat{f}(0)|
+        \|f\|_{\BMO(\Circ)} = \sup_I \frac{1}{\ha(I)}\int_I \left|f-\frac{1}{\ha(I)}\int_I f\;d\ha\right|\;d\ha + |\hat{f}(0)|
     \end{equation*}
     
     Then 
@@ -361,7 +361,7 @@ the following result of Fefferman, found in \cite{Garnett}:
     The class $\VMO(\Circ)$ is the set of measurable functions $f:\Circ\rightarrow\Cplx$
     such that
     \begin{equation*}
-        \lim_{\ha(I)\rightarrow0} \int_I \left|f-\frac{1}{\ha(I)}\int_I f\;d\ha\right|\;d\ha = 0
+        \lim_{\ha(I)\rightarrow0} \frac{1}{\ha(I)}\int_I \left|f-\frac{1}{\ha(I)}\int_I f\;d\ha\right|\;d\ha = 0
     \end{equation*}
     where the limit is over all arcs $I \subseteq \Circ$. 
     
@@ -696,7 +696,7 @@ for $p \in [1,\infty]$ and $q \in (0,\infty]$.
 We now turn our attention to more exotic ideals of $\mathcal{B}(\ell^2(\Ntrl))$. The
 Macaev-Dixmier ideal $\M_{1,\infty}$ is described in detail Appendix \ref{IdealsOfOperators}.
 
-Most important for our purposes is the equivalence of norms, proved in \cite{CRSS},
+Most important for our purposes is the equivalence of norms, proved in Theorem 4.5 of \cite{CRSS},
 \begin{equation}
     \|x\|_{\M_{1,\infty}} = \sup_{s \in (0,1)} s\|x\|_{\mathcal{L}_{s+1}}.
 \end{equation}
@@ -713,11 +713,35 @@ First we need the following result, proved in the proof of \cite[Theorem 3.1,p.2
 
 Hence, we have
 \begin{proposition}
-    Let $\varphi$ be a function on $\Circ$ such that $\sup_{s \in (0,1)} s\|\varphi\|_{B_{s+1,s+1}^{1/(s+1)}} < \infty$.
+    Let $\varphi$ be a function on $\Circ$ such that $\limsup_{s \downarrow 0} s\|\varphi\|_{B_{s+1,s+1}^{1/(s+1)}} < \infty$.
     Then $\qd \varphi \in \M_{1,\infty}$.
 \end{proposition}
 
 
+There is an alternative characterisation of Besov
+classes on the circle, which we refer to here,
+\begin{proposition}
+    Let $\zeta,\tau \in \Circ$. For a function
+    $f:\Circ\to\Cplx$, define
+    \begin{equation}
+        \Delta_\tau f(\zeta) = f(\tau\zeta)-f(\zeta).
+    \end{equation}
+    Then, let $s > 0$, $p,q \in [1,\infty]$ and $n$ be an integer $n > s$,
+    \begin{equation}
+        B_{pq}^s(\Circ) = \left\{f \in L^p\;:\;\int_\Circ \frac{\|\Delta^n_\tau f\|_p^q}{|1-\tau|^{1+sq}}\;d\ha(\tau) < \infty\right\}
+    \end{equation}
+    and the choice of $n$ is irrelevant.
+\end{proposition}
+A proof of this proposition can be found in [cite].
+
+This implies the following,
+\begin{proposition}
+    Let $\varphi \in H^1(\Circ)$ satisfy,
+    \begin{equation}
+        \limsup_{s\downarrow 0} s\int_{\Circ}\frac{\|\Delta^2_\tau \varphi\|_{s+1}^{s+1}}{|1-\tau|^2}\;d\ha(\tau) < \infty.
+    \end{equation}
+    Then $\Gamma_\varphi \in \M_{1,\infty}$.
+\end{proposition}
 
 
 

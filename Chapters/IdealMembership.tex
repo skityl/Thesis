@@ -16,10 +16,27 @@ as an operator on $H^2(\Circ)\oplus H^2_-(\Circ)$. Then we have the description,
         H_{\varphi_-}  & 0
     \end{pmatrix}
 \end{equation}
+as proved in lemma \ref{hankelDecomposition}.
+
 
 Hence, to determine when $\qd \varphi$ falls into some ideal of operators,
-it frequently suffices to check $H_{\overline{\varphi_+}}$ and $H_{\varphi_-}$.
+it suffices to check $H_{\overline{\varphi_+}}$ and $H_{\varphi_-}$.
 
+
+\subsection{Relation between $H_\varphi$ and $\Gamma_\varphi$}
+One can compute that $H_\psi$ has matrix representation $\{\psi(-j-k)\}_{j\geq 0,k > 0}$.
+
+Hence it is equivalent to study $H_\psi$ and $\Gamma_\varphi$, where $\varphi \in H^1(\Circ)$
+and
+\begin{equation}
+    \hat{\varphi}(n) = \hat{\psi}(-n).
+\end{equation}
+Hence,
+\begin{equation}
+    \varphi = A-\sum_{n\geq 0} \hat{\psi}(-n)z^n
+\end{equation}
+where the $A$- means that this is an Abel converging sum, see Appendix \ref{ClassicalHarmonicAnalysis}
+for details. This means that for $\zeta \in \Circ$, $\varphi(\zeta) = (\Proj_- \psi)(\zeta^{-1})$.
 
 \subsection{Bounded Quantised Differentials}
 The weakest condition that we can place on an operator is that it be bounded.
@@ -85,24 +102,13 @@ justified by the following proposition:
 
 
 \subsection{Trace Class Quantised Differentials}
-There is an alternative characterisation of Besov
-classes on the circle, which we refer to here. 
-\begin{proposition}
-    Let $\zeta,\tau \in \Circ$. For a function
-    $f:\Circ\to\Cplx$, define
-    \begin{equation}
-        \Delta_\tau f(\zeta) = f(\tau\zeta)-f(\zeta).
-    \end{equation}
-    Then, let $s > 0$, $p,q \in [1,\infty]$ and $n$ be an integer $n > s$,
-    \begin{equation}
-        B_{pq}^s = \left\{f \in L^p\;:\;\int_\Circ \frac{\|\Delta^n_\tau f\|_p^q}{|1-\tau|^{1+sq}}\;d\ha(\tau) < \infty\right\}
-    \end{equation}
-\end{proposition}
 
-To complete our description, we need the following:
+
+To determine which quantised differentials are trace class, we need
+the following:
 \begin{lemma}
-    Let $\varphi \in L^1(\Circ)$. Then $\varphi \in K(B_{11}^1,\VMO)_{\theta,q}$ if and only
-    if $\overline{\varphi_+},\varphi_- \in K(B_{11}^1,\VMO)_{\theta,q}$.
+    Let $\varphi \in L^1(\Circ)$. Then $\varphi \in K(B_{11}^1(\Circ),\VMO(\Circ))_{\theta,q}$ if and only
+    if $\overline{\varphi_+},\varphi_- \in K(B_{11}^1(\Circ),\VMO(\Circ))_{\theta,q}$.
 \end{lemma}
 \begin{proof}
     
@@ -134,9 +140,9 @@ about quantised differentials on $\Circ$ to differentials on $\Rl$.
 
 The chief importance of the $\BMO$ spaces in harmonic analysis
 lies in their conformal invariance. This is clarified in the following proposition,
-
+proved in \cite[Cor 1.3, p.129]{Garnett},
 \begin{proposition}
-
+    We have $\varphi \in \BMO(\Circ)$ if and only if $\varphi \circ \omega^{-1} \in \BMO(\Rl)$.
 \end{proposition}
 
 \begin{proposition}

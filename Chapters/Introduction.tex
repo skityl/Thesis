@@ -28,7 +28,8 @@ Another example is that $f$ was said to be differentiable when the quantity
 \begin{equation}
     \frac{df}{dx} := \frac{f(x+h)-f(x)}{h}
 \end{equation}
-exists for all infinitesimals $h$, and does not depend on $h$.
+exists for all infinitesimals $h$, and is constant in $h$ if one ignores
+sufficiently small infinitesimals.
 
 Mathematicians distinguished between infinitesimals of different ``sizes", 
 and if $x$ is infinitesimal, then $x^2$ was said to be smaller than $x$,
@@ -227,7 +228,7 @@ differentials $\qd f := [F,M_f]$.
     We have chosen to call the quantity $[F,M_f]$
     a quantised differential, and to denote it $\qd f$. 
     
-    This terminology is not universal. In particular, the book \cite{Connes94}
+    This terminology is not universal. In particular, the book \cite[Ch. 4]{Connes94}
     calls $[F,M_f]$ a quantised derivative and denotes it $df$. 
     
     We shall use the notation $\qd f$ to prevent confusion with the exterior
@@ -435,5 +436,14 @@ as a pair $(\A,\Hilb)$, just as a quantum mechanical system.
 The elements of $\A$ are ``coordinate functions", and their
 action on the elements of $\Hilb$ quantifies how the ``geometry"
 changes under observation.
+
+We approach the problem of definining
+infinitesimals in a modern sense with this point of view in mind.
+That is, we are committed to viewing all objects of interest as being operators
+on a Hilbert space. The study of functions of one variable can be thought
+of as a study of operators on the Hilbert space $L^2(\Rl)$. We therefore
+seek ``generalised functions" as being operators on $L^2(\Rl)$. This motivates
+our definition of $\qd f$ as an operator. For chapters \ref{QuantisedDifferentialsOnRandT}-\ref{IdealMembership} we shall simply take this definition as given. In chapter \ref{AbstractDifferentialAlgebra}
+we will return to the problem of the origin of the quantised differential.
 
 
