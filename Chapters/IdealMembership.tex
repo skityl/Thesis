@@ -43,6 +43,7 @@ The weakest condition that we can place on an operator is that it be bounded.
 The Nehari theorem \ref{nehari} gives us necessary and sufficient conditions
 for a quantised differential to be bounded.
 \begin{proposition}
+    \label{boundedDifferentials}
     Let $\varphi \in L^1(\Circ)$. Then $\qd \varphi$ defines a bounded
     linear operator on $L^2(\Circ)$ if and only if $\varphi \in \BMO(\Circ)$.
 \end{proposition}
@@ -111,7 +112,27 @@ the following:
     if $\overline{\varphi_+},\varphi_- \in K(B_{11}^1(\Circ),\VMO(\Circ))_{\theta,q}$.
 \end{lemma}
 \begin{proof}
+    First we check that $K(B_{11}^1(\Circ),\VMO(\Circ)_{\theta,q}$
+    is closed under the conjugation map. 
+
+    Recall that for a Banach pair $(X_0,X_1)$ with norms $\|\cdot\|_0$ and $\|\cdot\|_1$ 
+    respectively,
+    the $K$-functional is
+    \begin{equation*}
+        K(x,t,X_0,X_1) = \inf\{\|x_0\|_0+t\|x_1\|_1\;:\; x_0 \in X_0,x_1 \in X_1,x = x_0+x_1\}.
+    \end{equation*}
+    Hence it is sufficient to check that $\|\varphi\|_{\VMO} = \|\overline{\varphi}\|_{\VMO}$
+    and $\|\varphi\|_{B_{11}^1} = \|\overline{\varphi}\|_{B_{11}^1}$.
     
+    We see that by proposition \ref{feffVMO}, $\VMO(\Circ)$
+    is the closure of the rational functions in the $\BMO(\Circ)$ norm. Since
+    the $\BMO(\Circ)$ norm is invariant under conjugation, as
+    discussed in the proof of proposition \ref{boundedDifferentials}, we
+    see that $\|\varphi\|_{\VMO} = \|\overline{\varphi}\|_{\VMO}$.
+    
+    So prove that $\|\varphi\|_{B_{11}^1} = \|\overline{\varphi}\|_{B_{11}^1}$
+    we simply observe the equivalent $B_{11}^1(\Circ)$ norm described in
+    proposition \ref{altBesov}.
 \end{proof}
     
 So we get the following:

@@ -11,7 +11,7 @@
 
 \section{Introduction}
 We now return to the discussion of the origin of quantised calculus. Non-commutative
-geometry, as described in Chapter \ref{Introduction}, is invisaged
+geometry, as described in Chapter \ref{Introduction}, is envisaged
 as the study of pairs $(\A,\Hilb)$, where $\A$ is an algebra
 of operators on a Hilbert space $\Hilb$.
 
@@ -68,7 +68,8 @@ spaces,
 \begin{equation*}
     H^p_{dR}(M) = \frac{\ker(d_{p})}{\im(d_{p-1})}
 \end{equation*}
-This is a sequence of real vector spaces, and their dimensions are topological
+This is a sequence of real vector spaces, and their dimensions, called
+Betti numbers, are well known to be topological
 invariants of $M$.
 
 The maps $d_p$ satisfy a graded version of Leibniz's rule, for $a \in \Omega^n(M)$
@@ -290,9 +291,9 @@ The definition of a general Dirac operator is given in Appendix \ref{Dirac}.
     $\D$ is a densely defined unbounded operator on $\Hilb$ satisfying the following
     two properties:
     \begin{enumerate}
-        \item{} $[\D,a]$ is densely defined and extends to a bounded operator in $\N$
+        \item{} $[\D,a]$ is densely defined and extends to a bounded operator
         for all $a \in \A$.
-        \item{} $(\lambda -\D)^{-1}$ is $\tau$-compact for all $\lambda \in \Cplx\setminus \Rl$.
+        \item{} $a(\lambda -\D)^{-1}$ is compact for all $a \in \A$ and $\lambda \in \Cplx\setminus \Rl$.
     \end{enumerate}
     
     A spectral triple $(\A,\Hilb,\D)$ can be either \emph{even} or \emph{odd}:
@@ -320,13 +321,13 @@ One may then na\"ively define the algebra of differential forms as $\pi(\Omega \
 but this does not work since there exists $a \in \Omega \A$ such that $\pi(a) = 0$
 but $\pi(da) \neq 0$. These are called ``junk forms" and we must factor them out to get
 a good differential algebra. Hence, define
-\begin{theorem}
+\begin{definition}
     Let $J_0$ be the graded ideal of $\Omega \A$ defined by 
     \begin{equation*}
         J_0^{(p)} = \{a \in \Omega^p(\A) \;:\; \pi(a) = 0\}
     \end{equation*}
     And define $J^{(p)} = J_0^{(p)} + dJ_0^{(p)}$. Then $J = \bigoplus_p J^{(p)}$.
-\end{theorem}
+
 
 Now we can define the algebra of Connes' forms,
 \begin{equation*}
@@ -338,7 +339,7 @@ space of $p$-forms being $\Omega^p_\D \A = \Omega^p(\A)/J^{(p)}$.
 
 Since $J$ is a differential ideal, the operator $d$ on $\Omega \A$
 extends to $\Omega_\D \A$.  
-
+\end{definition}
 
 \begin{definition}[Quantum Differentiability]
     A spectral triple $(\A,\Hilb,\D)$ is called $QC^k$ for $k \geq 0$
