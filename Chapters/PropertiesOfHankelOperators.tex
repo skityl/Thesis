@@ -14,7 +14,7 @@ A Hankel matrix is an infinite matrix $\{M_{j,k}\}_{j,k \geq 0}$
 whose $(j,k)th$ entry depends only on $j+k$. If $a = \{a_j\}_{j\geq 0}$,
 Let $M_a = \{a_{j+k}\}_{j,k\geq 0}$ be the Hankel matrix with $(j,k)$th
 entry $a_{j+k}$. That is,
-\begin{equation*}
+\begin{equation}
     M_a = \begin{pmatrix}
         a_0 & a_1 & a_2 & a_3 & \cdots\\
         a_1 & a_2 & a_3 & a_4 & \cdots\\
@@ -22,7 +22,7 @@ entry $a_{j+k}$. That is,
         a_3 & a_4 & a_5 & a_6 & \cdots\\
         \vdots & \vdots & \vdots & \vdots & \ddots
     \end{pmatrix}.
-\end{equation*}
+\end{equation}
 An infinite matrix does not necessarily define an operator on $\ell^2(\Ntrl)$, 
 however any infinite matrix can be identified with a linear operator 
 on the dense subset $c_{00}(\Ntrl) \subset \ell^2(\Ntrl)$ of sequences
@@ -57,6 +57,10 @@ The main goal of this chapter is to determine sufficient conditions on $\{a_n\}_
 such that the infinite matrix $\{a_{j+k}\}_{j,k\geq 0}$ defines an operator
 on $\ell^2(\Ntrl)$ that is $\mathcal{L}^{p,q}$.
 
+The presentation here is based on the book \emph{Hankel Operators
+and their Applications}, by V.V. Peller, \cite{peller}, but we will only prove the results
+necessary for a basic introduction to quantised calculus.
+
 
 See Appendix \ref{ClassicalHarmonicAnalysis} for the elementary properties of the Fourier transform. 
 
@@ -72,14 +76,14 @@ and $c_{00}(\Itgr)$, and $P_A(\Circ)$ and $c_{00}(\Ntrl)$.
 It if of interest to determine when a Hankel operator defines
 a bounded linear operator on $\ell^2(\Ntrl)$. This is answered completely by the
 \emph{Nehari theorem}, which we cover now.
-\begin{theorem}
+\begin{theorem}[Nehari]
 \label{nehari}
     Let $a = \{a_j\}_{j=0}^\infty$ be a sequence. Then the 
     associated Hankel matrix $M_a$ defines a bounded linear operator on $\ell^2(\Ntrl)$
     if and only if there exists $\psi \in L^\infty(\Circ,\ha)$ such that
-    \begin{equation*}
+    \begin{equation}
         \hat{\psi}(m) = a_m
-    \end{equation*}
+    \end{equation}
     for $m \geq 0$.
 \end{theorem}
 \begin{proof}
@@ -92,60 +96,60 @@ a bounded linear operator on $\ell^2(\Ntrl)$. This is answered completely by the
     Let $q = fg$.
     
     Then we compute,
-    \begin{align*}
+    \begin{align}
         (\hat{h},M_a\hat{f}) &= \sum_{j,k \geq 0} \overline{\hat{h}(j)}a_{j+k}\hat{f}(k)\\
         &= \sum_{j,k\geq 0} \overline{\hat{h}(j)}\hat{\psi}(j+k)\hat{f}(k)\\
         &= \sum_{j \geq 0} \hat{\psi}(j) \sum_{k=0}^j \hat{g}(j)\hat{f}(j-k)\\
         &= \sum_{j \geq 0} \hat{\psi}(j) \hat{q}(j)\\
         &= \int_\Circ \psi(\zeta) q(\overline{\zeta}) \;d\ha(\zeta).
-    \end{align*}
+    \end{align}
     Hence,
-    \begin{align*}
+    \begin{align}
         |(\hat{h},M_a\hat{f})| &\leq \|\psi\|_{\infty} \|q\|_1\\
                                &\leq \|\psi\|_\infty \|f\|_2 \|h\|_2\\
                                &= \|\psi\|_\infty \|\hat{f}\|_2\|\hat{h}\|_2.
-    \end{align*}
+    \end{align}
     And thus $M_a$ is bounded on $\ell^2(\Ntrl)$.
     
     Conversely, suppose that $M_a$ is bounded on $\ell^2(\Ntrl)$. 
     
     Let $\mathcal{L}$ be the linear functional on $P(\Circ)$ defined by
-    \begin{equation*}
+    \begin{equation}
         \mathcal{L}(q) := \sum_{n\geq 0} a_n \hat{q}(n).
-    \end{equation*}
+    \end{equation}
     If $a \in \ell^1(\Ntrl)$, then $\mathcal{L}$ is bounded on $H^1(\Circ)$,
-    since the inverse fourier transform of $a$ is in $L^\infty(\Circ)$. 
+    since the inverse Fourier transform of $a$ is in $L^\infty(\Circ)$. 
     Now let us prove in this case that $\|\mathcal{L}\| \leq \|M_a\|$. 
     
     Let $q \in H^1(\Circ)$, with $\|q\|_1 \leq 1$. Then $q = fg$
     for some $f,g \in H^2(\Circ)$ with $\|f\|_2,\|g\|_2 \leq 1$. 
     
     Then we can compute,
-    \begin{align*} 
+    \begin{align} 
         |\mathcal{L}(q)| &= \left|\sum_{n=0}^\infty a_n \sum_{m=0}^n \hat{f}(m)\hat{g}(n-m)\right|\\
         &= \sum_{n,m\geq 0} a_{n+m} \hat{f}(n) \hat{g}(m)\\
         &= (M_a \hat{f},\overline{\hat{g}}). 
-    \end{align*}
+    \end{align}
     And hence,
-    \begin{equation*}
+    \begin{equation}
         |\mathcal{L}(q)| \leq \|M_a\|\|f\|_2\|g\|_2 \leq \|M_a\|.
-    \end{equation*}
+    \end{equation}
     So $\mathcal{L}(q)$ is bounded on $H^1(\Circ)$ whenever $a \in \ell^1(\Ntrl)$. 
     
     Now we consider $a$ to be an arbitrary sequence such that $M_a$ is bounded. Let $r \in (0,1)$
     and
-    \begin{equation*}
+    \begin{equation}
         a^{(r)} = \{r^ja_j\}_{j\geq 0}.
-    \end{equation*}
+    \end{equation}
     Then $a^{(r)} \in \ell^1(\Ntrl)$,
     
     Now we can see that $M_{a^{(r)}} = D_r M_a D_r$, where $D_r$
     is multiplication by the sequence $\{r^j\}_{j\geq 0}$. Since $\|D_r\| \leq 1$, 
     we must have $\|M_{a^{(r)}}\| \leq \|M_a\|$. Since $a^{(r)} \in \ell^1(\Ntrl)$, 
     we have that the linear functional
-    \begin{equation*}
+    \begin{equation}
         \mathcal{L}_r(q) := \sum_{n=0}^\infty a_nr^n \hat{q}(n)
-    \end{equation*}
+    \end{equation}
     is bounded on $H^1(\Circ)$, and the functionals $\{\mathcal{L}_r\}_{r \in (0,1)}$
     converge strongly to $\mathcal{L}$, and are uniformly bounded. Hence $\mathcal{L}$
     is continuous on $H^1(\Circ)$. 
@@ -160,33 +164,35 @@ a bounded linear operator on $\ell^2(\Ntrl)$. This is answered completely by the
 
 The key idea of this theorem is that it relates the sequence defining
 a Hankel operator with a function on $\Circ$. We can state this in a slightly more
-elegant way using the following result of Fefferman, which can be found in \cite{Garnett},
+elegant way using the following result of Fefferman; which
+can be found in  the book \emph{Bounded Analytic functions} \cite[Cor 4.5, p.240]{Garnett};
 \begin{proposition}
     The space $\BMO(\Circ)$ is defined as the set of measurable
     functions $f$ on $\Circ$ (modulo almost-everywhere equivalence) such that
-    \begin{equation*}
+    \begin{equation}
         \sup_I \int_I \frac{1}{\ha(I)}\left|f-\frac{1}{\ha(I)}\int_I f\;d\ha\right|\;d\ha < \infty
-    \end{equation*}
+    \end{equation}
     where $I$ is taken over all arcs in $\Circ$.
     
     $\BMO(\Circ)$ is a Banach space when equipped with the norm,
-    \begin{equation*}
+    \begin{equation}
         \|f\|_{\BMO(\Circ)} = \sup_I \frac{1}{\ha(I)}\int_I \left|f-\frac{1}{\ha(I)}\int_I f\;d\ha\right|\;d\ha + |\hat{f}(0)|
-    \end{equation*}
+    \end{equation}
     
     Then 
-    \begin{equation*}
+    \begin{equation}
         \BMO(\Circ) = L^\infty(\Circ)+\Proj_+L^\infty(\Circ) = \{f+\Proj_+g\;:\;f,g \in L^\infty(\Circ)\}.
-    \end{equation*}
+    \end{equation}
 \end{proposition}
 
 Using this description of $\BMO(\Circ)$, we can prove the following,
+which is an equivalent statement of the Nehari theorem, \ref{nehari}.
 \begin{corollary}
     Let $a = \{a_j\}_{j=0}^\infty$ be a sequence. Then $M_a$ defines
     a bounded operator on $\ell^2(\Ntrl)$ if and only if
-    \begin{equation*}
+    \begin{equation}
         \varphi := \sum_{n=0}^\infty a_n z^n \in \BMO(\Circ)\cap H^1(\Circ).
-    \end{equation*}
+    \end{equation}
 \end{corollary}
 \begin{proof}
     By theorem \ref{nehari}, $M_a$ is bounded if and only if $\varphi = \Proj_+\psi$
@@ -200,7 +206,7 @@ Using this description of $\BMO(\Circ)$, we can prove the following,
 
 From now on, we are no longer interested in Hankel matrices $M_a$ defined by an arbitrary
 sequence $a$, we are only interested in those matrices $M_a$ such that $a$
-arises from the fourier transform of a function. 
+arises from the Fourier transform of a function. 
 \begin{definition}
     Let $\varphi \in H^1(\Circ)$. Let $\Gamma_\varphi$
     be the Hankel matrix with $(i,j)$th entry $\hat{\varphi}(i+j)$.
@@ -239,18 +245,15 @@ and $q \in (0,\infty]$.
 More detailed results are proved in the book by V.V. Peller, \cite{Peller2003},
 where both the necessity and sufficiency of all the results in the above table are proved.
 
-The presentation here is based on Peller's, but we will only prove the results
-necessary for a basic introduction to quantised calculus.
-
 \section{Finite Rank Hankel operators}
 The strongest condition that we can put on a Hankel matrix $\Gamma_\varphi$
 is that it is a finite rank operator on $\ell^2(\Ntrl)$. The problem
 of determining $\varphi$ such that $\Gamma_\varphi$ is finite rank
 was solved by Kronecker, as follows.
-\begin{theorem}
+\begin{theorem}[Kronecker]
 \label{kronecker}
     Let $\varphi \in H^1(\Circ)$, and $\Gamma_\varphi$ be the associated Hankel
-    matrix. Then $\Gamma_\varphi$ defines a bounded operator on $\ell^2(\Ntrl)$
+    matrix. Then $\Gamma_\varphi$ defines a finite rank operator on $\ell^2(\Ntrl)$
     if and only if $\varphi$ is a rational function.
 \end{theorem}
 \begin{proof}
@@ -262,63 +265,66 @@ was solved by Kronecker, as follows.
     
     Hence there exist complex scalars $\{c_0,c_1,\ldots,c_n\}$ not all
     equal to zero such that
-    \begin{equation*}
+    \begin{equation}
         c_0a+c_1Ba+\cdots+c_nB^na = 0.
-    \end{equation*}
+    \end{equation}
     Now let $n,k \geq 0$. It is elementary that
-    \begin{equation*}
+    \begin{equation}
         F^n B^k a = F^{n-k}a-F^{n-k}(a_0,a_1,\ldots,a_{k-1},0,0,\ldots).
-    \end{equation*}
+    \end{equation}
     So hence we have,
-    \begin{align*}
+    \begin{align}
         0 &= F^n\sum_{k=0}^n c_k B^ka \\
           &= \sum_{k=0}^n c_kF^n B^ka\\
           &= \sum_{k=0}^n c_kF^{n-k}a - p
-    \end{align*}
+    \end{align}
     where $p$ is a finitely supported sequence. 
     
     Let $q = (c_n,c_{n-1},\ldots,c_0,0,0,\ldots)$. Then we have,
-    \begin{equation*}
+    \begin{equation}
         0 = q * a - p.
-    \end{equation*}
-    Where the $*$ is convolution. Therefore, if we take the inverse fourier transform,
-    \begin{equation*}
+    \end{equation}
+    Where the $*$ is convolution. Therefore, if we take the inverse Fourier transform,
+    denotes $\check{a} = \sum_{n\geq 0} a_n z^n$ and $\check{p} = \sum_{n\geq 0} p_n z^n$,
+    (the operation $s \mapsto \check{s}$ being the inverse Fourier transform), we
+    get,
+    \begin{equation}
         \varphi\check{a} = \check{p}.
-    \end{equation*}
+    \end{equation}
     And hence $\varphi$ is a quotient of two polynomials.
     
     Conversely, suppose that $\varphi$ is a rational function. Suppose
     that $\varphi = p/q$, where $p,q \in P(\Circ)$. 
     Let $n = \max\{\deg p,\deg q\}$.
     If 
-    \begin{equation*}
+    \begin{equation}
         q = \sum_{k=0}^n c_{n-k}z^k
-    \end{equation*}
+    \end{equation}
     then since $\varphi q = p$, we have
-    \begin{equation*}
+    \begin{equation}
         \sum_{k=0}^n c_k F^{n-k} a = p.
-    \end{equation*}
+    \end{equation}
     Now multiply by $B^n$,
-    \begin{align*}
+    \begin{align}
         B^n\sum_{k=0}^n  c_k F^{n-k} a &= \sum_{k=0}^n c_k B^k a\\
         &= 0.
-    \end{align*}
+    \end{align}
     
     Let $m \leq n$ be the largest number for which $c_m \neq 0$. Then $B^m a$
     is a linear combination of the $B^k a$ with $k \leq m-1$,
-    \begin{equation*}
+    \begin{equation}
         B^m a = \sum_{k=0}^{m-1} d_k B^k a
-    \end{equation*}
+    \end{equation}
     for some coefficients $d_k$. 
     
     We now proceed by induction to show that any row is a linear combination
     of the first $n$ rows. 
     
     Let $k > m$. Then we have,
-    \begin{align*}
+    \begin{align}
         B^k a &= B^{k-m} B^m a\\
         &= \sum_{j=0}^{m-1} d_j B^{k-m+1}a.
-    \end{align*}
+    \end{align}
     Since $k-m+j < k$, we have that the terms on the right hand side are
     linear combinations of the first $m$ rows by the inductive hypothesis.
     Hence $\rank(\Gamma_\varphi) \leq m$. 
@@ -331,17 +337,16 @@ on $\varphi$ such that $\Gamma_\varphi$ is compact.
 Our first result shows that Hankel matrices are continuous in their symbol.
 \begin{proposition}
     Let $\varphi \in L^\infty(\Circ)$, then
-    \begin{equation*}
+    \begin{equation}
         \|\Gamma_\varphi\| \leq \|\varphi\|_\infty.
-    \end{equation*}
-    and therefore if $\varphi \in C(\Circ)$, then $\Gamma_\varphi$ is compact.
+    \end{equation}
 \end{proposition}
 \begin{proof}
     It was shown in the proof of theorem \ref{nehari} that if $g,f$ are sequences
     of finite support, then
-    \begin{equation*}
+    \begin{equation}
         |(g,\Gamma_\varphi f)| \leq \|\varphi\|_\infty \|g\|_2\|f\|_2.
-    \end{equation*}
+    \end{equation}
     Hence $\|\Gamma_\varphi\| \leq \|\varphi\|_\infty$.
 \end{proof}
 
@@ -350,8 +355,14 @@ Our first result shows that Hankel matrices are continuous in their symbol.
     If $\varphi \in C(\Circ)$, then $\Gamma_\varphi$ is compact.
 \end{corollary}
 \begin{proof}
-    Since $\Gamma_\varphi$ is finite rank for $\varphi$ a polynomial,
-    and $\|\Gamma_\varphi\| \leq \|\varphi\|_\infty$, the result follows.
+    Note that $\Gamma_\varphi$ is finite rank for $\varphi$ a polynomial,
+    and polynomials are dense in $C(\Circ)$ with the $\|\cdot\|_\infty$
+    norm. Since we have $\|\Gamma_\varphi\| \leq \|\varphi\|_\infty$,
+    the map $\varphi \mapsto \Gamma_\varphi$ is continuous
+    from $C(\Circ)$ to $\mathcal{B}(\ell^2(\Ntrl))$. Since
+    the closure of the finite rank operators in $\mathcal{B}(\Hilb)$
+    is the set of compact operators, we conclude that for
+    $\varphi \in C(\Circ)$, $\Gamma_\varphi$ is compact.
 \end{proof} 
 
 To complete our characterisation of compact Hankel operators, we require
@@ -360,18 +371,18 @@ the following result of Fefferman, found in \cite{Garnett}:
 \label{feffVMO}
     The class $\VMO(\Circ)$ is the set of measurable functions $f:\Circ\rightarrow\Cplx$
     such that
-    \begin{equation*}
+    \begin{equation}
         \lim_{\ha(I)\rightarrow0} \frac{1}{\ha(I)}\int_I \left|f-\frac{1}{\ha(I)}\int_I f\;d\ha\right|\;d\ha = 0
-    \end{equation*}
+    \end{equation}
     where the limit is over all arcs $I \subseteq \Circ$. 
     
     $\VMO(\Circ)$ is alternatively viewed as the closure of the trigonometric
     polynomials in $\BMO(\Circ)$.
     
     It is a result of Fefferman \cite{Garnett} that,
-    \begin{equation*}
+    \begin{equation}
         \VMO(\Circ) = C(\Circ)+\Proj_+C(\Circ).
-    \end{equation*}
+    \end{equation}
 \end{proposition}
 
 So we have the following:
@@ -379,9 +390,14 @@ So we have the following:
     Let $\varphi \in \VMO(\Circ)$. Then $\Gamma_\varphi$ is compact.
 \end{proposition}
 \begin{proof}
-    if $\varphi \in \VMO(\Circ)$, then by proposition \ref{feffVMO}, $\varphi = f+\Proj_+g$ for $f,g \in C(\Circ)$. Hence,
+    if $\varphi \in \VMO(\Circ)$, then by proposition \ref{feffVMO}, $\varphi = f+\Proj_+g$ 
+    for $f,g \in C(\Circ)$. Hence,
     $\Proj_+\varphi = \Proj_+(f+g)$. Hence, there exists $h \in C(\Circ)$
-    with $\Gamma_{\varphi} = \Gamma_h$, simply by choosing $h = f+g$. Hence by corollary \ref{ctsCmpt}, we see that $\Gamma_\varphi$
+    with $\Gamma_{\varphi} = \Gamma_h$, simply by choosing $h = f+g$. 
+    This is because $\Gamma_\varphi$ depends only on the Fourier coefficients
+    $\hat{\varphi}(n)$ for $n \geq 0$, so $\Gamma_{\varphi} = \Gamma_{\Proj_+\varphi}$.
+    
+    Hence by corollary \ref{ctsCmpt}, we see that $\Gamma_\varphi$
     is compact.
 \end{proof}
 
@@ -392,14 +408,14 @@ We recall the definition of the $\mathcal{L}^1$ norm on $\mathcal{B}(\Hilb)$,
 \begin{definition}
     Let $\Hilb$ be a separable Hilbert space, and let $T \in \mathcal{B}(\Hilb)$. 
     For a non-negative integer $n$, we define the $n$th singular value,
-    \begin{equation*}
+    \begin{equation}
         \mu_n(T) := \inf\{\|T-F\| \;:\;F \in \mathcal{B}(\Hilb),\rank(F) \leq n\}.
-    \end{equation*}
+    \end{equation}
     For $p \in (0,\infty)$, we define the $\mathcal{L}^p$ norm of $T$
     as
-    \begin{equation*}
+    \begin{equation}
         \|T\|_p = \left(\sum_{n=0}^\infty |\mu_n(T)|^p\right)^{1/p}
-    \end{equation*}
+    \end{equation}
     with the convention that $\|T\|_p = \infty$ if the sum does not
     converge. The space $\mathcal{L}^p$ is the set of $T \in \mathcal{B}(\Hilb)$
     such that $\|T\|_p < \infty$.
@@ -423,9 +439,9 @@ of Besov spaces can be found, but the one of most relevance to us is given below
     \label{besovDefinition}
     We define a sequence of polynomials $\{W_n\}_{n \in \Itgr} \subset P(\Circ)$ as follows.
     First,
-    \begin{equation*}
+    \begin{equation}
         W_0 = z^{-1}+1+z.
-    \end{equation*}
+    \end{equation}
     And now for $n > 0$, we define $W_n$ by asserting that $\widehat{W}(2^n) = 1$,
     $\widehat{W}(2^{n-1}) = 0$, $\widehat{W}(2^{n+1}) = 0$, and $\widehat{W}$
     is a linear increasing function between $2^{n-1}$ and $2^n$, and a
@@ -435,9 +451,9 @@ of Besov spaces can be found, but the one of most relevance to us is given below
     
     Now, for $p,q > 0$, and $s \geq 0$, we define the \emph{Besov class}
     $B_{pq}^s(\Circ)$ to be the space of distributions $f$ on $\Circ$ such that
-    \begin{equation*}
+    \begin{equation}
         \sum_{n\geq 0} 2^{nsq} \|W_n*f\|_{p}^q < \infty.
-    \end{equation*}  
+    \end{equation}  
     We shall denote $B_{pp}^s$ as $B_p^s$.
 \end{definition}
 
@@ -445,14 +461,14 @@ In particular, we are going to prove that if $\varphi \in B_1^1(\Circ)$, then
 $\Gamma_\varphi \in \mathcal{L}^1$. First, we need a lemma.
 \begin{lemma}
     Let $f \in P_A(\Circ)$ be an analytic polynomial of degree at most $m$. Then,
-    \begin{equation*}
+    \begin{equation}
         \|\Gamma_f\|_1 \leq (m+1)\|f\|_1.
-    \end{equation*}
+    \end{equation}
 \end{lemma}
 \begin{proof}
     Let $\zeta \in \Circ$, now define the following elements
     of $\ell^2(\Ntrl)$, 
-    \begin{align*}
+    \begin{align}
         x_\zeta(j) &= \begin{cases}
             \zeta^j,\;0 \leq j \leq m,\\
             0,\;j > m
@@ -461,7 +477,7 @@ $\Gamma_\varphi \in \mathcal{L}^1$. First, we need a lemma.
             f(\zeta)\zeta^{-k},\;0\leq k \leq m,\\
             0,\;k > m.
         \end{cases}
-    \end{align*}
+    \end{align}
     That is, $x_\zeta = (1,\zeta,\zeta^2,\ldots,\zeta^m,0,0,\ldots)$
     and $y_\zeta = f(\zeta)\overline{x_\zeta}$.
     
@@ -469,9 +485,9 @@ $\Gamma_\varphi \in \mathcal{L}^1$. First, we need a lemma.
     so that $\|A_\zeta\|_1 = \|x_\zeta\|_2\|y_\zeta\|2 = (m+1)|f(\zeta)|$
     
     Then we have a componentwise equality of infinite matrices,
-    \begin{equation*}
+    \begin{equation}
         \Gamma_f = \int_\Circ A_\zeta\;d\ha(\zeta).
-    \end{equation*}
+    \end{equation}
     Hence, $\|\Gamma_f\|_1 \leq (m+1)\|f\|_1$ by the triangle inequality.
 \end{proof}
 \begin{theorem}
@@ -479,17 +495,17 @@ $\Gamma_\varphi \in \mathcal{L}^1$. First, we need a lemma.
 \end{theorem}
 \begin{proof}
     We have the following $L^\infty$-convergent sequence,
-    \begin{equation*}
+    \begin{equation}
         \varphi = \sum_{n\geq 0} W_n*\varphi.
-    \end{equation*}
+    \end{equation}
     Hence,
-    \begin{equation*}
+    \begin{equation}
         \Gamma_\varphi = \sum_{n\geq 0} \Gamma_{W_n*\varphi}.
-    \end{equation*}
+    \end{equation}
     So since the degree of $W_n$ is $2^{n+1}$, we have
-    \begin{equation*}
+    \begin{equation}
         \|\Gamma_\varphi\|_1 \leq \sum_{n\geq 0} 2^{n+1}\|W_n*\varphi\|_1.
-    \end{equation*}
+    \end{equation}
 \end{proof}
 
 This proves the sufficiency of the condition $\varphi \in B_1^1$ so that $\Gamma_\varphi$
@@ -500,108 +516,108 @@ is trace class. The proof of the necessity of this condition is more difficult,
 \end{theorem}
 \begin{proof}
     Define a pair of sequences of polynomials $\{Q_n\}_{n=0}^\infty$ as follows,
-    \begin{equation*}
+    \begin{equation}
         \widehat{Q}_n(k) = \begin{cases}
             0, \;k \leq 2^{n-1}\\
             1-\frac{|k-2^n|}{2^{n-1}},\;2^{n-1}\leq k \leq 2^n+2^{n-1},\\
             0\;k \geq 2^n+2^{n-1}.
         \end{cases}
-    \end{equation*}
+    \end{equation}
     and a sequence $\{R_n\}_{n=0}^\infty$,
-    \begin{equation*}
+    \begin{equation}
         \widehat{R}_n(k) = \begin{cases}
                 0,\;k \leq 2^n\\
                 1-\frac{|k-2^n-2^{n-1}|}{2^{n-1}},\;2^{n}\leq 2^{n+1}\\
                 0,\;k \geq 2^{n+1}.
         \end{cases}
-    \end{equation*}
+    \end{equation}
     This is a decomposition of the sequence $\{W_n\}_{n=0}^\infty$, 
     given by $W_n = Q_n+\frac{1}{2}R_n$. 
     
     First we prove that
-    \begin{equation*}
+    \begin{equation}
         \sum_{n\geq 0} 2^{2n+1}\|Q_{2n+1}*\varphi\|_1 < \infty.
-    \end{equation*}
+    \end{equation}
     
     To this end, we wish to construct an operator $B$
     such that
-    \begin{equation*}
+    \begin{equation}
         \langle \Gamma_\varphi,B\rangle = \sum_{n\geq 0} 2^{2n} \|Q_{2n+1}*\varphi\|_1.
-    \end{equation*}
+    \end{equation}
     
     Now define the sequence of squares,
     for $n\geq 1$,
-    \begin{equation*}
+    \begin{equation}
         S_n = [2^{2n-1},2^{2n-1}+2^{2n}-1]\times [2^{2n-1}+1,2^{2n-1}+2^{2n}].
-    \end{equation*}
+    \end{equation}
     Note that this sequence is pairwise disjoint.
     
     Let $\{\psi_n\}_{n=0}^\infty$ be a sequence in $L^\infty(\Circ)$, yet to be
     defined with $\|\psi_n\|_{\infty} \leq 1$. Now we
     define the matrix $B = \{B_{j,k}\}_{j,k\geq 0}$ by
-    \begin{equation*}
+    \begin{equation}
         B_{j,k} = \begin{cases}
             \widehat{\psi}_n(j+k),(j,k) \in S_n,n\geq 1,\\
             0,(j,k) \notin \bigcup_{n\geq 1} S_n.
         \end{cases}
-    \end{equation*}
+    \end{equation}
     We wish to prove that $B$ is bounded, and in fact $\|B\|\leq 1$. 
     Let $\{e_n\}_{n\geq 0}$ be the standard basis for $\ell^2(\Ntrl)$,
     with $e_n(m) = \delta_{n,m}$. Define the subspaces
-    \begin{align*}
+    \begin{align}
         \Hilb_n &= \span\{e_j\;:\;2^{2n-1}\leq j \leq 2^{2n-1}+2^{2n}-1\},\\
         \Hilb_n' &= \span\{e_j\;:\;2^{2n-1}+1\leq j\leq 2^{2n-1}+2^{2n}\}.
-    \end{align*}
+    \end{align}
     Let $P_n$ and $P_n'$ be the orthogonal projection onto $\Hilb_n$ and $\Hilb_n'$
     respectively.
     So that
-    \begin{equation*}
+    \begin{equation}
         B = \sum_{n\geq 1} P_n'\Gamma_{\psi_n}P_n,
-    \end{equation*}
+    \end{equation}
     where $P_n$ and $P_n'$ are the orthogonal projections onto $\Hilb_n$
     and $\Hilb_n'$ respectively.
     
     Now since the spaces $\{\Hilb_n\}_{n\geq 1}$ are pairwise orthogonal,
     as are the spaces $\{\Hilb_n'\}_{n\geq 1}$, we have
-    \begin{align*}
+    \begin{align}
         \|B\| &\leq \sup_{n\geq 1} \|P_n'\Gamma_{\psi_n}P_n\|\\
          &\leq \sup_{n} \|\Gamma_{\psi_n}\|\\
          &\leq \sup_{n} \|\psi_n\|_\infty \\
          &\leq 1.
-    \end{align*}
+    \end{align}
     
     Now, we compute
-    \begin{align*}
+    \begin{align}
         \langle \Gamma_\varphi,B \rangle &= \sum_{n\geq 1} \langle \Gamma_\varphi,P_n'\Gamma_{\psi_n}P_n\rangle\\
         &= \sum_{n\geq 1} \sum_{j=2^{2n}}^{2^{2n}+2^{2n+1}}(2^{2n}-|j-2^{2n+1}|\overline{\widehat{\varphi}}(j)\widehat{\psi_n}(j)\\
         &= \sum_{n\geq 1} 2^{2n} (Q_{2n+1}*\varphi,\psi_n).
-    \end{align*}
+    \end{align}
     Now, using the sharpness of H\"older's inequality, we can choose
     a sequence $\{\psi_n\}_{n=0}^\infty$ so that $\langle Q_{2n+1}*\varphi,\psi_n\rangle$
     is arbitrarily close to $\|Q_{2n+1}*\varphi\|_1$. Hence,
-    \begin{equation*}
+    \begin{equation}
         \sum_{n\geq 1}2^{2n+1}\|Q_{2n+1}*\varphi\|_1 = 2\langle \Gamma_\varphi,B\rangle \leq 2\|\Gamma_\varphi\|_1.
-    \end{equation*}
+    \end{equation}
     In exactly the same way, we may prove that
-    \begin{equation*}
+    \begin{equation}
         \sum_{n\geq 1}2^{2n}\|Q_{2n}*\varphi\|_1 < \infty
-    \end{equation*} 
+    \end{equation} 
     that
-    \begin{equation*}
+    \begin{equation}
         \sum_{n\geq 0} 2^{2n+1} \|R_{2n+1}*\varphi\|_1 < \infty
-    \end{equation*}
+    \end{equation}
     and
-    \begin{equation*}
+    \begin{equation}
         \sum_{n\geq 1} 2^{2n}\|R_{2n}*\varphi\|_1 < \infty
-    \end{equation*}
+    \end{equation}
     and therefore that $\varphi \in B_1^1$.
 \end{proof} 
 
 \begin{remark}
     We thus conclude that
-    \begin{equation*}
+    \begin{equation}
         \frac{1}{6}\sum_{n\geq 1}2^n \|W_n*\varphi\|_1 \leq \|\Gamma_\varphi\|_1 \leq 2\sum_{n\geq 0} 2^n\|W_n*\varphi\|_1.
-    \end{equation*}
+    \end{equation}
 \end{remark}
 
 \section{Interpolation}
@@ -647,10 +663,11 @@ It turns out that there is indeed such a functor, the $K$ functor from real inte
 For a definition see Appendix \ref{Interpolation}. We can choose $F_{p,q} = K(\cdot,\cdot)_{\theta,q}$
 where $\theta = 1-p^{-1}$. This is due to the following result:
 \begin{proposition}
+\label{LpqInterp}
     Let $p \in (0,\infty)$ and $q \in (0,\infty]$. If $\theta = 1-p^{-1}$, then $K(\mathcal{L}^1,\mathcal{L}^\infty)_{\theta,q} = \mathcal{L}^{p,q}$.
 \end{proposition}
 \begin{proof}
-    The details of this interpolation result are included by in \cite{DDP92}.
+    The details of this interpolation result are included in \cite{DDP92}.
     
     The key estimate is as follows.
     Let $T \in \mathcal{L}^1+\mathcal{L}^\infty = \mathcal{L}^\infty$.
@@ -670,9 +687,9 @@ where $\theta = 1-p^{-1}$. This is due to the following result:
 %    Let $K$ be the real interpolation functor, described in \cite{interp}. 
 %    Let $p,q \in (0,\infty]$
 %    Then
-%    \begin{equation*}
+%    \begin{equation}
 %        K(\mathcal{L}^1,\mathcal{K})_{\theta,q} = \mathcal{L}_{p,q}.
-%    \end{equation*} 
+%    \end{equation} 
 %    for $p = (1-\theta)^{-1}$.
 %\end{lemma}
 
@@ -698,7 +715,7 @@ Macaev-Dixmier ideal $\M_{1,\infty}$ is described in detail Appendix \ref{Ideals
 
 Most important for our purposes is the equivalence of norms, proved in Theorem 4.5 of \cite{CRSS},
 \begin{equation}
-    \|x\|_{\M_{1,\infty}} = \sup_{s \in (0,1)} s\|x\|_{\mathcal{L}_{s+1}}.
+    \|x\|_{\M_{1,\infty}} = \limsup_{s \downarrow 0} s\|x\|_{\mathcal{L}_{s+1}}.
 \end{equation}
 
 First we need the following result, proved in the proof of \cite[Theorem 3.1,p.250]{Peller2003}.

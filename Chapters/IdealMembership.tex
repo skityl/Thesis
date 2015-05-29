@@ -36,7 +36,12 @@ Hence,
     \varphi = A-\sum_{n\geq 0} \hat{\psi}(-n)z^n
 \end{equation}
 where the $A$- means that this is an Abel converging sum, see Appendix \ref{ClassicalHarmonicAnalysis}
-for details. This means that for $\zeta \in \Circ$, $\varphi(\zeta) = (\Proj_- \psi)(\zeta^{-1})$.
+for details. Hence we have that $\varphi \in L^1(\Circ)$, with $\hat{\varphi(n)} = 0$
+for $n < 0$ and $\hat{\varphi(n)} = \hat{\psi}(-n)$ for $n\geq 0$.
+
+For $\zeta \in \Circ$, let $\tilde{\psi}(\zeta) = \psi(\zeta^{-1})$. 
+
+Thus, $\varphi = \Proj_+\tilde(\zeta)$.
 
 \subsection{Bounded Quantised Differentials}
 The weakest condition that we can place on an operator is that it be bounded.
@@ -108,11 +113,14 @@ justified by the following proposition:
 To determine which quantised differentials are trace class, we need
 the following:
 \begin{lemma}
+\label{Kinvariance}
     Let $\varphi \in L^1(\Circ)$. Then $\varphi \in K(B_{11}^1(\Circ),\VMO(\Circ))_{\theta,q}$ if and only
-    if $\overline{\varphi_+},\varphi_- \in K(B_{11}^1(\Circ),\VMO(\Circ))_{\theta,q}$.
+    if $\overline{\varphi_+},\varphi_- \in K(B_{11}^1(\Circ),\VMO(\Circ))_{\theta,q}$,
+    See Appendix \ref{Interpolation}, Definition \ref{Kdefinition} for details
+    on the $K$-method.
 \end{lemma}
 \begin{proof}
-    First we check that $K(B_{11}^1(\Circ),\VMO(\Circ)_{\theta,q}$
+    First we check that $K(B_{11}^1(\Circ),\VMO(\Circ))_{\theta,q}$
     is closed under the conjugation map. 
 
     Recall that for a Banach pair $(X_0,X_1)$ with norms $\|\cdot\|_0$ and $\|\cdot\|_1$ 
@@ -133,12 +141,45 @@ the following:
     So prove that $\|\varphi\|_{B_{11}^1} = \|\overline{\varphi}\|_{B_{11}^1}$
     we simply observe the equivalent $B_{11}^1(\Circ)$ norm described in
     proposition \ref{altBesov}.
+    
+    Now we must check that $\varphi \in K(B_{11}^1(\Circ),\VMO(\Circ))_{\theta,q}$
+    if and only if both $\varphi_+ := \Proj_+\varphi$ and $\varphi_- := \Proj_-\varphi$
+    are in $K(B_{11}^1(\Circ),\VMO(\Circ))_{\theta,q}$.
+    
+    To prove this, see that if $\varphi \in \VMO(\Circ)$,
+    then by proposition \ref{feffVMO}, there exist continuous
+    functions $f$ and $g$ such that $\varphi = f+\Proj_+g$. 
+    Hence $\Proj_+\varphi = \Proj_+(f+g) \in \VMO(\Circ)$.
+    Conversely, if $\varphi_+$ and $\varphi_-$ are in $\VMO(\Circ)$,
+    then $\varphi = \varphi_++\varphi_- \in \VMO(\Circ)$ simply
+    because $\VMO(\Circ)$ is closed under addition.
+    
+    Now we prove that $\varphi \in B_{11}^1(\Circ)$ if and only if both
+    $\varphi_+$ and $\varphi_-$ are in $B_{11}^1(\Circ)$. It is clear
+    that if $\varphi_+$ and $\varphi_-$ are in $B_{11}^1(\Circ)$ 
+    then $\varphi \in B_{11}^1(\Circ)$ since $B_{11}^1(\Circ)$ is a vector space.
+    
+    Recall that $\varphi \in B_{11}^1(\Circ)$ if and only if 
+    \begin{equation}
+        \sum_{n \geq 0} 2^n \|W_n*\varphi\|_1
+    \end{equation}
+    where the polynomials $W_n$ are defined in definition \ref{besovDefinition}.
+    
+    See that $W_n*(\Proj_+\varphi) = (\Proj_+W_n)*\varphi$....
 \end{proof}
     
 So we get the following:
 \begin{corollary}
-    Let $\varphi\in K(B_{11}^1,\VMO(\Circ))_{(1-p)^{-1},q}$. Then $\qd \varphi \in \mathcal{L}_{p,q}$. 
+    Let $\varphi\in K(B_{11}^1(\Circ),\VMO(\Circ))_{(1-p)^{-1},q}$. Then $\qd \varphi \in \mathcal{L}_{p,q}$. 
 \end{corollary}
+\begin{proof}
+    Since we have $\varphi \in K(B_{11}^1(\Circ),\VMO(\Circ))_{\theta,q}$, we
+    conclude that both $\overline{\varphi_+}$ and $\varphi_-$
+    are in $K(B_{11}^1(\Circ),\VMO(\Circ))_{\theta,q}$ by lemma \ref{Kinvariance}.
+    Thus by proposition \ref{LpqInterp}, we see that both $H_{\varphi_-}$
+    and $H_{\overline{\varphi_+}}$ are in $\mathcal{L}^{p,q}$.
+    Hence, $\qd \varphi \in \mathcal{L}^{p,q}$.
+\end{proof}
 
 \section{Quantised Differentials on $\Rl$}
 Using proposition \ref{cayley}, we can transfer our results
@@ -153,6 +194,8 @@ about quantised differentials on $\Circ$ to differentials on $\Rl$.
     \begin{equation}
         f_I := \frac{1}{\lambda(I)}\int_I f\;d\lambda.
     \end{equation}
+    (Recall that $\lambda$ denotes one dimensional Lebesgue measure).
+    
     The $\BMO(\Rl)$ semi-norm is
     \begin{equation}
         \|f\|_{\BMO(\Rl)} = \sup_{I} \frac{1}{\lambda(I)}\int_I |f-f_I|\;d\lambda.
@@ -167,10 +210,6 @@ proved in \cite[Cor 1.3, p.129]{Garnett},
 \end{proposition}
 
 \begin{proposition}
-    Let $\varphi \in L^\infty(\Rl)$. Then $\qd \varphi$
-    is bounded if and only if $\varphi \circ \omega^{-1} \in \BMO(\Circ)$.
-\end{proposition}
-\begin{proposition}
     Let $\varphi \in L^\infty(\Rl)$. Then $\qd \varphi$ is compact
     if and only if $\varphi \circ \omega^{-1} \in \VMO(\Circ)$.
     
@@ -179,9 +218,27 @@ proved in \cite[Cor 1.3, p.129]{Garnett},
     $\varphi = g\circ\omega + (\Proj_+f)\circ \omega$. 
 \end{proposition}
 
+
+In general, we can say the following:
 \begin{proposition}
-    Let $\varphi\in L^1(\Circ)$ be a function such that
+    Let $\mathcal{E} \subseteq \mathcal{B}(L^2(\Rl))$. 
+    The mapping in equation \ref{cayleyTransform} is a unitary
+    map from $L^2(\Rl)$ to $L^2(\Circ)$. For an operator
+    $E \in \mathcal{E}$, define $\mathcal{U}E = UEU^{-1} \in \mathcal{B}(L^2(\Circ))$.
     
-    $\varphi_+,\varphi_- \in K(B_{11}^1(\Circ),\VMO(\Circ)_{1-1/p,q}$. Then $\qd \varphi \in \mathcal{L}^{p,q}$.
+    Denote the imate of $\mathcal{E}$ under $\mathcal{U}$ as $\mathcal{E}_\Circ$.
+    
+    Suppose that $X \subseteq L^0(\Circ)$ is such that $f \in X$
+    implies that $\qd f \in \mathcal{E}_\Circ$.
+    
+    For a function
+    $\varphi \in \BMO(\Rl)$, we have that $\qd \varphi \in \mathcal{E}$
+    if $\varphi\circ \omega^{-1} \in X$.
 \end{proposition}
+\begin{proof}
+    This immediately follows from proposition \ref{cayley}, which states
+    that $\mathcal{U}\qd \varphi = \qd (\varphi \circ \omega^{-1})$.
+\end{proof}
+
+
 
