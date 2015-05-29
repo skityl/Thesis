@@ -1,10 +1,3 @@
 ~ To-do list ~
 
-- Include prove that du is not L^2
-- Make sure that the norms on besov spaces are actually equivalent, and add
-citation for it.
-- Add proof of Cor 4.5
-- Section 5.2, add reference for diff geom terms.
-- 7.6 - check to see if simply connected can be removed for a = a*
-- 3.17 - add precise reference
-- 3.21 - see Xiong's thesis for references.
+- Include proof that du is not L^2

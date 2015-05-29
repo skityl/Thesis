@@ -830,6 +830,12 @@ on a higher dimensional torus. We shall consider the two dimensional commutative
         S := \sum_{k\in\Itgr^2\setminus \{(0,0),(0,-1)\}} \left|\frac{k_1}{\sqrt{k_1^2+(k_2+1)^2}}-\frac{k_1}{\sqrt{k_1^2+k_2^2}}\right|^2 < \infty.
     \end{equation}
     
+    However by restricting to $k_1 = k_2 > 0$, we get
+    \begin{align}
+        S &> \sum_{k > 0} \left|\frac{k}{\sqrt{2k^2+k+1}}-\frac{k}{\sqrt{2}k}\right|^2\\
+          &= \sum_{k > 0} \frac{k^2}{2}\left(\frac{1}{2k^2+k+1}-\frac{2}{\sqrt{2k^2+k+1}}+1\right)
+    \end{align}
+    
 \end{proof}
 What this proposition demonstrates is that the results
 of Chapter \ref{IdealMembership} appear to have no analogue

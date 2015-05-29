@@ -161,11 +161,21 @@ the following:
     
     Recall that $\varphi \in B_{11}^1(\Circ)$ if and only if 
     \begin{equation}
-        \sum_{n \geq 0} 2^n \|W_n*\varphi\|_1
+        \sum_{n\in \Itgr} 2^{|n|} \|W_n*\varphi\|_1
     \end{equation}
     where the polynomials $W_n$ are defined in definition \ref{besovDefinition}.
     
-    See that $W_n*(\Proj_+\varphi) = (\Proj_+W_n)*\varphi$....
+    See that $W_n*(\Proj_+\varphi) = 0$ for $n < 0$, since $W_n$ is a polynomial
+    in negative powers of $z$ for $n > 0$. Also, for $n > 0$ we
+    have $W_n * (\Proj_+\varphi) = W_n*\varphi$ since $W_n$ is a polynomial
+    in positive powers of $z$ for $n > 0$.
+    Hence,
+    \begin{align}
+        \sum_{n\in \Itgr} 2^{|n|}\|W_n * (\Proj_+\varphi)\|_1 &= \sum_{n\geq 0} 2^{|n|} \|W_n*\varphi\|_1\\
+        &\leq \sum_{n \in \Itgr} 2^{|n|}\|W_n*\varphi\|_1.
+    \end{align}
+    Hence if $\varphi \in B_{11}^1(\Circ)$, we have that $\varphi_+ \in B_{11}^1(\Circ)$.
+    Since $\varphi_- = \varphi-\varphi_+$, we conclude also that $\varphi_- \in B_{11}^1(\Circ)$.
 \end{proof}
     
 So we get the following:
@@ -179,6 +189,18 @@ So we get the following:
     Thus by proposition \ref{LpqInterp}, we see that both $H_{\varphi_-}$
     and $H_{\overline{\varphi_+}}$ are in $\mathcal{L}^{p,q}$.
     Hence, $\qd \varphi \in \mathcal{L}^{p,q}$.
+\end{proof}
+
+\begin{proposition}
+    Let $\varphi \in L^1(\Circ)$ be such that $\limsup_{s\downarrow 1} s\|\varphi\|_{B_{s+1,s+1}^{1/(s+1)}}$
+    is finite, Then $\qd \varphi \in \mathcal{M}_{1,\infty}$.
+\end{proposition}
+\begin{proof}
+    From the proof of proposition \ref{Kinvariance}, we see that $\|\overline{\varphi_+}\|_{B_{s+1,s+1}^{1/(s+1)}} \leq \|\varphi\|_{B_{s+1,s+1}^{1/(s+1)}}$,
+    and similarly for $\varphi_-$.
+    
+    Hence, $H_{\varphi_-}$ and $H_{\overline{\varphi_+}}$ are in $\M_{1,\infty}$
+    by proposition \ref{macaevHankel}, and consequently $\qd \varphi \in \M_{1,\infty}$.
 \end{proof}
 
 \section{Quantised Differentials on $\Rl$}
@@ -226,7 +248,7 @@ In general, we can say the following:
     map from $L^2(\Rl)$ to $L^2(\Circ)$. For an operator
     $E \in \mathcal{E}$, define $\mathcal{U}E = UEU^{-1} \in \mathcal{B}(L^2(\Circ))$.
     
-    Denote the imate of $\mathcal{E}$ under $\mathcal{U}$ as $\mathcal{E}_\Circ$.
+    Denote the image of $\mathcal{E}$ under $\mathcal{U}$ as $\mathcal{E}_\Circ$.
     
     Suppose that $X \subseteq L^0(\Circ)$ is such that $f \in X$
     implies that $\qd f \in \mathcal{E}_\Circ$.

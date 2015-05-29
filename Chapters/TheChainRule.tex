@@ -11,7 +11,7 @@
 \section{Introduction}
 
  It is desirable
-to find a noncommutative generalisation of the chain rule. In classical analysis,
+to find a non-commutative generalisation of the chain rule. In classical analysis,
 as practiced by Newton and Leibniz, the chain rule could be stated as:
 \begin{equation}
 \label{classicalChainRule}
@@ -124,6 +124,7 @@ define symmetrically normed ideals of $\mathcal{B}(\Hilb)$.
 \end{proof}
 
 \begin{proposition}
+\label{holoChainRule}
     Let $(\A,\Hilb,\D)$ be an almost circular spectral triple with respect
     to the ideal $\mathcal{E}$. Let $a \in \A$,
     and let $\varphi$ be holomorphic on a simply connected neighbourhood of $\sigma(a)$.
@@ -139,6 +140,12 @@ define symmetrically normed ideals of $\mathcal{B}(\Hilb)$.
     uniformly on $\sigma(a)$, and $\{p_n'\}_{n=1}^\infty$ converges
     uniformly to $\varphi$. Thus the result follows.
 \end{proof}
+Our proposition \ref{holoChainRule} is inspired by Theorem 8b of Connes' 
+book \cite{Connes94}. Connes' proves this result for $(\A,\Hilb,\D) = (C^\infty(\Circ),L^2(\Circ),\D_\Circ)$.
+In that book, the equivalent of \ref{holoChainRule} is proved for $\varphi \in C^\infty(\sigma(a))$,
+and $a = a^*$. So our result is neither more or less general than Connes', but it
+applies in a more abstract situation of an almost circular spectral triple.
+
 
 %\begin{proposition}
 %    Let $(\A,\Hilb,\D)$ be a spectral triple as above. Let $a := (a_1,\ldots,a_n) \in \A^n$,

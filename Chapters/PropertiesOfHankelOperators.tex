@@ -484,7 +484,7 @@ $\Gamma_\varphi \in \mathcal{L}^1$. First, we need a lemma.
     Let $A_\zeta$ be the rank one operator, $A_\zeta(x) = (x_\zeta,x)y_\zeta$,
     so that $\|A_\zeta\|_1 = \|x_\zeta\|_2\|y_\zeta\|2 = (m+1)|f(\zeta)|$
     
-    Then we have a componentwise equality of infinite matrices,
+    Then we have a component-wise equality of infinite matrices,
     \begin{equation}
         \Gamma_f = \int_\Circ A_\zeta\;d\ha(\zeta).
     \end{equation}
@@ -667,6 +667,7 @@ where $\theta = 1-p^{-1}$. This is due to the following result:
     Let $p \in (0,\infty)$ and $q \in (0,\infty]$. If $\theta = 1-p^{-1}$, then $K(\mathcal{L}^1,\mathcal{L}^\infty)_{\theta,q} = \mathcal{L}^{p,q}$.
 \end{proposition}
 \begin{proof}
+    We include only a sketch proof.
     The details of this interpolation result are included in \cite{DDP92}.
     
     The key estimate is as follows.
@@ -715,11 +716,13 @@ Macaev-Dixmier ideal $\M_{1,\infty}$ is described in detail Appendix \ref{Ideals
 
 Most important for our purposes is the equivalence of norms, proved in Theorem 4.5 of \cite{CRSS},
 \begin{equation}
+\label{macaevEquiv}
     \|x\|_{\M_{1,\infty}} = \limsup_{s \downarrow 0} s\|x\|_{\mathcal{L}_{s+1}}.
 \end{equation}
 
 First we need the following result, proved in the proof of \cite[Theorem 3.1,p.250]{Peller2003}.
 \begin{proposition}
+\label{besovScattenEquiv}
     Let $\varphi \in H^1(\Circ)$, and let $p \in (1,2)$. Then there is a constant $C$
     not depending on $p$ such that
     \begin{equation}
@@ -730,9 +733,16 @@ First we need the following result, proved in the proof of \cite[Theorem 3.1,p.2
 
 Hence, we have
 \begin{proposition}
+\label{macaevHankel}
     Let $\varphi$ be a function on $\Circ$ such that $\limsup_{s \downarrow 0} s\|\varphi\|_{B_{s+1,s+1}^{1/(s+1)}} < \infty$.
-    Then $\qd \varphi \in \M_{1,\infty}$.
+    Then $\Gamma_\varphi \in \M_{1,\infty}$.
 \end{proposition}
+\begin{proof}
+    By Proposition \ref{besovScattenEquiv}, we see that
+    \begin{equation}
+        \|\Gamma_\varphi\|_{\M_{1,\infty}} = \limsup_{s\downarrow 0} s\|\Gamma_\varphi\|_{s+1} \leq \limsup_{s \downarrow 0} s\|\varphi\|_{B_{s+1,s+1}^{1/(s+1)}}.
+    \end{equation}
+\end{proof}
 
 
 There is an alternative characterisation of Besov
@@ -752,14 +762,14 @@ classes on the circle, which we refer to here,
 \end{proposition}
 A proof of this proposition can be found in [cite].
 
-This implies the following,
-\begin{proposition}
-    Let $\varphi \in H^1(\Circ)$ satisfy,
-    \begin{equation}
-        \limsup_{s\downarrow 0} s\int_{\Circ}\frac{\|\Delta^2_\tau \varphi\|_{s+1}^{s+1}}{|1-\tau|^2}\;d\ha(\tau) < \infty.
-    \end{equation}
-    Then $\Gamma_\varphi \in \M_{1,\infty}$.
-\end{proposition}
+%This implies the following,
+%\begin{proposition}
+%    Let $\varphi \in H^1(\Circ)$ satisfy,
+%    \begin{equation}
+%        \limsup_{s\downarrow 0} s\int_{\Circ}\frac{\|\Delta^2_\tau \varphi\|_{s+1}^{s+1}}{|1-\tau|^2}\;d\ha%(\tau) < \infty.
+%    \end{equation}
+%    Then $\Gamma_\varphi \in \M_{1,\infty}$.
+%\end{proposition}
 
 
 
