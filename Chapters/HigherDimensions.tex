@@ -656,6 +656,7 @@ We shall identify $u(n) \in \A_\lambda$ with the multiplication operator
 $M_{u(n)}f = u(n)f$ for $f \in L^2(\A_\lambda,\tau)$
 
 \section{Commutators}
+\label{commutators}
 Let $n \in \Itgr^d$. We are interested in $[F(D),u(n)]$. 
 
 Let $f \in L^2(\A_\lambda,\tau)$. 
@@ -771,7 +772,52 @@ is finite rank. In the case of functions on a higher dimensional
 torus, or more generally a non-commutative torus, there is no analogous
 result.
 
-To prove this ``no go" theorem, we must clarify the meaning of a quantised differential
+However, we can prove the following:
+\begin{proposition}
+\label{compactNCCommutators}
+    Let $a \in \A_\theta$, and let $F \in \ell^\infty(\Itgr^d)$ be such
+    that $\{F(k+n)-F(k)\}_{k \in \Itgr^d} \in c_0(\Itgr^d)$
+    for all $n$. Then $[F(D),a]$ is compact.
+\end{proposition}
+\begin{proof}
+    Since $F \in \ell^\infty(\Itgr^d)$, we conclude that $\|F(D)\| = \|F\|_\infty < \infty$,
+    so $\|[F(D),a]\| \leq 2\|F\|_\infty \|a\|$. 
+    
+    It was shown in section \ref{commutators} that 
+    \begin{equation}
+        [F(D),u(n)] = u(n)(F(n+D)-F(D)).
+    \end{equation} 
+    
+    We now define the operator $F_k(D)$ for $k \in \N$. Let
+    \begin{equation}
+        F_k(n) = \begin{cases}
+            F(n),\text{ if }\|n\| < k\\
+            0.\text{ otherwise.}
+        \end{cases} 
+    \end{equation}
+    Hence $F_k(n+D)-F_k(D)$ is a finite rank operator. 
+    
+    We have assumed that $\{F(n+k)-F(k)\}_{k \in \Itgr^d} \in c_0(\Itgr^d)$. Thus,
+    for every $\varepsilon > 0$, there is a $K > 0$ such that for $k > K$,
+    \begin{equation}
+        \|F(n+D)-F(D) - F_k(n+D)+F_k(D)\| < \varepsilon.
+    \end{equation}
+    Thus we have that $[F_k(D),u(n)]$ converges in the operator
+    norm to $[F(D),u(n)]$. But $[F_k(D),u(n)]$ is finite rank,
+    hence $[F(D),u(n)]$ is compact.
+    
+    Thus for any linear combination $a$ of the terms $\{u(n)\}_{n \in \Itgr^d}$,
+    we have that $[F(D),a]$ is compact. Since $\|[F(D),a]\| \leq 2\|F\|_\infty\|a\|$,
+    we have that the map $a\mapsto [F(D),a]$ is continuous. Hence,
+    for any $a$  in the norm closure of the set $\Span\{u(n)\}_{n \in \Itgr^d}$, 
+    $[F(D),a]$ is compact. However the norm closure of the set $\Span\{u(n)\}_{n \in \Itgr^d}$
+    is exactly $\A_\theta$.
+\end{proof} 
+
+To demonstrate that we do not have
+analogues for most
+of the results
+of chapter \ref{IdealMembership}, we must clarify the meaning of a quantised differential
 on a higher dimensional torus. We shall consider the two dimensional commutative case only.
 \begin{definition}
 \label{twoDirac}
@@ -809,12 +855,19 @@ on a higher dimensional torus. We shall consider the two dimensional commutative
     \end{align*}
     
     For $f \in L^1(\Circ^2)$, we have the potentially not everywhere defined
-    or bounded pointwise multiplication operator $M_f$. Define,
+    or bounded pointwise multiplication operator $1\otimes M_f$
+    on $\Cplx^2\otimes L^2(\Circ)$. Define,
     \begin{equation}
         \qd f := [\sgn(\D),M_f]
     \end{equation}    
     as the quantised differential on the two-torus.
 \end{definition}
+
+Note that for any $f \in C(\Circ^d)$, we have $\qd f$ is compact
+by proposition \ref{compactNCCommutators}.
+
+
+
 \begin{proposition}
     Let $v$ be the second coordinate function with quantised differential
     $\qd v$ as in definition \ref{twoDirac}. Then $\qd v \notin \mathcal{L}^2$.
@@ -836,6 +889,4 @@ of Chapter \ref{IdealMembership} appear to have no analogue
 in the two dimensional case: even for a function that is extremely smooth (such as
 $v$), the quantised differential ($\qd v$) does not lie even within
 the relatively large ideal $\mathcal{L}^2$. 
-the quantised differential of that function 
-
 
