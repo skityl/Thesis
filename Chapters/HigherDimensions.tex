@@ -719,6 +719,7 @@ So therefore
 So we have necessary and sufficient conditions for $[F(D),u(n)] \in \mathcal{L}^2$. 
 
 \section{Membership of $\mathcal{L}^p$}
+\label{LpConditions}
 We can see that since $F(D)$ and $F(n+D)$ are self adjoint, 
 \begin{equation}
     [F(D),u(n)]^* = (F(n+D)-F(D))u(n)^*
@@ -870,23 +871,33 @@ by proposition \ref{compactNCCommutators}.
 
 \begin{proposition}
     Let $v$ be the second coordinate function with quantised differential
-    $\qd v$ as in definition \ref{twoDirac}. Then $\qd v \notin \mathcal{L}^2$.
+    $\qd v$ as in definition \ref{twoDirac}. Then $\qd v \notin \mathcal{L}^1$.
 \end{proposition}
 \begin{proof}
     It is sufficient to look at the commutator,
     \begin{equation}
         \left[\frac{\D_1}{\sqrt{\D_1^2+\D_2^2}},M_v\right].
     \end{equation}
-    By \ref{HSConditions}, we have that this operator is $\mathcal{L}^2$
+    By \ref{LpConditions}, we have that this operator is $\mathcal{L}^1$
      only if
     \begin{equation}
-        S := \sum_{k\in\Itgr^2\setminus \{(0,0),(0,-1)\}} \left|\frac{k_1}{\sqrt{k_1^2+(k_2+1)^2}}-\frac{k_1}{\sqrt{k_1^2+k_2^2}}\right|^2 < \infty.
+        S := \sum_{(k_1,k_2)\in\Itgr^2\setminus \{(0,0),(0,-1)\}} \left|\frac{k_1}{\sqrt{k_1^2+(k_2+1)^2}}-\frac{k_1}{\sqrt{k_1^2+k_2^2}}\right| < \infty.
     \end{equation}
-    
+    We specialise this to $k_1,k_2 > 0$,
+    \begin{align}
+        S &> \sum_{k_1,k_2 > 0} \left|\frac{k_1}{\sqrt{k_1^2+(k_2+1)^2}}-\frac{k_1}{\sqrt{k_1^2+k_2^2}}\right|\\
+        &= \sum_{k_1 > 0}\sum_{k_2 > 0} \frac{k_1}{\sqrt{k_1^2+k_2^2}}-\frac{k_1}{k_1^2+(k_2+1)^2}. 
+    \end{align}
+    However the inner sum telescopes, so we have
+    \begin{align}
+        S &> \sum_{k_1 > 0} \frac{k_1}{\sqrt{k_1^2+1^2}}\\
+        &= \infty.
+    \end{align}
+    Hence $\qd v \notin \mathcal{L}^1$. 
 \end{proof}
 What this proposition demonstrates is that the results
 of Chapter \ref{IdealMembership} appear to have no analogue
 in the two dimensional case: even for a function that is extremely smooth (such as
 $v$), the quantised differential ($\qd v$) does not lie even within
-the relatively large ideal $\mathcal{L}^2$. 
+the relatively large ideal $\mathcal{L}^1$. 
 
