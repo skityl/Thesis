@@ -1,10 +1,10 @@
 % Chapter Template
 
-\chapter{Applications} % Main chapter title
+\chapter{An Application to Fractal Geometry} %Main chapter title
 
 \label{Applications} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
 
-\lhead{Chapter \ref{Applications}. \emph{Applications}} % Change X to a consecutive number; this is for the header on each page - perhaps a shortened title
+\lhead{Chapter \ref{Applications}. \emph{An Application to Fractal Geometry}} % Change X to a consecutive number; this is for the header on each page - perhaps a shortened title
 
 %----------------------------------------------------------------------------------------
 %	SECTION 1
@@ -16,7 +16,8 @@ with the aim of proving analogies of classical facts. It is natural
 to wonder whether there are any uses of quantised calculus. This
 chapter very briefly, and without proofs, states
 some results about the application of quantised calculus to the computation
-of integrals over Julia sets.
+of integrals over Julia sets. The following is based on the discussion 
+in Chapter 4 of \cite{Connes94}.
 
 \section{The Dixmier Trace}
 We have not yet discussed integration in quantised calculus. We give
@@ -29,15 +30,15 @@ detail, and the book \cite{SingularTraces} covers more technical topics.
     \begin{enumerate}
         \item{} $\|\omega\| \leq 1$.
         \item{} $\omega(a) \geq 0$ for $a \geq 0$.
-        \item{} $\omega$ is shift invariant: meaning that if $S(a_0,a_1,\ldots) = (a_1,a_2,\ldots)$
-        is the shift operator, then $\omega = \omega\circ S$.
+        \item{} $\omega$ is shift invariant: meaning that if $B(a_0,a_1,\ldots) = (a_1,a_2,\ldots)$
+        is the shift operator, then $\omega = \omega\circ B$.
     \end{enumerate}
 \end{definition}    
 
 The existence of extended limits is a consequence of the Hahn-Banach theorem,
 and is proved in \cite[Thm 6.2.5]{SingularTraces}. The use
 of extended limits is in the definition of a Dixmier trace.
-The following isproved in \cite[Ch. 2]{SingularTraces}.
+The following is proved in \cite[Ch. 2]{SingularTraces}.
 \begin{proposition}
     Let $\omega$ be an extended limit, and let $T > 0$ be an operator
     in $\M_{1,\infty}$. Define,
@@ -52,7 +53,7 @@ The following isproved in \cite[Ch. 2]{SingularTraces}.
 \begin{definition}
     Let $c \in \Cplx$, and let $\varphi_c(z) = z^2+c$. Define
     \begin{equation}
-        B := \{z \in \Cplx\;:\; \|\{\varphi^n(z)\}_{n \geq 0}\|_\infty < \infty\}.
+        B := \{z \in \Cplx\;:\; \|\{\varphi_c^n(z)\}_{n \geq 0}\|_\infty < \infty\}.
     \end{equation}
     Let $J$, the Julia set associated to $\varphi_c$, be the boundary of $B$,
     $J:= \partial B$.
@@ -60,19 +61,29 @@ The following isproved in \cite[Ch. 2]{SingularTraces}.
     When $c$ is small, it can be shown that $J$ is a Jordan curve
     whose complement has two connected components, an interior and exterior.
 \end{definition}
-\includegraphics[width=160mm]{Pictures/Julia_set.png}\\
-The above shows $J$ for $c = -1.12+0.222i$.
+    \includegraphics[width=140mm]{Figures/julia.png}\\
+
+The figure above shows $B$ for $c = -3/4$.
 The conformal mapping theorem states that there is a holomorphic
 bijection $Z$ between the open unit disc $\{z \in \Cplx\;:\;|z| < 1\}$
-and the interior of $B$. There is a result of Caratheodory
-which states that $Z$ extends to a continuous
+and the interior of $B$. Then Carath\'eodory's theorem
+ states that $Z$ extends to a continuous
 map from $\Circ$ to $J$. 
 
-The Hausdorff dimension of $J$, $p$, is known to be in $(0,1)$. Let
-$f:J\to\Cplx$. We consider the quantity
+The Hausdorff dimension of $J$, $p$, is known to be in $(1,2)$. Let
+$f:J\to\Cplx$ be continuous. We consider the quantity
 \begin{equation}
     \Tr_\omega(f(Z)|\qd Z|^p).
 \end{equation}
-It is argued by Connes in \cite{Connes94} that in fact this is a sensible
-means of integrating functions on $J$. Herein lies the utility
+
+
+Here we see an application of our results: The results of Chapter \ref{IdealMembership}
+allow us to determine which functions $\varphi$ have $\qd \varphi\in \M_{1,\infty}$,
+that is, in the domain of the Dixmier trace $\Tr_\omega$.
+
+Herein lies the utility
 of quantised calculus.
+It is argued by Connes in \cite{Connes94} that in fact this is a sensible
+means of integrating functions on $J$. In fact, $\Tr_\omega(f(Z)|\qd Z|^p)$
+is a rescaling of the Hausdorff measure on $J$.
+

@@ -1,0 +1,205 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><title>
+	Easy Fractal Generator - Image View
+</title><link rel="stylesheet" href="css/style.css" type="text/css" /></head>
+<body style="margin: 0px 0px 0px 0px; background-color: #111111; background-image: none">
+    <form method="post" action="Show-Fractal.aspx?image=pyijmklh.jpg&amp;data=jlnutusg.efgJulia&amp;type=Julia" id="form2">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJMTYzNzA2NzU4D2QWAgIDD2QWCAIBDw8WAh4HVmlzaWJsZWhkZAIFDw8WAh4ISW1hZ2VVcmwFG34vX1RlbXAvSW1hZ2VzL3B5aWpta2xoLmpwZ2RkAgsPDxYCHwBoZGQCDQ9kFgICAQ9kFgJmDw8WAh8AaGRkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYCBQdpbWdCYWNrBQhpbWdJbWFnZe23g+Wn9AWKhWdshSzjuOQxVeodPQaaVUifvVQ6I7ri" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAqncwqQOHRcHsAeGoGthmyATrO21NHfhP9EuVFWBWbrgTsIwFIDUX756r7t1lulzVGGfdja2P83hNAOdpm755VBozoJZpuXxkpOVJKRbHyuHgYetjG9iuzlcOWuPLP7BVQ85pbWlDO2hADfoPXD/5tdU5CzBtiIIVJM6XATG4rHNF9UQmMO6umxfnX1AFc6qWQn+lpbtU18QwCKL2ByhK/7t1syUvm6EfnKmdDATvdv/Ign955cbCCa1m9IhJI5IMg=" />
+</div>
+    
+<script language="javascript">
+    
+    function ShowHideAdd()
+    {
+        var ad = document.getElementById("topAd");
+        if (ad.style.display == "block")
+        {
+            ad.style.display = "none";
+        }
+        else
+        {
+            ad.style.display = "block";
+        }
+    }
+    
+</script>
+        
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td align="center" style="height: 91px; background-image: url(img/viewer_topbgLarge.gif)"
+                    valign="middle">
+                    <table style="text-align: center; margin: auto" border="0" cellpadding="0" cellspacing="0"
+                        width="100%">
+                        <tr>
+                            
+                            <td align="right" valign="middle" style="padding-right: 20px" >
+                                <input type="image" name="imgBack" id="imgBack" src="img/viewer_close.gif" alt="Back to Easy Fractal Generator" /></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table style="text-align: center; margin: auto" border="0" cellspacing="0" width="100%">
+                        <tr>
+                            <td align="center" style="padding-bottom: 10px; padding-top: 10px; height: 50px"
+                                valign="middle">
+                                <input type="image" name="imgImage" id="imgImage" src="_Temp/Images/pyijmklh.jpg" alt="Click to enlarge" style="max-width: 1024px" /></td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="padding-right:50px">
+                                <br />
+                                <input type="submit" name="btnSaveAs" value="Save image to PC" id="btnSaveAs" />
+                                <br />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="pnlUpload" style="width:100%;">
+	
+                                    <table border="0" cellpadding="2" cellspacing="0" width="500">
+                                        <tr>
+                                            <td align="left" class="style10">
+                                                <strong>You can upload your fractal by filling and submitting the form
+                                                    below:</strong>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left" class="style10" style="height: 13px">
+                                                Name:
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left">
+                                                <input name="txtName" type="text" id="txtName" class="ss" style="width:95%;" />&nbsp;
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left" class="style10" style="height: 13px">
+                                                Description:
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left">
+                                                <textarea name="txtDescription" rows="2" cols="20" id="txtDescription" class="ss" style="height:64px;width:95%;">
+</textarea>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td align="left">
+                                                <input type="submit" name="btnSubmit" value="Upload" id="btnSubmit" class="s" style="width:100px;" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                
+</div>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <br />
+                                <br />
+                                <br />
+                            </td>
+                        </tr>
+                        <tr >
+                            <td align="center">
+                                <div id="pnlPrintFractal" style="width:400px;">
+	
+                                    
+<table cellpadding="2" cellspacing="2" border="0" width="100%">
+    <tr>
+        <td style="color: Red">
+            <strong>Print your favorite fractal now and decorate your room
+            with Zazzle !</strong>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" name="ZazzlePrintOptions1$btnPrintPoster" value="Print a poster with this fractal !" id="ZazzlePrintOptions1_btnPrintPoster" />
+        </td>
+    </tr>
+    <tr>
+        <td style="color: Red; text-align: right">
+            * Powered by Zazzle *
+        </td>
+    </tr>
+    <tr>
+        <td style="color: #d7d7d7" align="left">
+                To customize the size of the poster, you should press <strong>Customize it</strong>
+                once you are in Zazzle            
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <br />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" name="ZazzlePrintOptions1$btnPrintMousePad" value="Make a mouse pad with this fractal !" id="ZazzlePrintOptions1_btnPrintMousePad" />
+        </td>
+    </tr>
+    <tr>
+        <td style="color: Red; text-align: right">
+            * Powered by Zazzle *
+        </td>
+    </tr>
+</table>
+<input name="ZazzlePrintOptions1$hiddenImagePath" type="hidden" id="ZazzlePrintOptions1_hiddenImagePath" value="/_Temp/Images/pyijmklh.jpg" />
+                                
+</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <br />
+                                <br />
+                                &nbsp;</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+                <td>
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td style="height: 25px; background-image: url(img/viewer_bottombg.gif)">
+                </td>
+            </tr>
+            <tr>
+                <td align="center" style="padding-right: 15px; padding-left: 15px; padding-bottom: 15px;
+                    padding-top: 15px" valign="top">
+                    <br />
+                </td>
+            </tr>
+        </table>
+        
+    </form>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12303006-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>    
+</body>
+</html>
