@@ -38,8 +38,9 @@ detail, and the book \cite{SingularTraces} covers more technical topics.
 The existence of extended limits is a consequence of the Hahn-Banach theorem,
 and is proved in \cite[Thm 6.2.5]{SingularTraces}. The use
 of extended limits is in the definition of a Dixmier trace.
-The following is proved in \cite[Ch. 2]{SingularTraces}.
+
 \begin{proposition}
+\label{dixmierLinear}
     Let $\omega$ be an extended limit, and let $T > 0$ be an operator
     in $\M_{1,\infty}$. Define,
     \begin{equation}
@@ -48,32 +49,37 @@ The following is proved in \cite[Ch. 2]{SingularTraces}.
     Then $\Tr_\omega$ is additive, and extends to a linear functional
     on all of $\M_{1,\infty}$. $\Tr_\omega$ is called a Dixmier trace.
 \end{proposition}
-
+Proposition \ref{dixmierLinear} is proved in \cite[Ch. 2]{SingularTraces}.
 \section{Julia Sets}
 \begin{definition}
-    Let $c \in \Cplx$, and let $\varphi_c(z) = z^2+c$. Define
+    Let $c \in \Cplx$, and let $\varphi(z) = z^2+c$. Define
     \begin{equation}
-        B := \{z \in \Cplx\;:\; \|\{\varphi_c^n(z)\}_{n \geq 0}\|_\infty < \infty\}.
+        B := \{z \in \Cplx\;:\; \sup_{n\geq 0}\{|\varphi^n(z)|\} < \infty\}.
     \end{equation}
-    Let $J$, the Julia set associated to $\varphi_c$, be the boundary of $B$,
-    $J:= \partial B$.
+    Let $J:= \partial B$. $J$ is called the Julia set associated
+    to $\varphi$.
     
     When $c$ is small, it can be shown that $J$ is a Jordan curve
-    whose complement has two connected components, an interior and exterior.
+    whose complement has two connected components, an interior and exterior [cite].
 \end{definition}
-    \includegraphics[width=140mm]{Figures/julia.png}\\
-
-The figure above shows $B$ for $c = -3/4$.
-The conformal mapping theorem states that there is a holomorphic
+\begin{figure}[h]
+    \includegraphics[width=140mm]{Figures/juliaAxes.png}
+\caption{$B$ for $c = -3/4$. \textcopyright \, \href{http://www.easyfractalgenerator.com/}{easyfractalgenerator.com}}
+\end{figure}
+The conformal mapping theorem [cite] states that there is a holomorphic
 bijection $Z$ between the open unit disc $\{z \in \Cplx\;:\;|z| < 1\}$
-and the interior of $B$. Then Carath\'eodory's theorem
+and the interior of $B$. Then Carath\'eodory's theorem [cite]
  states that $Z$ extends to a continuous
 map from $\Circ$ to $J$. 
 
-The Hausdorff dimension of $J$, $p$, is known to be in $(1,2)$. Let
-$f:J\to\Cplx$ be continuous. We consider the quantity
+Let $p$ be the Hausdorff dimension of $J$ [cite]. It is known that $p \in (1,2)$ [cite].
+
+There is a $p$-dimensional Hausdorff measure, $\Lambda_p$ on $J$ [cite].
+Let
+$f\in C_0(\Cplx)$ and let $\Tr_\omega$
+be a Dixmier trace. We consider the quantity
 \begin{equation}
-    \Tr_\omega(f(Z)|\qd Z|^p).
+    \Tr_\omega(M_{f(Z)}|\qd Z|^p).
 \end{equation}
 
 
@@ -83,7 +89,10 @@ that is, in the domain of the Dixmier trace $\Tr_\omega$.
 
 Herein lies the utility
 of quantised calculus.
-It is argued by Connes in \cite{Connes94} that in fact this is a sensible
-means of integrating functions on $J$. In fact, $\Tr_\omega(f(Z)|\qd Z|^p)$
-is a rescaling of the Hausdorff measure on $J$.
-
+It is proved by Connes in \cite[Ch. 4, Thm 17]{Connes94} that there is a non-zero constant $\lambda$,
+which does not depend on $f$, such that
+\begin{equation}
+    \Tr_\omega(M_{f(Z)}|\qd Z|^p) = \lambda \int_J f\;d\Lambda_p.
+\end{equation}
+Hence the quantised calculus provides a means of computing integrals
+with respect to Hausdorff measure on a Julia set.

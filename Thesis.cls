@@ -450,4 +450,5 @@
 \RequirePackage{cite}
 \RequirePackage[pdftex]{graphicx}
 \RequirePackage{epstopdf}
+\RequirePackage{float}
 
