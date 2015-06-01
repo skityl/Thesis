@@ -11,27 +11,56 @@
 We have explored the concept of a quantised derivatives on $\Circ$ and on $\Rl$.
 It is natural to consider generalisations to other spectral triples. 
 
-Of particular interest will be spectral triples that have some symmetries: expressed
-as a group action. 
+$\Rl$ and $\Circ$ are important as settings for analysis since they
+are spaces posessing some symmetry. In other words, there is a group
+action on $\Rl$ (namely, the action of $\Rl$ itself by translation)
+that is faithful and transitive. Similarly the group $\Circ$
+acts on itself by rotation.
 
-There is a beautiful and extraordinary generalisation of the Fourier
+We consider now more general non-commutative spaces with a group
+action. There is a beautiful and extraordinary generalisation of the Fourier
 transform in the theory of Von Neumann algebras relating
-to the action of compact groups. The purpose
-of these notes is to give a basic exposition of this idea.
+to the action of compact groups. In the next section, we explore this idea.
+
+For an introduction to the theory of Von Neumann algebras, see the book \cite{Sakai1971}.
 
 \section{Compact Group actions}
+
+First we recall the definition of the $\sigma$-weak topology.
+
+\begin{definition}
+    Let $\Hilb$ be a Hilbert space, and let $\{\xi_j\}_{j = 0}^\infty$
+    and $\{\eta_j\}_{j=0}^\infty$ be sequences of elements of $\Hilb$
+    such that 
+    \begin{align}
+        \sum_{j=0}^\infty \|\xi_j\|^2 &< \infty\\
+        \sum_{j=0}^\infty \|\eta_j\|^2 &< \infty.
+    \end{align}
+    Then for $a \in \mathcal{B}(\Hilb)$, define the semi-norm,
+    \begin{equation}
+        \left| \sum_{j=0}^\infty \langle \xi_j,a\eta_j\rangle\right|.
+    \end{equation}
+    This system of semi-norms defines the $\sigma$-weak topology
+    on $\mathcal{B}(\Hilb)$.
+\end{definition}
+
+
+
 Let $G$ be a compact abelian group equipped with normalised Haar
 measure $\mu$, and let $\M$ be a Von Neumann algebra.
 
 Recall that a group action on a Von Neumann algebra
 is a group action $\alpha:G\times \M\rightarrow \M$ such that
 for all $g \in G$ the function $a\mapsto \alpha(g,a)$ is an algebra
-homomorphism.
+homomorphism. We assert that all group actions
+are $\sigma$-weakly continuous, meaning that the map $g\mapsto \alpha(g,x)$
+is continuous from $G$ to $\M$ when $\M$ is equipped with the $\sigma$-weak
+topology.
 
 Suppose that $G$ acts on $M$ in a way that is
 \begin{enumerate}
     \item{} \emph{ergodic}: the only projections in $\M$
-    fixed by $G$ are $0$ and $1$ and
+    fixed by $G$ are $0$ and $1$.
     \item{} \emph{free}: there is no nontrivial projection $p \in \M$
     such that some $g \in G$ not equal to the identity fixes all of $p\M p$.
 \end{enumerate}
@@ -82,26 +111,7 @@ We then have the following result:
     So the system of unitaries is the set of monomials on $\Circ$. 
 \end{example}
 The important feature of this system of unitaries is that it spans
-$\M$. First we recall the definition of the $\sigma$-weak topology.
-
-\begin{definition}
-    Let $\Hilb$ be a Hilbert space, and let $\{\xi_j\}_{j = 0}^\infty$
-    and $\{\eta_j\}_{j=0}^\infty$ be sequences of elements of $\Hilb$
-    such that 
-    \begin{align}
-        \sum_{j=0}^\infty \|\xi_j\|^2 &< \infty\\
-        \sum_{j=0}^\infty \|\eta_j\|^2 &< \infty.
-    \end{align}
-    Then for $a \in \mathcal{B}(\Hilb)$, define the semi-norm,
-    \begin{equation}
-        \left| \sum_{j=0}^\infty \langle \xi_j,a\eta_j\rangle\right|.
-    \end{equation}
-    This system of semi-norms defines the $\sigma$-weak topology
-    on $\mathcal{B}(\Hilb)$.
-\end{definition}
-
-
-
+$\M$. 
 \begin{proposition}
 \label{densePolynomials}
     Let $G$ be a compact abelian group acting freely and ergodically 
@@ -133,16 +143,20 @@ and $\tau$ is invariant under the action of $G$, that is for
 all $g \in G$ and $x \in \M$ we have $\tau(\alpha(g,x)) = \tau(x)$. 
 Then the map $(x,y)\mapsto \tau(x^*y)$ is an inner product on $\M$,
 and the completion of $\M$ in this inner product is denoted $\mathcal{L}^2(\M,\tau)$.
+See the book \cite[Ch. 1]{SingularTraces} for introduction
+to the theory of traces on Von Neumann algebras.
+
 
 We require the following lemma from Pedersen \cite{Pedersen1979},
 Theorem 3.6.5,
 \begin{lemma}
+\label{pedersenLemma}
     A state $\varphi$ on a Von Neumann algebra is normal if and only if it is
     $\sigma$-weakly continuous.
 \end{lemma}
 
 
-Since $\M$ carries a group action, such a trace exists.
+We now prove that if $\M$ carries a free and ergodic group action, such a trace exists.
 \begin{lemma}
     Let $\M$ be a Von Neumann algebra, and let $G$ act on $\M$ freely and ergodically.
     Then there is a $G$-invariant state on $\M$, and it is a faithful normal
@@ -153,20 +167,24 @@ Since $\M$ carries a group action, such a trace exists.
     \begin{equation}
         \tau(x) = \int_G \alpha(s,x)\;d\mu(s) = \hat{x}(0).
     \end{equation}
-    See that $\alpha(g,\tau(x)) = \tau(x)$, so $\tau(x)$
+    See that $\alpha(g,\tau(x)) = \tau(x)$ since the Haar
+    measure is $G$-invariant, so $\tau(x)$
     is $G$-invariant so by ergodicity must be in $\Cplx 1$. If we identify
     $\Cplx 1$ with $\Cplx$, we can think of $\tau(x)$ as a scalar, so $\tau(x)$
     is a state. By the continuity of the group action, we have that $\tau$ is normal,
     and if $\tau(x^*x) = 0$, we must have $\alpha(s,x)^*\alpha(s,x) = 0$
     for all $s \in G$, so $x = 0$. Hence $\tau$ is faithful.
     
-    To prove that prove that $\tau$ is a trace it is sufficient to prove that
+    Since $\tau$ is normal, by lemma \ref{pedersenLemma} it is $\sigma$-weakly continuous.
+    
+    Hence to prove that $\tau$ is a trace it is sufficient to prove that
     \begin{equation}
         \tau(u(p)u(q)) = \tau(u(q)u(p))
     \end{equation}
-    for all $p,q \in \widehat{G}$. 
+    for all $p,q \in \widehat{G}$ since the system $\{u(p)\;:\; p \in \widehat{G}\}$
+    is $\sigma$-weakly dense in $\M$ by proposition \ref{densePolynomials}.
     
-    Let $g \in G$, then we have
+    Let $g \in G$, since $\tau$ is $G$-invariant then we have
     \begin{align}
         \tau(u(p)u(q)) &= \tau(\alpha(g,u(p)u(q)))\\
         &= p(g)q(g)\tau(u(p)u(q)).
@@ -177,11 +195,10 @@ Since $\M$ carries a group action, such a trace exists.
     Otherwise, if $p = q^{-1}$ there is a scalar $\lambda_p$
     with $|\lambda_p| = 1$ such that
     \begin{align}
-        \tau(u(p)u(q)) = \lambda_p\tau(u(p)u(p)^*) = \lambda_p.
+        \tau(u(p)u(q)) = \lambda_p\tau(u(p)u(p)^*) = \lambda_p\tau(1) = \lambda_p.
     \end{align}
-    Hence $\tau(u(p)u(q)) = \tau(u(q)u(p))$.
+    Similarly we compute $\tau(u(q)u(p)) = \lambda_p$, so $\tau(u(p)u(q)) = \tau(u(q)u(p))$.
     
-    Hence, since $\tau$ is normal, it is $\sigma$-weakly continuous.
     Since the set $\{u(p)\;:\;p \in \widehat{G}\}$ is $\sigma$-weakly
     dense in $\M$, we have that $\tau(xy) = \tau(yx)$ for all $x,y \in \M$.
     
@@ -195,7 +212,8 @@ Since $\M$ carries a group action, such a trace exists.
 \end{proposition}
 \begin{proof}
     By standard Hilbert space theory, it is sufficient to prove that $\mathcal{P}$
-    is orthonormal and has dense span.
+    is orthonormal and has dense span (see, e.g., \cite{rudin} for details on
+    the theory of Hilbert spaces).
     
     First we prove ortho-normality. Let $p,q \in \widehat{G}$. Then for all $g \in G$,
     \begin{align}
@@ -434,6 +452,19 @@ As usual, define $\|x\|_p = \tau(|x|^p)^{1/p}$. We require the following lemma:
         \|\varphi*x\|_\infty \leq \|\varphi\|_1\|x\|.
     \end{equation}
     
+    Consider the function $T(x) = \varphi * x$. We
+    have shown that $T:\mathcal{L}^1(\M,\tau)\to\mathcal{L}^1(\M,\tau)$
+    with norm $\|\varphi\|_1$, and $T:\M\to \M$ with norm $\|\varphi\|_1$.
+    
+    We see that since $\tau(1) = 1$, we have $\M \subseteq \mathcal{L}^1(\M,\tau)$.
+    Thus $(\mathcal{L}^1(\M,\tau),\M)$ is a compatible pair (as in definition \ref{compatiblePair}).
+    
+    Hence for any interpolation functor $F$ (see Appendix \ref{Interpolation}
+    for details on interpolation theory),
+    we have that $T:F(\mathcal{L}^1(\M,\tau),\M)\to F(\mathcal{L}^1(\M,\tau),\M)$
+    with norm $1$. In Theorem 4.1 of \cite{DDP92} is it shown that there exists
+    a functor $F$ with $F(\mathcal{L}^1(\M,\tau),\M) = \mathcal{L}^p(\M,\tau)$.
+    
     Hence by interpolation, the result follows.
 \end{proof} 
 
@@ -613,7 +644,7 @@ out that all such Von Neumann algebras have a convenient description.
     By proposition \ref{densePolynomials}, $\M$ is generated
     by a family of unitaries $\{u(n)\;:\;n \in \Itgr^d\}$.
     
-    We have that there is a unique normalised trace $\tau$, such that
+    We have that there is a faithful normalised trace $\tau$, such that
     \begin{equation}
         \mathcal{L}^2(\M,\tau) = \left\{\sum_{n \in \Itgr^d} c_nu(n)\;:\; c \in \ell^2(\Itgr^d)\right\}
     \end{equation}
@@ -627,7 +658,7 @@ out that all such Von Neumann algebras have a convenient description.
 \section{Quantised Derivatives on Non-commutative Tori}
 
 Let $d > 0$ be a positive integer. 
-Let $\A_{\lambda}$ be the $d$-dimensional non-commutative torus.
+Let $\A_{\lambda}$ be $d$-dimensional non-commutative torus.
 $\A_\lambda$ has a unique normalised trace $\tau$.
 The Hilbert space $L^2(\A_\lambda,\tau)$ 
 has orthonormal basis $\{u(n)\}_{n \in \Itgr^d}$ where $u(n) = U_1^{n_1}U_2^{n_2}\cdots U_d^{n_d}$.
@@ -870,6 +901,7 @@ by proposition \ref{compactNCCommutators}.
 
 
 \begin{proposition}
+\label{noTraceClass}
     Let $v$ be the second coordinate function with quantised differential
     $\qd v$ as in definition \ref{twoDirac}. Then $\qd v \notin \mathcal{L}^1$.
 \end{proposition}
@@ -886,7 +918,7 @@ by proposition \ref{compactNCCommutators}.
     We specialise this to $k_1,k_2 > 0$,
     \begin{align}
         S &> \sum_{k_1,k_2 > 0} \left|\frac{k_1}{\sqrt{k_1^2+(k_2+1)^2}}-\frac{k_1}{\sqrt{k_1^2+k_2^2}}\right|\\
-        &= \sum_{k_1 > 0}\sum_{k_2 > 0} \frac{k_1}{\sqrt{k_1^2+k_2^2}}-\frac{k_1}{k_1^2+(k_2+1)^2}. 
+        &= \sum_{k_1 > 0}\sum_{k_2 > 0} \frac{k_1}{\sqrt{k_1^2+k_2^2}}-\frac{k_1}{\sqrt{k_1^2+(k_2+1)^2}}. 
     \end{align}
     However the inner sum telescopes, so we have
     \begin{align}
@@ -899,5 +931,12 @@ What this proposition demonstrates is that the results
 of Chapter \ref{IdealMembership} appear to have no analogue
 in the two dimensional case: even for a function that is extremely smooth (such as
 $v$), the quantised differential ($\qd v$) does not lie even within
-the relatively large ideal $\mathcal{L}^1$. 
+the ideal $\mathcal{L}^1$, so there is evidently no hope 
+of finding a class of smooth functions whose quantised differentials
+lie in $\mathcal{L}^{1,\infty}$ or $\mathcal{M}_{1,\infty}$.
+
+\begin{remark}
+    The computation in Proposition \ref{noTraceClass} applies equally
+    well to non-commutative tori of any dimension. 
+\end{remark}
 

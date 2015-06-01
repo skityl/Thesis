@@ -44,7 +44,7 @@ of extended limits is in the definition of a Dixmier trace.
     Let $\omega$ be an extended limit, and let $T > 0$ be an operator
     in $\M_{1,\infty}$. Define,
     \begin{equation}
-        \Tr_\omega(T) := \omega\left\{\frac{1}{\log(N+1)}\sum_{k=0}^N \mu_k(T)\right\}_{N > 0}.
+        \Tr_\omega(T) := \omega\left\{\frac{1}{\log(2^N+1)}\sum_{k=0}^{2^N} \mu_k(T)\right\}_{N > 0}.
     \end{equation}
     Then $\Tr_\omega$ is additive, and extends to a linear functional
     on all of $\M_{1,\infty}$. $\Tr_\omega$ is called a Dixmier trace.
@@ -69,15 +69,19 @@ Proposition \ref{dixmierLinear} is proved in \cite[Ch. 2]{SingularTraces}.
 The conformal mapping theorem [cite] states that there is a holomorphic
 bijection $Z$ between the open unit disc $\{z \in \Cplx\;:\;|z| < 1\}$
 and the interior of $B$. Then Carath\'eodory's theorem [cite]
- states that $Z$ extends to a continuous
-map from $\Circ$ to $J$. 
+ implies that $Z$ extends to a homeomorphism from $\Circ$ to $J$. 
 
 Let $p$ be the Hausdorff dimension of $J$ [cite]. It is known that $p \in (1,2)$ [cite].
 
 There is a $p$-dimensional Hausdorff measure, $\Lambda_p$ on $J$ [cite].
 Let
 $f\in C_0(\Cplx)$ and let $\Tr_\omega$
-be a Dixmier trace. We consider the quantity
+be a Dixmier trace. 
+
+We have that $f\circ Z :\Circ\to \Cplx$, and we consider $M_{f(Z)} \in \mathcal{B}(L^2(\Circ))$,
+and $\qd Z \in \mathcal{B}(L^2(\Circ))$.
+
+We consider the quantity
 \begin{equation}
     \Tr_\omega(M_{f(Z)}|\qd Z|^p).
 \end{equation}
