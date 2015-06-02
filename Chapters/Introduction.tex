@@ -42,6 +42,10 @@ are either trivial or impossible. Hence, the use
 of infinitesimals was banned from mathematics and their role
 in analysis was replaced with the concept of a \emph{limit}.
 
+
+A comprehensive history of the use of infinitesimals prior to the 19th
+century is given in \cite{infinitesimalBook}.
+
 Despite the difficulties with giving a non-contradictory definition
 of infinitesimals, there are numerous reasons that the concept is appealing. 
 Using infinitesimals makes some definitions in analysis seem simpler, for example
@@ -58,14 +62,23 @@ sense are not self-contradictory objects if certain axioms of logic are ignored,
 \cite{sia} for an introduction to this approach.
 A third approach is the Levi-Civita field \cite{lcf}.
 
-A comprehensive history of the use of infinitesimals prior to the 19th
-century is given in \cite{infinitesimalBook}.
+
+The quantised calculus is a relatively new approach to giving
+a rigorous foundation to mathematics with infinitesimals.
+Quantised calculus is an invention of A.
+Connes and D. Sullivan and was first introduced in the 1994 paper 
+``Quantized calculus on $S^1$ and quasi-fuchsian groups.", \cite{connes1994quantized}. 
+The ideas were then presented in chapter 4 of Connes' book ``Noncommutative Geometry",
+\cite{Connes94}. Connes has further described quantised calculus in the 1995 article
+``Noncommutative Geometry and Reality", \cite{connes1995noncommutative}.
 
 \section{Compact Operators as Infinitesimals}
-A relatively new approach to rigorously defining infinitesimals
-comes from non-commutative geometry. In this setting, all objects
+Quantised calculus
+comes from noncommutative geometry. 
+In this setting, all objects
 of interest such as functions, vector fields, differential forms, etc., are
 thought of as operators on a Hilbert space. 
+
 
 In what follows, let $\Hilb$ be a complex separable Hilbert space. 
 
@@ -115,14 +128,15 @@ the singular values.
     If $T$ is compact, the sequence of singular values of $T$
     is decreasing and approaches $0$. 
     
-    The philosophy of measuring the size of a compact operator
-    by the rate of decay of its singular values is given
-    by the ``Calkin Correspondence", explained in Appendix \ref{IdealsOfOperators}.
+
 \end{remark}
 
 We shall regard the \emph{size} of $T$ as being given by the \emph{rate of decay}
 of $\{\mu_n(T)\}_{n=0}^\infty$. 
 
+The philosophy of measuring the size of a compact operator
+by the rate of decay of its singular values is given formal justification
+by the ``Calkin Correspondence", explained in Appendix \ref{IdealsOfOperators}.
 
 \section{Expected Properties of infinitesimals}
 According to $17$th century mathematicians, infinitesimals were supposed
@@ -190,18 +204,17 @@ the role played by the quantised differential.
 The following definition may at first glance seem strange and unmotivated,
 \begin{definition}
     Consider the operator $\D = \frac{1}{i}\frac{d}{dx}$ of differentiation
-    on $\Rl$ (or $\D = \frac{1}{2\pi i}\frac{d}{d\theta}$ on $\Circ$). By the Borel functional calculus, we can define $F := \sgn(\D)$. 
-    $F$ is called the Hilbert transform. For a function $f \in L^1(\Rl)$ (resp. $f \in L^1(\Circ)$)
+    on $\Rl$. By the Borel functional calculus, we can define $F := \sgn(\D)$. 
+    $F$ is called the Hilbert transform. For a function $f \in L^1(\Rl)$
     we have the pointwise multiplication
-    operator $M_f$ considered as an operator on $L^2(\Rl)$ (resp. $L^2(\Circ)$), $M_f$
-    may be a densely defined unbounded operator when $f \notin L^\infty(\Rl)$ 
-    (resp. $f \notin L^\infty(\Circ)$).
-    
+    operator $M_f$ considered as an operator on $L^2(\Rl)$, $M_f$
+    may be a not-everywhere defined unbounded operator when $f \notin L^\infty(\Rl)$ 
+
     The operator
     \begin{equation}
         \qd f := [F,M_f]
     \end{equation}
-    is an operator on $L^2(\Rl)$ (resp. $L^2(\Circ)$)
+    is an operator on $L^2(\Rl)$
     called the \emph{quantised differential} of $f$.
 \end{definition}
 
@@ -211,30 +224,38 @@ is often used to denote the exterior differential of $f$. It must be emphasised
 that the exterior differential $df$ and the quantised differential $\qd f$ are very different objects.
 The difference between $df$ and $\qd f$ will be explained in detail in Chapter \ref{AbstractDifferentialAlgebra}.
 
+
 Similar to the case of functions $f:\Rl\rightarrow \Cplx$, we can also
 study functions on the circle. Let
 \begin{equation}
     \Circ := \{z \in \Cplx\;:\;|z| = 1\}.
 \end{equation}
+$\Circ$ is parametrised by the map $\theta:\Circ\to [0,2\pi)$
+given by $\exp(i\theta) \mapsto \theta$ for $\theta \in [0,2\pi)$.
+
+The pull-back of the Lebesgue measure on $[0,2\pi)$
+to $\Circ$ by $\theta$ is denoted $\ha$, and is normalised to have $\ha(\Circ) = 1$. 
 
 Then we have a differentiation operator 
 \begin{equation}
     \D := \frac{1}{2\pi i} \frac{d}{d\theta},
 \end{equation}
-and $F := \sgn(\D)$. Then we can define quantised
-differentials $\qd f := [F,M_f]$. 
+acting on $L^2(\Circ,\ha)$.
+Define $F := \sgn(\D)$. For a function
+$g:\Circ\to\Cplx$, we can define the quantised
+differential $\qd g := [F,M_g]$. 
 
 \begin{remark}
     We have chosen to call the quantity $[F,M_f]$
-    a quantised differential, and to denote it $\qd f$. 
-    
+    a quantised differential, and to denote it $\qd f$.     
     This terminology is not universal. In particular, the book \cite[Ch. 4]{Connes94}
-    calls $[F,M_f]$ a quantised derivative and denotes it $df$. 
-    
+    calls $[F,M_f]$ a quantised derivative and denotes it $df$.     
     We shall use the notation $\qd f$ to prevent confusion with the exterior
     derivative $df$, and we call it a differential to be consistent
     with the idea of an ``infinitesimal increment".
 \end{remark}    
+
+
 
 It is not easy to motivate the definition $\qd f := [F,M_f]$. Instead,
 we shall show that $\qd f$ satisfies all the properties
@@ -252,23 +273,28 @@ The two questions that we shall attempt to answer are as follows:
 In order to answer those questions, it is informative to give an explanation
 of the origin of the definition of $\qd f$. 
 
-\section{Non-commutative geometry}
+\section{Noncommutative geometry}
 
-\subsection{Introduction to the non-commutative world}
-Non-commutative geometry is a relatively new topic in mathematics. Non-commutative
+\subsection{Introduction to the Noncommutative world}
+Noncommutative geometry is a relatively new topic in mathematics. Noncommutative
 geometry is best thought of not as a collection of results, but instead as a
-perspective on mathematics. 
+perspective on mathematics.
 
-It is difficult to give a completely satisfying general definition of non-commutative geometry, but 
-one can say that non-commutative geometry is the study of non-commutative algebras
+It is difficult to give a completely satisfying general definition of noncommutative geometry, but 
+one can say that noncommutative geometry is the study of noncommutative algebras
 which are somehow similar to algebras of functions on geometric spaces, using
 the methods and language of geometry.
 
-The key idea which underlies most of non-commutative geometry is the duality
+The idea that one can approach noncommutative algebras in this way
+is not new, but the particular philosophy that we explore here is due
+to Alain Connes, and was first introduced in his 1985 paper ``Noncommutative
+Differential Geometry", \cite{connes1985non}. 
+
+The key idea which underlies most of noncommutative geometry is the duality
 between geometric spaces and algebras. 
 
 \begin{example}
-    Let $X$ be a compact Hausdorff space. Let $C(X)$ be the algebra
+    Let $X$ be a compact Hausdorff space. $C(X)$ is defined to be the algebra
     of continuous complex valued functions on $X$. $C(X)$ naturally carries
     the structure of a commutative unital $C^*$-algebra. In fact, for any commutative
     unital $C^*$-algebra $\A$, there is a compact Hausdorff space $K$
@@ -297,15 +323,15 @@ between geometric spaces and algebras.
     Let $\mathbf{UC^*Alg}$ be the category of unital $C^*$-algebras,
     which are not necessarily commutative. Inspired by the duality between commutative
     unital $C^*$-algebras and compact Hausdorff spaces, we define
-    the category of (potentially) non-commutative compact Hausdorff spaces
+    the category of (potentially) noncommutative compact Hausdorff spaces
     to be $\mathbf{UC^*Alg}^{Op}$.
 \end{example}
 For more details on the duality between $C^*$-algebras
 and compact Hausdorff spaces, we refer to the book \cite{Sakai1971}.
 
 \subsection{A brief introduction to Quantum Mechanics}
-Non-commutative geometry can be thought of simply as the study of non-commutative
-algebras using geometric language. However, much research in non-commutative
+Noncommutative geometry can be thought of simply as the study of noncommutative
+algebras using geometric language. However, much research in noncommutative
 geometry is inspired by quantum mechanics. It is therefore instructive to 
 give a brief description of quantum mechanics. 
 
@@ -428,12 +454,12 @@ Using the spectral theorem, we may state our first postulate.
 %    express $A$ as a difference of two positive operators.
 %\end{proof}
 
-\subsection{Non-commutative spaces}
+\subsection{The Noncommutative Perspective}
 Inspired by quantum mechanics, quantum mechanics can be thought
 of as the study of spaces with coordinates such that the order of observation
 of coordinates is important. 
 
-Accordingly, a general non-commutative space can be defined
+Accordingly, a general noncommutative space can be defined
 as a pair $(\A,\Hilb)$, just as a quantum mechanical system.
 The elements of $\A$ are ``coordinate functions", and their
 action on the elements of $\Hilb$ quantifies how the ``geometry"
@@ -445,15 +471,12 @@ That is, we are committed to viewing all objects of interest as being operators
 on a Hilbert space. The study of functions of one variable can be thought
 of as a study of operators on the Hilbert space $L^2(\Rl)$. We therefore
 seek ``generalised functions" as being operators on $L^2(\Rl)$. This motivates
-our definition of $\qd f$ as an operator. For chapters \ref{QuantisedDifferentialsOnRandT}-\ref{IdealMembership} we shall simply take this definition as given. In chapter \ref{AbstractDifferentialAlgebra}
+our definition of $\qd f$ as an operator. For Chapters \ref{QuantisedDifferentialsOnRandT}-\ref{IdealMembership} we shall simply take this definition as given. In Chapter \ref{AbstractDifferentialAlgebra}
 we will return to the problem of the origin of the quantised differential.
+
+In Chapter \ref{HigherDimensions} we will attempt to develop the quantised calculus
+in a more general setting.
 
 Chapter \ref{Applications} covers an example of the application of quantised
 calculus in one variable to the theory of Julia sets.
-
-The appendices of this thesis cover background material necessary for the text,
-for the convenience of the reader. A reader familiar with these topics
-should not need to consult them, and they are consequently not considered
-part of the thesis itself.
-
 

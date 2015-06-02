@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/TeX Live for SUSE Linux)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+The style file: unsrtnat.bst
+Database file #1: Bibliography.bib
+Warning--entry type for "sia" isn't style-file defined
+--line 95 of file Bibliography.bib
+Warning--entry type for "lcf" isn't style-file defined
+--line 146 of file Bibliography.bib
+Warning--empty year in sia
+Warning--empty year in lcf
+You've used 26 entries,
+            2481 wiz_defined-function locations,
+            702 strings with 7244 characters,
+and the built_in function-call counts, 7282 in all, are:
+= -- 594
+> -- 230
+< -- 28
++ -- 116
+- -- 64
+* -- 374
+:= -- 1169
+add.period$ -- 77
+call.type$ -- 26
+change.case$ -- 36
+chr.to.int$ -- 26
+cite$ -- 28
+duplicate$ -- 476
+empty$ -- 797
+format.name$ -- 102
+if$ -- 1573
+int.to.chr$ -- 1
+int.to.str$ -- 27
+missing$ -- 40
+newline$ -- 137
+num.names$ -- 78
+pop$ -- 276
+preamble$ -- 1
+purify$ -- 26
+quote$ -- 0
+skip$ -- 286
+stack$ -- 0
+substring$ -- 120
+swap$ -- 54
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 131
+warning$ -- 2
+while$ -- 57
+width$ -- 0
+write$ -- 328
+(There were 4 warnings)

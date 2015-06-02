@@ -72,7 +72,7 @@ bijection $Z$ between the open unit disc $\{z \in \Cplx\;:\;|z| < 1\}$
 and the interior of $B$. Then Carath\'eodory's theorem \cite[Prop. 2.8.7]{berenstein1991complex}
  implies that $Z$ extends to a homeomorphism from $\Circ$ to $J$. 
 
-Let $p$ be the Hausdorff dimension of $J$ [cite]. It is known that $p \in (1,2)$ [cite].
+Let $p$ be the Hausdorff dimension of $J$.
 
 There is a $p$-dimensional Hausdorff measure, $\Lambda_p$ on $J$. See \cite{rogers1998hausdorff} for the theory
 of Hausdorff measures.
@@ -85,13 +85,17 @@ and $\qd Z \in \mathcal{B}(L^2(\Circ))$.
 
 We consider the quantity
 \begin{equation}
+    \label{quantumIntegral}
     \Tr_\omega(M_{f(Z)}|\qd Z|^p).
 \end{equation}
 
-
-Here we see an application of our results: The results of Chapter \ref{IdealMembership}
-allow us to determine which functions $\varphi$ have $\qd \varphi\in \M_{1,\infty}$,
-that is, in the domain of the Dixmier trace $\Tr_\omega$.
+\begin{remark}
+    In Chapter \ref{IdealMembership}, we found sufficient conditions that the map
+    $Z$ must satisfy so that $\qd Z \in \mathcal{L}^{p,\infty}$. These conditions
+    are useful because the expression \ref{quantumIntegral} is well defined
+    when $\qd Z \in \mathcal{L}^{p,\infty}$. Connes \cite[Ch. 4, Prop. 7]{Connes94} used
+    a different method to show that $\qd Z \in \mathcal{L}^{p,\infty}$.
+\end{remark}
 
 Herein lies the utility
 of quantised calculus.
