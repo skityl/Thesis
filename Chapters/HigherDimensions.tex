@@ -13,12 +13,12 @@ It is natural to consider generalisations to other spectral triples.
 
 $\Rl$ and $\Circ$ are important as settings for analysis since they
 are spaces posessing some symmetry. In other words, there is a group
-action on $\Rl$ (namely, the action of $\Rl$ itself by translation)
+action on $\Rl$ (namely, the action of $\Rl$ on itself by translation)
 that is faithful and transitive. Similarly the group $\Circ$
 acts on itself by rotation.
 
 We consider now more general non-commutative spaces with a group
-action. There is a beautiful and extraordinary generalisation of the Fourier
+action. There is a beautiful generalisation of the Fourier
 transform in the theory of Von Neumann algebras relating
 to the action of compact groups. In the next section, we explore this idea.
 
@@ -50,7 +50,7 @@ Let $G$ be a compact abelian group equipped with normalised Haar
 measure $\mu$, and let $\M$ be a Von Neumann algebra.
 
 Recall that a group action on a Von Neumann algebra
-is a group action $\alpha:G\times \M\rightarrow \M$ such that
+is a mapping $\alpha:G\times \M\rightarrow \M$ such that
 for all $g \in G$ the function $a\mapsto \alpha(g,a)$ is an algebra
 homomorphism. We assert that all group actions
 are $\sigma$-weakly continuous, meaning that the map $g\mapsto \alpha(g,x)$
@@ -68,12 +68,11 @@ Suppose that $G$ acts on $M$ in a way that is
 We then have the following result:
 \begin{proposition}
     Suppose that $G$ is a compact abelian group that acts freely and ergodically
-    on the Von Neumann algebra $\M$, by the action $\alpha:G\times\M\rightarrow\M$. Then there is a set 
+    on the Von Neumann algebra $\M$. We denote the action as $\alpha:G\times\M\rightarrow\M$. Then there is a set 
     \begin{equation}
         \{ u(p) \;:\; p \in \widehat{G}\}
     \end{equation}
-    of unitary eigenoperators for the action indexed by the dual group $\widehat{G}$,
-    and the map $p\mapsto u(p)$ is a representation of $\widehat{G}$.
+    of unitary eigenoperators for the action indexed by the dual group $\widehat{G}$.
 \end{proposition}
 \begin{proof}
     Let $x \in \M$ and $p \in \widehat{G}$. Define
@@ -86,16 +85,16 @@ We then have the following result:
         \alpha(g,\hat{x}(p)) &= \int_G \alpha(sg,x)p(s)^{-1} \;d\mu(s)\\
         &= p(g)\hat{x}(p).
     \end{align}
-    Hence we have that $\hat{x}(p)$ is an eigenoperator for the action of $G$.
+    Hence we have that for each $g \in G$, the linear map $x \mapsto \alpha(g,x)$
+    has eigenvector $\hat{x}(p)$ with eigenvalue $p(g)$. This is
+    to say that $\hat{x}(p)$ is an eigenoperator for the action of $G$.
     Hence, for $x,y \in \M$, we have that $\hat{x}(p)\hat{y}(p)^*$ is a fixed
-    point of $G$, hence a scalar multiple of $1$. 
+    point of $G$, hence a scalar multiple of $1$ by the ergodicity of the action.
     
     Then define
     \begin{equation}
-        u(p) = \frac{\hat{x}(p)}{\|\hat{x}(p)\|}.
+        u(p) := \frac{\hat{x}(p)}{\|\hat{x}(p)\|}.
     \end{equation}
-    Hence $u$ is unitary, and for each $y \in \M$, we have $\hat{y}(p)$ is a scalar
-    multiple of $u(p)$.
 \end{proof} 
 \begin{example}
     The prototypical example of this decomposition is for $\M = L^\infty(\Circ)$,
@@ -104,14 +103,15 @@ We then have the following result:
     \begin{equation}
         \hat{f}(n)(\zeta) = \int_\Circ f(\tau\zeta) \tau^{-n} d\ha(\tau)
     \end{equation}
-    This is simply the $n$th Fourier coefficient times $\zeta^n$. Hence we have
+    This is simply the $n$th Fourier coefficient times $\zeta^n$. Hence we have (up to a unimodular 
+    scaling factor)
     \begin{equation}
         u(n)(\zeta) = \zeta^n.
     \end{equation}
     So the system of unitaries is the set of monomials on $\Circ$. 
 \end{example}
 The important feature of this system of unitaries is that it spans
-$\M$. 
+$\M$ in the following sense, proved in \cite{Pedersen1979}:
 \begin{proposition}
 \label{densePolynomials}
     Let $G$ be a compact abelian group acting freely and ergodically 
@@ -122,20 +122,6 @@ $\M$.
     be the corresponding unitary eigenoperators of $G$. Then the span
     of $\mathcal{P}$ is dense in the $\sigma$-weak topology on $\M$.
 \end{proposition}
-\begin{proof}
-    (sketch: See \cite{Pedersen1979} 8.1.6 for details) This follows from the claim that the \emph{Arveson spectrum}
-    $\operatorname{Sp}(\alpha)$
-    of $\alpha$ is $\widehat{G}$. We claim that since
-    \begin{equation}
-        \operatorname{Sp}^{\perp}(\alpha) = \{ s \in G\;:\; \alpha(s,x) = x\;\text{ for all }x \in \M\}
-    \end{equation} 
-    we have that $\operatorname{Sp}^\perp(\alpha) = \{0\}$ because $\alpha$
-    is free,
-    from which it follows that $\operatorname{Sp}(\alpha) = \widehat{G}$.
-    
-    Consequently, the system $\{u(p)\;:\; p \in \widehat{G}\}$ is $\sigma$-weakly
-    dense in $\M$.
-\end{proof}
 
 \subsection{The space $\mathcal{L}^2(\M,\tau)$}
 Suppose that $\tau$ is a faithful trace on $\M$ such that $\tau(1) = 1$,
@@ -171,9 +157,18 @@ We now prove that if $\M$ carries a free and ergodic group action, such a trace 
     measure is $G$-invariant, so $\tau(x)$
     is $G$-invariant so by ergodicity must be in $\Cplx 1$. If we identify
     $\Cplx 1$ with $\Cplx$, we can think of $\tau(x)$ as a scalar, so $\tau(x)$
-    is a state. By the continuity of the group action, we have that $\tau$ is normal,
-    and if $\tau(x^*x) = 0$, we must have $\alpha(s,x)^*\alpha(s,x) = 0$
+    is a linear functional. We see that $\tau$ is a state since $\tau(1) = \int_G 1\;d\mu = 1$.   
+    
+    If $\tau(x^*x) = 0$, we must have $\alpha(s,x)^*\alpha(s,x) = 0$
     for all $s \in G$, so $x = 0$. Hence $\tau$ is faithful.
+    
+    Recall that a state $\varphi$ is normal if for any sequence of 
+    pairwise orthogonal projections $\{p_n\}_{n \in \Ntrl}$, we have
+    that $\varphi(\sum_{n} p_n) = \sum_{n} \tau(p_n)$. 
+    We have that the series $\sum_n p_n$ converges strongly, hence
+    $\sigma$-weakly. Thus $\tau$ is normal since $\alpha(s,-)$
+    is $\sigma$-weakly continuous.
+    
     
     Since $\tau$ is normal, by lemma \ref{pedersenLemma} it is $\sigma$-weakly continuous.
     
@@ -278,6 +273,7 @@ In general, for $N = (N_1,\ldots,N_d) \in \Itgr^d$, define
 \end{equation}
 where the summation runs over all multi-indices $n = (n_1,\ldots,n_d)$
 such that for each $1\leq j \leq d$, we have $-N_j \leq n_j \leq N_J$.
+$S_N$ is called the C\`esaro sum.
 and
 \begin{equation}
     \sigma_N a := \frac{1}{N_1N_2\cdots N_d}\sum_{n = (1,\ldots,1)}^N S_n a.
@@ -377,9 +373,10 @@ where
     F_N(t) = \prod_{j=1}^d\frac{t_j^{N_j}-2+t_j^{-N_j}}{N(t_j^{1/2}-t_j^{-1/2})^2}
 \end{equation}
 where the fractional powers in the formulae for $D_N$ and $F_N$ are defined
-in a principal value sense. See \cite{katznelson} for proofs.
+in a principal value sense. $D_N$
+is called the Dirichlet kernel, and $F_N$ is the F\'jer kernel. See \cite{katznelson} for proofs.
 
-Now we define approximate identities,
+Now we recall the definition approximate identities,
 \begin{definition}
     A net $\{\Phi_\lambda\}_{\lambda \in \Lambda} \subset L^1(\Circ^d,\ha)$ is called
     an approximation to the identity if,
