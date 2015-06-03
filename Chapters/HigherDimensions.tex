@@ -19,10 +19,10 @@ acts on itself by rotation.
 
 We consider now more general noncommutative spaces with a group
 action. There is a beautiful generalisation of the Fourier
-transform in the theory of Von Neumann algebras relating
+transform in the theory of von Neumann algebras relating
 to the action of compact groups. In the next section, we explore this idea.
 
-For an introduction to the theory of Von Neumann algebras, see the book \cite{Sakai1971}.
+For an introduction to the theory of von Neumann algebras, see the book \cite{Sakai1971}.
 
 \section{Compact Group actions}
 
@@ -42,14 +42,14 @@ First we recall the definition of the $\sigma$-weak topology.
     \end{equation}
     This system of semi-norms defines the $\sigma$-weak topology
     on $\mathcal{B}(\Hilb)$.
+    
+    For more details, see \cite{Sakai1971}.
 \end{definition}
 
-
-
 Let $G$ be a compact abelian group equipped with normalised Haar
-measure $\mu$, and let $\M$ be a Von Neumann algebra.
+measure $\mu$, and let $\M$ be a von Neumann algebra.
 
-Recall that a group action on a Von Neumann algebra
+Recall that a group action on a von Neumann algebra
 is a mapping $\alpha:G\times \M\rightarrow \M$ such that
 for all $g \in G$ the function $a\mapsto \alpha(g,a)$ is an algebra
 homomorphism. We assert that all group actions
@@ -65,10 +65,23 @@ Suppose that $G$ acts on $M$ in a way that is
     such that some $g \in G$ not equal to the identity fixes all of $p\M p$.
 \end{enumerate}
 
+We will need to compute integrals of von Neumann algebra valued functions.
+To do this, will will use the \emph{Pettis integral}. See the paper
+\cite{zsido1977spectral} for details. The important feature of the Pettis
+integral that we will need is that it commutes with a group action.
+That is, if $G$ is a compact abelian group with Haar measure $\mu$, and 
+$f:G\to \M$ is a function that is continuous in the $\sigma$-weak topology, 
+and $g \in G$, and $\alpha$ is a $G$-action on $\M$, we have
+\begin{equation}
+    \alpha(g,\int_G f(s)\;d\mu(s)) = \int_G \alpha(g,f(s))\;d\mu(s).
+\end{equation}
+
+
 We then have the following result:
 \begin{proposition}
     Suppose that $G$ is a compact abelian group that acts freely and ergodically
-    on the Von Neumann algebra $\M$. We denote the action as $\alpha:G\times\M\rightarrow\M$. Then there is a set 
+    on the von Neumann algebra $\M$. We denote the action as $\alpha:G\times\M\rightarrow\M$. 
+    Then there is a set 
     \begin{equation}
         \{ u(p) \;:\; p \in \widehat{G}\}
     \end{equation}
@@ -79,7 +92,6 @@ We then have the following result:
     \begin{equation}
         \hat{x}(p) := \int_G \alpha(s,x) p(s)^{-1} \;d\mu(s).
     \end{equation}
-    
     Let $g \in G$, then we can compute,
     \begin{align}
         \alpha(g,\hat{x}(p)) &= \int_G \alpha(g,\alpha(s,x))\;d\mu(s)\\
@@ -116,7 +128,7 @@ $\M$ in the following sense, proved in \cite[Thm 2.3]{Pedersen1979}:
 \begin{proposition}
 \label{densePolynomials}
     Let $G$ be a compact abelian group acting freely and ergodically 
-    on a Von Neumann algebra $\M$. Let
+    on a von Neumann algebra $\M$. Let
     \begin{equation}
         \mathcal{P} = \{ u(p)\;:\; p \in \widehat{G}\}
     \end{equation}
@@ -131,21 +143,21 @@ all $g \in G$ and $x \in \M$ we have $\tau(\alpha(g,x)) = \tau(x)$.
 Then the map $(x,y)\mapsto \tau(x^*y)$ is an inner product on $\M$,
 and the completion of $\M$ in this inner product is denoted $\mathcal{L}^2(\M,\tau)$.
 See the book \cite[Ch. 1]{SingularTraces} for introduction
-to the theory of traces on Von Neumann algebras.
+to the theory of traces on von Neumann algebras.
 
 
 We require the following lemma from Pedersen \cite{Pedersen1979},
 Theorem 3.6.5,
 \begin{lemma}
 \label{pedersenLemma}
-    A state $\varphi$ on a Von Neumann algebra is normal if and only if it is
+    A state $\varphi$ on a von Neumann algebra is normal if and only if it is
     $\sigma$-weakly continuous.
 \end{lemma}
 
 
 We now prove that if $\M$ carries a free and ergodic group action, such a trace exists.
 \begin{lemma}
-    Let $\M$ be a Von Neumann algebra, and let $G$ act on $\M$ freely and ergodically.
+    Let $\M$ be a von Neumann algebra, and let $G$ act on $\M$ freely and ergodically.
     Then there is a $G$-invariant state on $\M$, and it is a faithful normal
     trace.
 \end{lemma}
@@ -237,7 +249,41 @@ We now prove that if $\M$ carries a free and ergodic group action, such a trace 
     in the norm $\|\cdot\|_p$. 
 \end{remark}
 
-
+%\subsection{Symplectic bicharacters corresponding to group actions}
+%The system of unitaries corresponding to a group
+%action is not arbitrary, and it has some structure, as we
+%now show:
+%\begin{definition}
+%\label{bicharacterDef}
+%Let $\M$ be a von Neumann algebra, with an action $\alpha:G\times \M\to\M$
+%    from a compact abelian group $G$ that is free and ergodic. Let 
+%    $\{u(p)\;:\;p \in \widehat{G}\}$ be the corresponding system of unitaries.
+%    Define,
+%    \begin{equation}
+%        \omega(p,q)1 := u(p)u(q)u(p+q)^*.
+%    \end{equation}
+%    We have that $\omega(p,q)\in\Cplx$ since the action is ergodic. 
+%    Similarly, define
+%    \begin{equation}
+%        \chi(p,q)1 = u(p)u(q)u(p)^*u(q)^*.
+%    \end{equation}
+%\end{definition}
+%We will require the following lemma:
+%\begin{lemma}
+%\label{lemmaOnCharacters}
+%    Let $\omega,\chi$ be as in Definition \ref{bicharacterDef},
+%    and $p,q,r \in \widehat{G}$. Then,
+%    \begin{equation}
+%        \omega(q,r)\omega(p,q+r) = \omega(p+q,r)\omega(p,q).
+%    \end{equation} 
+%    We also have,
+%    \begin{align}
+%        \chi(p+q,r) &= \chi(p,q)\chi(q,r)\\
+%        \chi(p,q)^{-1} &= \chi(q,p).
+%    \end{align}
+%\end{lemma}
+%Lemma \ref{lemmaOnCharacters} is the result of straightforward computation, which
+%we omit. The computations can be found in \cite{Pedersen1979}.
 \subsection{Noncommutative Harmonic Analysis}
 
 We now fix $G = \Circ^d$, for $d \geq 1$, so that $\widehat{G} = \Itgr^d$. It is of interest
@@ -250,8 +296,8 @@ Let $\ha$ denote the normalised Haar measure on $\Circ^d$.
 
 From now on, denote the action of $t \in \Circ^d$ on $x \in \M$ as $\alpha_t(x)$.
 
-Fix $\M$ a Von Neumann Algebra, and let $\Circ^d$ act on $\M$ freely
-and ergodically. Let $\tau$ be the unique normalised faithful $\Circ^d$-invariant trace
+Fix $\M$ a von Neumann Algebra, and let $\Circ^d$ act on $\M$ freely
+and ergodically. Let $\tau$ be a normalised faithful $\Circ^d$-invariant trace
 on $\M$. Let
 \begin{equation}
     \mathcal{P} := \{ u(n) \;:\; n \in \Itgr^d\}
@@ -461,7 +507,7 @@ Approximate identities are so named because of the following two results:
 \end{proof}
 
 \begin{proposition}
-    Let $\M$ be a Von Neumann algebra with a free and ergodic group action $\alpha$ of $\Circ^d$.
+    Let $\M$ be a von Neumann algebra with a free and ergodic group action $\alpha$ of $\Circ^d$.
     Let $\mathcal{P} = \{u(n)\;:\;n \in \Itgr^d\}$ be the corresponding system
     of eigenoperators and trace $\tau$. Then $\mathcal{P} \subseteq \mathcal{U}(\M)$,
     and hence $\mathcal{U}(\M)$ is dense in $\mathcal{L}^p(\M,\tau)$
@@ -571,7 +617,7 @@ At last we can prove the following result:
 \end{proof}
 
 \subsection{The Operators $\delta_j$}
-Let $\M$ be a Von Neumann Algebra, and let $\Circ^d$
+Let $\M$ be a von Neumann Algebra, and let $\Circ^d$
 act freely and ergodically on $\M$. 
 
 The generalised differentiation operator $\delta_j$ is defined
@@ -671,9 +717,9 @@ Hence we have the formula,
 \end{equation}
 
 \subsection{Noncommutative Tori}
-So far we have discussed abstract Von Neumann algebras
+So far we have discussed abstract von Neumann algebras
 possessing a free and ergodic action by the group $\Circ^d$. It turns
-out that all such Von Neumann algebras have a convenient description. 
+out that all such von Neumann algebras have a convenient description. 
 
 \begin{definition}
 \label{ncTorus}
@@ -696,24 +742,27 @@ out that all such Von Neumann algebras have a convenient description.
     \begin{equation}
         U_k e_{b_j} := e_{b_k+b_j}.
     \end{equation}
-    Furthermore we define,
+    We also assume that, for $k < j$,
     \begin{equation}
-        U_k^*e_{b_j} := e_{-b_k+b_j}.
+        U_k^*e_{b_j} := e_{b_j-b_k}.
     \end{equation}
     
     This uniquely defines $U_k:\ell^2(\Itgr^d) \to \ell^2(\Itgr^d)$, 
     since for any $n \in \Itgr^d$, we can obtain $e_n$
     by successively applying $U_k$ for certain
-    choices of $k$ to some $e_{b_j}$.
+    choices of $k$ to some $e_{b_j}$, also using the relation that,
+    \begin{equation}
+        e_{b_j} = U_k^*e_{b_j+b_k}.
+    \end{equation}
     
     Then each $U_k$ is unitary, and the
-    Von Neumann algebra generated by $\{U_1,\ldots,U_d\}$ is denoted
+    von Neumann algebra generated by $\{U_1,\ldots,U_d\}$ is denoted
     $\N_\theta$.
 \end{definition}
 
 
 \begin{proposition}
-    Let $\M$ be a Von Neumann algebra such that there is an action
+    Let $\M$ be a von Neumann algebra such that there is an action
     $\alpha:\Circ^d\times \M\to\M$ that is free and ergodic. Then $\M$
     is isometrically isomorphic to $\N_\theta$ for some $\theta$.
 \end{proposition}
@@ -765,22 +814,27 @@ out that all such Von Neumann algebras have a convenient description.
     with $b_j$ equal to $0$ everywhere except the $j$th position where
     it is equal to $1$. 
     
-    Define, for $j \in \{1,\ldots,d\}$,
+    Define, for $j,l \in \{1,\ldots,d\}$, 
+    with $j \leq l$, the operator $U_j:\ell^2(\Itgr^d)\to\ell^2(\Itgr^d)$,
+    \begin{align}
+        U_je_{b_l} &:= \omega_{b_j,b_l}^{-1}\pi(u(b_j))e_{b_l}\\
+                   &= e_{b_j+b_l}.
+    \end{align}
+    and for $j > l$,
+    \begin{align}
+        U_je_{b_l} &:= \pi(u(b_j))e_{b_l}\\
+                   &= \omega_{b_j,b_l}e_{b_j+b_l}.
+    \end{align}
+    We also define that,
     \begin{equation}
-        U_j = \pi(u(b_j)).
+        U_j^*e_{b_l} := e_{b_l-b_j}.
     \end{equation}
     Since it is a composition of isometries, $U_j$ is unitary. We
     shall show that $\{U_1,\ldots,U_d\}$ satisfies the relation
-    of a noncommutative torus $\N_\theta$ for some $\theta$. 
-    
-    Now for $j,l \in \{1,\ldots,d\}$ with $j > l$,
-    \begin{equation}
-        U_je_{b_l} = \omega_{e_j,e_l}e_{b_j+b_l}.
-    \end{equation}
+    of a noncommutative torus $\N_\theta$ for some $\theta$.
     
     Since $|\omega_{e_j,e_l}| = 1$, we can find $\theta_{j,l} \in \Rl$
     such that $\omega_{e_j,e_l} = \exp(2\pi i \theta_{j,l})$. 
-    
     
     Now define $\theta_{l,j} = -\theta_{j,l}$, and $\theta_{j,j} = 0$.
     
@@ -790,9 +844,16 @@ out that all such Von Neumann algebras have a convenient description.
     
     If $j \leq l$, we have
     \begin{equation}
-        U_je_{b_l} = \omega_{e_j,e_l}e_{b_j+b_l}.
+        U_je_{b_l} = e_{b_j+b_l}.
     \end{equation}
-    
+    We also see that,
+    \begin{equation}
+        U_j^*e_{b_l} := e_{b_l-b_j}.
+    \end{equation}
+    For $j > l$,
+    \begin{equation}
+        U_je_{b_l} = \exp(2\pi i \theta_{j,i})e_{b_j+b_l}.
+    \end{equation}
     Now $\pi$ extends by linearity to a map from $\Span\{u(n)\;:\;n \in \Itgr^d\}$
     to $\mathcal{B}(\Hilb)$. Since $\pi$ is a composition of isometries, $\pi$
     must be $\sigma$-weakly continuous. Hence $\pi$ extends by continuity to a map
@@ -825,12 +886,12 @@ out that all such Von Neumann algebras have a convenient description.
 %    is isomorphic to $\N_\theta$ for some $\theta$.
 \end{proof}
 
-\section{Quantised Derivatives on Noncommutative Tori}
+\section{Quantised Differentials on Noncommutative Tori}
 
 Let $d > 0$ be a positive integer. 
 Let $\N_{\theta}$ be a noncommutative torus
 associated to the $d\times d$ anti-symmetric real matrix $\theta$.
-$\N_\theta$ has a unique normalised trace $\tau$.
+$\N_\theta$ has a normalised trace $\tau$.
 The Hilbert space $\mathcal{L}^2(\N_\theta,\tau)$ 
 has orthonormal basis $\{u(n)\}_{n \in \Itgr^d}$ where $u(n) = U_1^{n_1}U_2^{n_2}\cdots U_d^{n_d}$.
 
@@ -857,7 +918,7 @@ $\|F\|_\infty$.
 We shall identify $u(n) \in \N_\theta$ with the multiplication operator
 $M_{u(n)}f = u(n)f$ for $f \in \mathcal{L}^2(\N_\theta,\tau)$
 
-\section{Commutators}
+\subsection{Commutators}
 \label{commutators}
 Let $F:\Itgr^d\to\Rl$.
 Let $n \in \Itgr^d$. We are interested in $[F(D),u(n)]$. 
@@ -921,7 +982,7 @@ So $[F(D),u(n)] = u(n)(F(n+D)-F(D))$.
 
 %So we have necessary and sufficient conditions for $[F(D),u(n)] \in \mathcal{L}^2$. 
 
-\section{Membership of $\mathcal{L}^p$}
+\subsection{Membership of $\mathcal{L}^p$}
 \begin{proposition}
 \label{LpConditions}
     
@@ -952,7 +1013,7 @@ Now,
 \end{align}
 This is exactly the equality of $\|[F(D),u(n)]\|_p$ and $\|\{|F(k+n)-F(k)|\}_{k \in \Itgr^d}\|_p$.
 
-\section{Double commutators}
+\subsection{Double commutators}
 
 We are also interested in the properties of the double commutators,
 \begin{equation*}
@@ -974,7 +1035,7 @@ Hence,
 So we have $[[F(D),u(n)],u(n)] \in \mathcal{L}^p$
 if and only if $\{F(k+n)-2F(k)+F(k-n)\}_{k\in \Itgr^d} \in \ell^p(\Itgr^d)$.
 
-\section{Application to quantised differentials}
+\subsection{Application to quantised differentials}
 Recall that for functions on the circle $\Circ$, we have the result
 that $\varphi$ is a rational function if and only if $\qd \varphi$
 is finite rank. In the case of functions on a higher dimensional
@@ -1071,7 +1132,7 @@ on a higher dimensional torus. We shall consider the two dimensional commutative
             \D_1 + i\D_2 & 0
         \end{pmatrix}.
     \end{align*}
-    which acts on the Hilbert space $\Cplx^2 \otimes L^2(\Circ^2)$.
+    which is an operator on the Hilbert space $\Cplx^2 \otimes L^2(\Circ^2)$.
     
     We now define the operators $\D_1/\sqrt{\D_1^2+\D_2^2}$ and $\D_2/\sqrt{\D_1^2+\D_2^2}$,
     by
@@ -1083,10 +1144,9 @@ on a higher dimensional torus. We shall consider the two dimensional commutative
     \end{equation}
     
     The Hilbert transform on the two torus is then defined to be:
-    \begin{align*}
-        \sgn(\D) &:= \frac{\D}{|\D|}\\
-        &= \sigma_1 \otimes \frac{\D_1}{\sqrt{\D_1^2+\D_2^2}} + \sigma_2 \otimes \frac{\D_2}{\sqrt{\D_1^2+\D_2^2}}
-    \end{align*}
+    \begin{equation}
+        \sgn(\D) := \sigma_1 \otimes \frac{\D_1}{\sqrt{\D_1^2+\D_2^2}} + \sigma_2 \otimes \frac{\D_2}{\sqrt{\D_1^2+\D_2^2}}
+    \end{equation}
     
     For $f \in L^1(\Circ^2)$, we have the potentially not everywhere defined
     or bounded pointwise multiplication operator $1\otimes M_f$
